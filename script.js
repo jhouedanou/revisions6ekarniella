@@ -416,87 +416,6 @@ const questions = [
         correct: 0,
         explanation: "45 = 7 × 6 + 3, donc quotient 6, reste 3."
     },
-    // NOUVELLES QUESTIONS SEMAINE 1
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "valeur_positionnelle",
-        question: "Dans 12 345, le chiffre 2 représente :",
-        options: ["2 unités", "2 dizaines", "2 centaines", "2 milliers"],
-        correct: 3,
-        explanation: "Dans 12 345, le 2 est à la position des milliers, donc 2 × 1000 = 2000."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "comparaison_nombres",
-        question: "Rangez ces nombres du plus petit au plus grand : 1 234, 1 243, 1 324, 1 432",
-        options: ["1 234, 1 243, 1 324, 1 432", "1 432, 1 324, 1 243, 1 234", "1 234, 1 324, 1 243, 1 432", "1 243, 1 234, 1 324, 1 432"],
-        correct: 0,
-        explanation: "1 234 < 1 243 < 1 324 < 1 432 (comparaison chiffre par chiffre)."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "addition",
-        question: "Calculez : 1 234 + 567 + 89",
-        options: ["1 890", "1 890", "1 890", "1 890"],
-        correct: 0,
-        explanation: "1 234 + 567 = 1 801, puis 1 801 + 89 = 1 890."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "soustraction",
-        question: "Calculez : 2 000 - 1 234",
-        options: ["766", "776", "786", "796"],
-        correct: 0,
-        explanation: "2 000 - 1 234 = 766 (on emprunte 10 aux dizaines pour les unités)."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "multiplication",
-        question: "Calculez : 15 × 12",
-        options: ["180", "170", "190", "200"],
-        correct: 0,
-        explanation: "15 × 12 = 15 × 10 + 15 × 2 = 150 + 30 = 180."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "division",
-        question: "Calculez : 1 008 ÷ 8",
-        options: ["126", "124", "128", "122"],
-        correct: 0,
-        explanation: "1 008 ÷ 8 = 126 (vérification : 126 × 8 = 1 008)."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "tables_multiplication",
-        question: "8 × 6 = ?",
-        options: ["42", "48", "54", "56"],
-        correct: 1,
-        explanation: "8 × 6 = 48 (table de 8)."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "multiples",
-        question: "Parmi ces nombres, lequel est un multiple de 8 ?",
-        options: ["42", "48", "54", "58"],
-        correct: 1,
-        explanation: "48 = 8 × 6, donc 48 est multiple de 8."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "diviseurs",
-        question: "Combien le nombre 16 a-t-il de diviseurs ?",
-        options: ["4", "5", "6", "7"],
-        correct: 1,
-        explanation: "Les diviseurs de 16 sont : 1, 2, 4, 8, 16 (soit 5 diviseurs)."
-    },
-    {
-        category: "🔢 Nombres et Opérations",
-        concept: "criteres_divisibilite",
-        question: "Le nombre 1 248 est-il divisible par 3 ?",
-        options: ["Oui", "Non", "On ne peut pas savoir", "Seulement par 2"],
-        correct: 0,
-        explanation: "1 + 2 + 4 + 8 = 15, et 15 ÷ 3 = 5 (exact), donc 1 248 est divisible par 3."
-    },
 
     // PARTIE 2 : LES FRACTIONS ET DÉCIMAUX
     {
@@ -579,87 +498,6 @@ const questions = [
         correct: 1,
         explanation: "0,6 est à 0,4 de 1 et à 0,6 de 0, donc plus près de 1."
     },
-    // NOUVELLES QUESTIONS SEMAINE 3
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "fractions_definition",
-        question: "Que vaut 2/3 en décimal ?",
-        options: ["0,66", "0,67", "0,6", "0,7"],
-        correct: 0,
-        explanation: "2/3 = 2 ÷ 3 = 0,666... ≈ 0,66."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "comparaison_fractions",
-        question: "Laquelle est la plus petite ?",
-        options: ["1/3", "1/4", "1/5", "1/6"],
-        correct: 3,
-        explanation: "1/6 = 0,167 < 1/5 = 0,2 < 1/4 = 0,25 < 1/3 = 0,333..."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "fractions_definition",
-        question: "4/8 est égal à :",
-        options: ["1/4", "1/2", "2/4", "1/3"],
-        correct: 1,
-        explanation: "4/8 = 1/2 (on divise numérateur et dénominateur par 4)."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "decimaux",
-        question: "Comment écrit-on \"vingt-trois unités et cinq centièmes\" ?",
-        options: ["23,5", "23,05", "23,50", "23,005"],
-        correct: 1,
-        explanation: "Vingt-trois unités = 23, cinq centièmes = 0,05, donc 23,05."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 3,25 + 1,75",
-        options: ["4,5", "5", "4,75", "5,25"],
-        correct: 1,
-        explanation: "3,25 + 1,75 = 5,00 = 5."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 12,5 × 4",
-        options: ["48", "50", "52", "54"],
-        correct: 1,
-        explanation: "12,5 × 4 = 50."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "fractions_definition",
-        question: "Dans un gâteau coupé en 8 parts, j'en mange 3. Quelle fraction ai-je mangée ?",
-        options: ["3/8", "5/8", "3/5", "8/3"],
-        correct: 0,
-        explanation: "3 parts mangées sur 8 parts totales = 3/8."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 10,5 ÷ 2",
-        options: ["5,25", "5,5", "5,75", "6"],
-        correct: 0,
-        explanation: "10,5 ÷ 2 = 5,25."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "fractions_definition",
-        question: "Que vaut 3/5 de 25 ?",
-        options: ["12", "15", "18", "20"],
-        correct: 1,
-        explanation: "3/5 de 25 = (3 × 25) ÷ 5 = 75 ÷ 5 = 15."
-    },
-    {
-        category: "🍕 Fractions et Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 0,8 × 0,5",
-        options: ["0,4", "0,04", "4", "40"],
-        correct: 0,
-        explanation: "0,8 × 0,5 = 0,4."
-    },
 
     // PARTIE 3 : GÉOMÉTRIE
     {
@@ -726,71 +564,6 @@ const questions = [
         correct: 0,
         explanation: "Dans un triangle équilatéral, les 3 côtés sont égaux."
     },
-    // NOUVELLES QUESTIONS SEMAINE 4
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Combien de côtés a un pentagone ?",
-        options: ["4", "5", "6", "7"],
-        correct: 1,
-        explanation: "Un pentagone a 5 côtés (penta = cinq)."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Un losange a :",
-        options: ["4 côtés égaux et 4 angles droits", "4 côtés égaux mais pas d'angles droits", "2 paires de côtés égaux", "4 angles droits"],
-        correct: 1,
-        explanation: "Un losange a 4 côtés égaux mais pas nécessairement d'angles droits."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "perimetre",
-        question: "Un carré de 6 cm de côté a un périmètre de :",
-        options: ["12 cm", "24 cm", "36 cm", "18 cm"],
-        correct: 1,
-        explanation: "Périmètre du carré = 4 × côté = 4 × 6 = 24 cm."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "aire",
-        question: "Un carré de 6 cm de côté a une aire de :",
-        options: ["12 cm²", "24 cm²", "36 cm²", "18 cm²"],
-        correct: 2,
-        explanation: "Aire du carré = côté × côté = 6 × 6 = 36 cm²."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Dans un cercle, le diamètre est :",
-        options: ["La moitié du rayon", "Le double du rayon", "Égal au rayon", "Le tiers du rayon"],
-        correct: 1,
-        explanation: "Le diamètre = 2 × rayon."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Deux droites perpendiculaires :",
-        options: ["Se coupent à angle droit", "Ne se coupent jamais", "Se coupent en plusieurs points", "Sont parallèles"],
-        correct: 0,
-        explanation: "Deux droites perpendiculaires se coupent à angle droit (90°)."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Un angle aigu mesure :",
-        options: ["Moins de 90°", "Exactement 90°", "Plus de 90°", "180°"],
-        correct: 0,
-        explanation: "Un angle aigu mesure moins de 90°."
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Dans un triangle rectangle :",
-        options: ["Un angle est droit", "Tous les angles sont droits", "Aucun angle n'est droit", "Deux angles sont droits"],
-        correct: 0,
-        explanation: "Dans un triangle rectangle, un angle mesure 90°."
-    },
 
     // PARTIE 4 : MESURES
     {
@@ -848,71 +621,6 @@ const questions = [
         options: ["1 800 m", "2 800 m", "1 200 m", "2 200 m"],
         correct: 0,
         explanation: "5 km = 5 000 m, reste : 5 000 - 3 200 = 1 800 m."
-    },
-    // NOUVELLES QUESTIONS SEMAINE 5
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "4,5 km = ? m",
-        options: ["450 m", "4 500 m", "45 000 m", "450 000 m"],
-        correct: 1,
-        explanation: "4,5 km = 4,5 × 1 000 = 4 500 m."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "1 750 g = ? kg",
-        options: ["1,75 kg", "17,5 kg", "0,175 kg", "175 kg"],
-        correct: 0,
-        explanation: "1 750 g = 1,75 kg."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "3 heures 45 minutes = ? minutes",
-        options: ["345 minutes", "225 minutes", "245 minutes", "265 minutes"],
-        correct: 1,
-        explanation: "3h = 180 min, donc 3h45 = 180 + 45 = 225 min."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "Il est 9h30. Dans 2h45, quelle heure sera-t-il ?",
-        options: ["11h15", "12h15", "12h30", "12h45"],
-        correct: 1,
-        explanation: "9h30 + 2h45 = 12h15."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "perimetre",
-        question: "Un rectangle de 8 cm × 6 cm a un périmètre de :",
-        options: ["14 cm", "28 cm", "48 cm", "56 cm"],
-        correct: 1,
-        explanation: "Périmètre = 2 × (8 + 6) = 2 × 14 = 28 cm."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "2,5 litres = ? cl",
-        options: ["25 cl", "250 cl", "2 500 cl", "25 000 cl"],
-        correct: 1,
-        explanation: "2,5 L = 2,5 × 100 = 250 cl."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "Une piscine contient 25 000 L. Combien de m³ cela représente-t-il ?",
-        options: ["2,5 m³", "25 m³", "250 m³", "2 500 m³"],
-        correct: 1,
-        explanation: "1 m³ = 1 000 L, donc 25 000 L = 25 m³."
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "Un marathon fait 42,195 km. Combien de mètres cela représente-t-il ?",
-        options: ["42 195 m", "421 950 m", "4 219,5 m", "421,95 m"],
-        correct: 0,
-        explanation: "42,195 km = 42,195 × 1 000 = 42 195 m."
     }
 ];
 
@@ -920,27 +628,27 @@ const questions = [
 const weeklyStructure = {
     "Semaine 1": {
         title: "🔢 Nombres et Opérations - Semaine 1",
-        questions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
+        questions: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
         concepts: ["valeur_positionnelle", "comparaison_nombres", "addition", "soustraction", "multiplication", "division", "tables_multiplication", "multiples", "diviseurs", "criteres_divisibilite"]
     },
     "Semaine 2": {
         title: "🔢 Nombres et Opérations - Semaine 2", 
-        questions: [30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49],
-        concepts: ["valeur_positionnelle", "addition", "multiplication", "division", "multiples", "diviseurs", "criteres_divisibilite"]
+        questions: [10, 11, 12, 13],
+        concepts: ["valeur_positionnelle", "addition", "multiplication", "division"]
     },
     "Semaine 3": {
         title: "🍕 Fractions et Décimaux - Semaine 3",
-        questions: [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
+        questions: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
         concepts: ["fractions_definition", "comparaison_fractions", "decimaux"]
     },
     "Semaine 4": {
         title: "📐 Géométrie - Semaine 4",
-        questions: [70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89],
+        questions: [24, 25, 26, 27, 28, 29, 30, 31],
         concepts: ["geometrie_figures", "perimetre", "aire"]
     },
     "Semaine 5": {
         title: "📏 Mesures - Semaine 5",
-        questions: [90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109],
+        questions: [32, 33, 34, 35, 36, 37, 38, 39],
         concepts: ["conversions", "perimetre"]
     }
 };
@@ -958,15 +666,7 @@ function startQuiz() {
 }
 
 function showWeekSelection() {
-    // Créer l'élément weekSelection s'il n'existe pas
-    let weekSelection = document.getElementById('weekSelection');
-    if (!weekSelection) {
-        weekSelection = document.createElement('div');
-        weekSelection.id = 'weekSelection';
-        weekSelection.style.display = 'none';
-        document.querySelector('.quiz-container').appendChild(weekSelection);
-    }
-    
+    const weekSelection = document.getElementById('weekSelection');
     weekSelection.innerHTML = `
         <h2>📅 Choisis ta semaine de révision</h2>
         <div class="week-grid">
@@ -982,10 +682,6 @@ function showWeekSelection() {
         </div>
         <button type="button" class="btn-secondary" onclick="showStartScreen()">⬅️ Retour</button>
     `;
-    
-    // Afficher la sélection des semaines
-    document.getElementById('startScreen').style.display = 'none';
-    weekSelection.style.display = 'block';
 }
 
 function selectWeek(week) {
@@ -1139,7 +835,7 @@ function updateNavigationButtons() {
         const askTontonBtn = document.createElement('button');
         askTontonBtn.type = 'button';
         askTontonBtn.className = 'btn-ask-tonton';
-        askTontonBtn.textContent = '👨‍🏫 Appeler tonton (Meet)';
+        askTontonBtn.textContent = '👨‍🏫 Demander à tonton';
         askTontonBtn.onclick = () => askTonton();
         navButtons.appendChild(askTontonBtn);
         
@@ -1158,14 +854,27 @@ function askTonton() {
     const questionIndex = weekQuestions[currentQuestion];
     const question = questions[questionIndex];
     
-    // Créer un lien Google Meet
-    const meetLink = "https://meet.google.com/yzb-zzit-ccu"; // Remplacez par votre lien Google Meet
+    const subject = encodeURIComponent('IMPORTANT; email à ouvrir dans l\'app Gmail d\'Android');
+    const body = encodeURIComponent(`
+Bonjour tonton,
+
+J'ai une question sur les maths de 6e :
+
+Question : ${question.question}
+
+Les options sont :
+${question.options.map((opt, i) => `${String.fromCharCode(97 + i)}) ${opt}`).join('\n')}
+
+Je suis sur la ${currentWeek}, question ${currentQuestion + 1}.
+
+Peux-tu m'aider à comprendre ?
+
+Merci !
+    `);
     
-    // Ouvrir Google Meet dans un nouvel onglet
-    window.open(meetLink, '_blank');
-    
-    // Optionnel : Afficher un message pour informer l'utilisateur
-    alert(`👨‍🏫 Tonton va t'aider !\n\nQuestion : ${question.question}\n\nSemaine : ${currentWeek}\nQuestion : ${currentQuestion + 1}\n\nLe lien Google Meet s'ouvre dans un nouvel onglet.`);
+    // Lien Gmail pour Android
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jhouedanou@gmail.com&su=${subject}&body=${body}`;
+    window.open(gmailUrl, '_blank');
 }
 
 function selectOption(optionIndex, optionDiv) {
@@ -1326,3 +1035,13 @@ function restartQuiz() {
     document.getElementById('results').style.display = 'none';
     document.getElementById('startScreen').style.display = 'block';
 }
+
+// Initialiser la sélection des semaines au chargement
+document.addEventListener('DOMContentLoaded', function() {
+    // Ajouter l'écran de sélection des semaines au HTML
+    const quizContainer = document.querySelector('.quiz-container');
+    const weekSelectionDiv = document.createElement('div');
+    weekSelectionDiv.id = 'weekSelection';
+    weekSelectionDiv.style.display = 'none';
+    quizContainer.appendChild(weekSelectionDiv);
+});
