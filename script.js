@@ -1139,7 +1139,7 @@ function updateNavigationButtons() {
         const askTontonBtn = document.createElement('button');
         askTontonBtn.type = 'button';
         askTontonBtn.className = 'btn-ask-tonton';
-        askTontonBtn.textContent = '👨‍🏫 Demander à tonton';
+        askTontonBtn.textContent = '👨‍🏫 Appeler tonton (Meet)';
         askTontonBtn.onclick = () => askTonton();
         navButtons.appendChild(askTontonBtn);
         
@@ -1158,25 +1158,14 @@ function askTonton() {
     const questionIndex = weekQuestions[currentQuestion];
     const question = questions[questionIndex];
     
-    const subject = encodeURIComponent(`Question maths 6e - ${question.category}`);
-    const body = encodeURIComponent(`
-Bonjour tonton,
-
-J'ai une question sur les maths de 6e :
-
-Question : ${question.question}
-
-Les options sont :
-${question.options.map((opt, i) => `${String.fromCharCode(97 + i)}) ${opt}`).join('\n')}
-
-Je suis sur la ${currentWeek}, question ${currentQuestion + 1}.
-
-Peux-tu m'aider à comprendre ?
-
-Merci !
-    `);
+    // Créer un lien Google Meet
+    const meetLink = "https://meet.google.com/yzb-zzit-ccu"; // Remplacez par votre lien Google Meet
     
-    window.open(`mailto:jhouedanou@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    // Ouvrir Google Meet dans un nouvel onglet
+    window.open(meetLink, '_blank');
+    
+    // Optionnel : Afficher un message pour informer l'utilisateur
+    alert(`👨‍🏫 Tonton va t'aider !\n\nQuestion : ${question.question}\n\nSemaine : ${currentWeek}\nQuestion : ${currentQuestion + 1}\n\nLe lien Google Meet s'ouvre dans un nouvel onglet.`);
 }
 
 function selectOption(optionIndex, optionDiv) {
