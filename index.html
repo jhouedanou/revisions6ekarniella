@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 QCM Mathématiques 6e - Quiz Interactif</title>
+    <meta name="description" content="Quiz interactif pour réviser les mathématiques de 6e : nombres, fractions, géométrie et mesures">
+    <meta name="author" content="Quiz Maths 6e">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 QCM Mathématiques 6e</h1>
+            <p>Quiz interactif pour réviser le programme essentiel</p>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Écran de démarrage -->
+            <div class="start-screen" id="startScreen">
+                <h2>✨ Prête à réviser les maths ? ✨</h2>
+                <p>Ce quiz contient 40 questions sur le programme de 6e :<br>
+                   🔢 Nombres et opérations • 🍕 Fractions et décimaux<br>
+                   📐 Géométrie • 📏 Mesures</p>
+                <p><strong>Durée conseillée :</strong> 1 heure<br>
+                   <strong>Objectif :</strong> Tester tes connaissances et progresser !</p>
+                <button type="button" class="btn" onclick="startQuiz()">🚀 Commencer le quiz</button>
+            </div>
+
+            <!-- Container des questions -->
+            <div class="question-container" id="questionContainer">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question-info">
+                    <span class="category-tag" id="categoryTag"></span>
+                    <span id="questionNumber"></span>
+                </div>
+
+                <!-- Section concept théorique -->
+                <div class="concept-section" id="conceptSection">
+                    <h3>💡 Concept à réviser</h3>
+                    <div class="concept-content" id="conceptContent"></div>
+                    <button type="button" class="btn-concept" onclick="showQuestion()">J'ai compris, voir la question ➡️</button>
+                </div>
+
+                <div class="question" id="questionBox">
+                    <h3 id="questionText"></h3>
+                    <div class="options" id="optionsContainer"></div>
+                </div>
+
+                <div class="explanation" id="explanation">
+                    <h4>💡 Explication :</h4>
+                    <p id="explanationText"></p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn-secondary" id="prevBtn" onclick="prevQuestion()">⬅️ Précédent</button>
+                    <button type="button" class="btn" id="nextBtn" onclick="nextQuestion()">Suivant ➡️</button>
+                </div>
+            </div>
+
+            <!-- Écran des résultats -->
+            <div class="results" id="results">
+                <h2>🎉 Quiz terminé ! 🎉</h2>
+                <div class="score-circle" id="scoreCircle">
+                    <span id="finalScore"></span>
+                </div>
+                <div class="score-message" id="scoreMessage"></div>
+                <div class="score-details" id="scoreDetails"></div>
+                <div id="badgeContainer"></div>
+                <button type="button" class="btn" onclick="restartQuiz()">🔄 Recommencer</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

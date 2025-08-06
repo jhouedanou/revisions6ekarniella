@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 QCM Mathématiques 6e - Quiz Interactif</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b6b, #ffeaa7);
+            padding: 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .quiz-container {
+            padding: 30px;
+        }
+
+        .start-screen {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .start-screen h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .start-screen p {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .question-container {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .progress-bar {
+            background: #e0e0e0;
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(135deg, #ff6b6b, #ffeaa7);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .question-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, #ff6b6b, #ffeaa7);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .question {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            border-left: 5px solid #667eea;
+        }
+
+        .question h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        .option {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .option:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .option input[type="radio"] {
+            display: none;
+        }
+
+        .option.selected {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+        }
+
+        .option.correct {
+            border-color: #00d4aa;
+            background: linear-gradient(135deg, rgba(0, 212, 170, 0.1), rgba(0, 212, 170, 0.2));
+        }
+
+        .option.incorrect {
+            border-color: #ff6b6b;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.2));
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+            transform: translateY(-2px);
+        }
+
+        .explanation {
+            display: none;
+            background: #e8f5e8;
+            border: 1px solid #00d4aa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .explanation h4 {
+            color: #00695c;
+            margin-bottom: 10px;
+        }
+
+        .explanation p {
+            color: #004d40;
+            line-height: 1.6;
+        }
+
+        .results {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+        }
+
+        .score-message {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .score-details {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            margin: 10px 5px;
+        }
+
+        .badge-excellent { background: linear-gradient(135deg, #00d4aa, #01a085); }
+        .badge-good { background: linear-gradient(135deg, #667eea, #764ba2); }
+        .badge-average { background: linear-gradient(135deg, #ffeaa7, #fab1a0); }
+        .badge-needs-work { background: linear-gradient(135deg, #ff6b6b, #ee5a24); }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .quiz-container {
+                padding: 20px;
+            }
+            
+            .options {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎯 QCM Mathématiques 6e</h1>
+            <p>Quiz interactif pour réviser le programme essentiel</p>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Écran de démarrage -->
+            <div class="start-screen" id="startScreen">
+                <h2>✨ Prête à réviser les maths ? ✨</h2>
+                <p>Ce quiz contient 40 questions sur le programme de 6e :<br>
+                   🔢 Nombres et opérations • 🍕 Fractions et décimaux<br>
+                   📐 Géométrie • 📏 Mesures</p>
+                <p><strong>Durée conseillée :</strong> 1 heure<br>
+                   <strong>Objectif :</strong> Tester tes connaissances et progresser !</p>
+                <button class="btn" onclick="startQuiz()">🚀 Commencer le quiz</button>
+            </div>
+
+            <!-- Container des questions -->
+            <div class="question-container" id="questionContainer">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <div class="question-info">
+                    <span class="category-tag" id="categoryTag"></span>
+                    <span id="questionNumber"></span>
+                </div>
+
+                <div class="question" id="questionBox">
+                    <h3 id="questionText"></h3>
+                    <div class="options" id="optionsContainer"></div>
+                </div>
+
+                <div class="explanation" id="explanation">
+                    <h4>💡 Explication :</h4>
+                    <p id="explanationText"></p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="btn-secondary" id="prevBtn" onclick="prevQuestion()" style="display: none;">⬅️ Précédent</button>
+                    <button class="btn" id="nextBtn" onclick="nextQuestion()">Suivant ➡️</button>
+                </div>
+            </div>
+
+            <!-- Écran des résultats -->
+            <div class="results" id="results">
+                <h2>🎉 Quiz terminé ! 🎉</h2>
+                <div class="score-circle" id="scoreCircle">
+                    <span id="finalScore"></span>
+                </div>
+                <div class="score-message" id="scoreMessage"></div>
+                <div class="score-details" id="scoreDetails"></div>
+                <div id="badgeContainer"></div>
+                <button class="btn" onclick="restartQuiz()">🔄 Recommencer</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const questions = [
+            // PARTIE 1 : LES NOMBRES ET OPÉRATIONS
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Dans le nombre 5 847, que représente le chiffre 8 ?",
+                options: ["8 unités", "8 dizaines", "8 centaines", "8 milliers"],
+                correct: 2,
+                explanation: "Dans 5 847, le 8 est à la position des centaines, donc 8 × 100 = 800."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Quel est le plus grand nombre ?",
+                options: ["2 456", "2 546", "2 465", "2 564"],
+                correct: 3,
+                explanation: "On compare chiffre par chiffre : 2564 > 2546 > 2465 > 2456."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Calculez : 347 + 158 + 95",
+                options: ["590", "600", "610", "595"],
+                correct: 1,
+                explanation: "347 + 158 = 505, puis 505 + 95 = 600."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Calculez : 1 000 - 247",
+                options: ["753", "763", "743", "773"],
+                correct: 0,
+                explanation: "1 000 - 247 = 753 (on emprunte 10 aux dizaines pour les unités)."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Calculez : 37 × 24",
+                options: ["848", "888", "868", "878"],
+                correct: 1,
+                explanation: "37 × 24 : 37 × 4 = 148, 37 × 20 = 740, donc 148 + 740 = 888."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Calculez : 756 ÷ 9",
+                options: ["84", "86", "82", "88"],
+                correct: 0,
+                explanation: "756 ÷ 9 = 84 (vérification : 84 × 9 = 756)."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "9 × 7 = ?",
+                options: ["54", "63", "72", "81"],
+                correct: 1,
+                explanation: "9 × 7 = 63 (table de 9)."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Parmi ces nombres, lequel est un multiple de 6 ?",
+                options: ["34", "38", "42", "46"],
+                correct: 2,
+                explanation: "42 = 6 × 7, donc 42 est multiple de 6."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Combien le nombre 12 a-t-il de diviseurs ?",
+                options: ["4", "5", "6", "7"],
+                correct: 2,
+                explanation: "Les diviseurs de 12 sont : 1, 2, 3, 4, 6, 12 (soit 6 diviseurs)."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Un nombre est divisible par 3 si :",
+                options: ["Il finit par 3", "La somme de ses chiffres est divisible par 3", "Il contient le chiffre 3", "Il est impair"],
+                correct: 1,
+                explanation: "Critère de divisibilité par 3 : la somme des chiffres doit être divisible par 3."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Quel est l'ordre de grandeur de 3 876 ?",
+                options: ["3 000", "4 000", "30 000", "40 000"],
+                correct: 1,
+                explanation: "3 876 est plus proche de 4 000 que de 3 000."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "47 + 38 = ?",
+                options: ["85", "75", "95", "83"],
+                correct: 0,
+                explanation: "47 + 38 = 47 + 40 - 2 = 87 - 2 = 85."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "25 × 4 × 17 = ?",
+                options: ["1 600", "1 700", "1 800", "1 900"],
+                correct: 1,
+                explanation: "25 × 4 = 100, puis 100 × 17 = 1 700."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "Julie achète 3 livres à 12€ chacun. Combien paie-t-elle ?",
+                options: ["15€", "36€", "39€", "42€"],
+                correct: 1,
+                explanation: "3 × 12€ = 36€."
+            },
+            {
+                category: "🔢 Nombres et Opérations",
+                question: "45 ÷ 7 donne :",
+                options: ["6 reste 3", "6 reste 4", "7 reste 1", "7 reste 2"],
+                correct: 0,
+                explanation: "45 = 7 × 6 + 3, donc quotient 6, reste 3."
+            },
+
+            // PARTIE 2 : LES FRACTIONS ET DÉCIMAUX
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Que représente la fraction 3/5 ?",
+                options: ["3 entiers et 5 parts", "3 parts sur 5 parts égales", "5 parts sur 3 parts égales", "3 + 5"],
+                correct: 1,
+                explanation: "Définition d'une fraction : numérateur/dénominateur. 3/5 = 3 parts sur 5 parts égales."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Laquelle est la plus grande ?",
+                options: ["1/2", "3/8", "2/5", "4/9"],
+                correct: 0,
+                explanation: "1/2 = 0,5 > 2/5 = 0,4 > 3/8 = 0,375 > 4/9 ≈ 0,44."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "3/6 est égal à :",
+                options: ["1/3", "1/2", "2/3", "6/3"],
+                correct: 1,
+                explanation: "3/6 = 1/2 (on divise numérateur et dénominateur par 3)."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Comment écrit-on \"douze unités et sept dixièmes\" ?",
+                options: ["12,7", "12,07", "127", "12,70"],
+                correct: 0,
+                explanation: "Douze unités = 12, sept dixièmes = 0,7, donc 12,7."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Quel est le plus grand ?",
+                options: ["5,8", "5,79", "5,82", "5,789"],
+                correct: 2,
+                explanation: "5,82 > 5,8 > 5,789 > 5,79."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Que vaut 1/4 en décimal ?",
+                options: ["0,25", "0,4", "0,14", "4,1"],
+                correct: 0,
+                explanation: "1/4 = 1 ÷ 4 = 0,25."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "7,8 + 12,45 = ?",
+                options: ["19,25", "20,23", "20,25", "19,23"],
+                correct: 2,
+                explanation: "On aligne les virgules : 7,80 + 12,45 = 20,25."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "4,67 × 10 = ?",
+                options: ["4,670", "46,7", "467", "0,467"],
+                correct: 1,
+                explanation: "Multiplier par 10 décale la virgule d'un rang vers la droite."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Dans une classe de 28 élèves, 3/4 mangent à la cantine. Combien d'élèves mangent à la cantine ?",
+                options: ["19", "21", "23", "25"],
+                correct: 1,
+                explanation: "3/4 de 28 = (3 × 28) ÷ 4 = 84 ÷ 4 = 21."
+            },
+            {
+                category: "🍕 Fractions et Décimaux",
+                question: "Sur une droite graduée de 0 à 1, où se place 0,6 ?",
+                options: ["Plus près de 0 que de 1", "Plus près de 1 que de 0", "Exactement au milieu", "On ne peut pas le placer"],
+                correct: 1,
+                explanation: "0,6 est à 0,4 de 1 et à 0,6 de 0, donc plus près de 1."
+            },
+
+            // PARTIE 3 : GÉOMÉTRIE
+            {
+                category: "📐 Géométrie",
+                question: "Combien de côtés a un hexagone ?",
+                options: ["5", "6", "7", "8"],
+                correct: 1,
+                explanation: "Un hexagone a 6 côtés (hexa = six)."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Un carré a :",
+                options: ["4 côtés égaux et 4 angles droits", "4 côtés et 4 angles quelconques", "4 côtés égaux mais pas d'angles droits", "4 angles droits mais pas de côtés égaux"],
+                correct: 0,
+                explanation: "Définition du carré : 4 côtés égaux et 4 angles droits."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Un rectangle mesure 12 cm sur 8 cm. Quel est son périmètre ?",
+                options: ["20 cm", "96 cm", "40 cm", "32 cm"],
+                correct: 2,
+                explanation: "Périmètre = 2 × (longueur + largeur) = 2 × (12 + 8) = 40 cm."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Le même rectangle (12 cm × 8 cm) a une aire de :",
+                options: ["40 cm²", "96 cm²", "20 cm²", "48 cm²"],
+                correct: 1,
+                explanation: "Aire = longueur × largeur = 12 × 8 = 96 cm²."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Dans un cercle, comment appelle-t-on la distance du centre au bord ?",
+                options: ["Le diamètre", "Le rayon", "La corde", "La circonférence"],
+                correct: 1,
+                explanation: "Le rayon va du centre au bord du cercle."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Deux droites parallèles :",
+                options: ["Se coupent en un point", "Se coupent en deux points", "Ne se coupent jamais", "Se coupent à angle droit"],
+                correct: 2,
+                explanation: "Définition des droites parallèles : elles ne se coupent jamais."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Un angle droit mesure :",
+                options: ["45°", "90°", "180°", "360°"],
+                correct: 1,
+                explanation: "Un angle droit mesure 90°."
+            },
+            {
+                category: "📐 Géométrie",
+                question: "Dans un triangle équilatéral :",
+                options: ["Tous les côtés sont égaux", "Deux côtés sont égaux", "Tous les angles sont droits", "Un angle est droit"],
+                correct: 0,
+                explanation: "Dans un triangle équilatéral, les 3 côtés sont égaux."
+            },
+
+            // PARTIE 4 : MESURES
+            {
+                category: "📏 Mesures",
+                question: "3 km = ? m",
+                options: ["30 m", "300 m", "3 000 m", "30 000 m"],
+                correct: 2,
+                explanation: "1 km = 1 000 m, donc 3 km = 3 000 m."
+            },
+            {
+                category: "📏 Mesures",
+                question: "2 500 g = ? kg",
+                options: ["2,5 kg", "25 kg", "0,25 kg", "250 kg"],
+                correct: 0,
+                explanation: "1 000 g = 1 kg, donc 2 500 g = 2,5 kg."
+            },
+            {
+                category: "📏 Mesures",
+                question: "2 heures 30 minutes = ? minutes",
+                options: ["230 minutes", "130 minutes", "150 minutes", "90 minutes"],
+                correct: 2,
+                explanation: "2h = 120 min, donc 2h30 = 120 + 30 = 150 min."
+            },
+            {
+                category: "📏 Mesures",
+                question: "Il est 14h45. Dans 1h15, quelle heure sera-t-il ?",
+                options: ["15h60", "16h00", "15h30", "16h15"],
+                correct: 1,
+                explanation: "14h45 + 1h15 = 15h60 = 16h00."
+            },
+            {
+                category: "📏 Mesures",
+                question: "Le périmètre d'un carré de 5 cm de côté est :",
+                options: ["10 cm", "15 cm", "20 cm", "25 cm"],
+                correct: 2,
+                explanation: "Périmètre du carré = 4 × côté = 4 × 5 = 20 cm."
+            },
+            {
+                category: "📏 Mesures",
+                question: "1 litre = ? cl",
+                options: ["10 cl", "100 cl", "1 000 cl", "10 000 cl"],
+                correct: 1,
+                explanation: "1 litre = 100 centilitres."
+            },
+            {
+                category: "📏 Mesures",
+                question: "Une course de 5 km. Paul a déjà couru 3 200 m. Combien lui reste-t-il à courir ?",
+                options: ["1 800 m", "2 800 m", "1 200 m", "2 200 m"],
+                correct: 0,
+                explanation: "5 km = 5 000 m, reste : 5 000 - 3 200 = 1 800 m."
+            }
+        ];
+
+        let currentQuestion = 0;
+        let userAnswers = [];
+        let score = 0;
+        let showingExplanation = false;
+
+        function startQuiz() {
+            document.getElementById('startScreen').style.display = 'none';
+            document.getElementById('questionContainer').style.display = 'block';
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const question = questions[currentQuestion];
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('categoryTag').textContent = question.category;
+            document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.innerHTML = `
+                    <input type="radio" name="answer" value="${index}" id="option${index}">
+                    <label for="option${index}">${String.fromCharCode(97 + index)}) ${option}</label>
+                `;
+                optionDiv.onclick = () => selectOption(index, optionDiv);
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            // Masquer l'explication
+            document.getElementById('explanation').style.display = 'none';
+            showingExplanation = false;
+            
+            // Gérer les boutons de navigation
+            document.getElementById('prevBtn').style.display = currentQuestion > 0 ? 'inline-block' : 'none';
+            document.getElementById('nextBtn').textContent = currentQuestion === questions.length - 1 ? 'Voir les résultats 🎯' : 'Suivant ➡️';
+        }
+
+        function selectOption(optionIndex, optionDiv) {
+            // Supprimer la sélection précédente
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Ajouter la sélection actuelle
+            optionDiv.classList.add('selected');
+            
+            // Enregistrer la réponse
+            userAnswers[currentQuestion] = optionIndex;
+            
+            // Afficher l'explication
+            showExplanation();
+        }
+
+        function showExplanation() {
+            const question = questions[currentQuestion];
+            const userAnswer = userAnswers[currentQuestion];
+            
+            // Colorer les options
+            document.querySelectorAll('.option').forEach((opt, index) => {
+                if (index === question.correct) {
+                    opt.classList.add('correct');
+                } else if (index === userAnswer && index !== question.correct) {
+                    opt.classList.add('incorrect');
+                }
+            });
+            
+            // Afficher l'explication
+            document.getElementById('explanationText').textContent = question.explanation;
+            document.getElementById('explanation').style.display = 'block';
+            showingExplanation = true;
+        }
+
+        function nextQuestion() {
+            if (!showingExplanation && userAnswers[currentQuestion] === undefined) {
+                alert('Veuillez sélectionner une réponse avant de continuer.');
+                return;
+            }
+
+            if (currentQuestion < questions.length - 1) {
+                currentQuestion++;
+                loadQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function prevQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                loadQuestion();
+            }
+        }
+
+        function showResults() {
+            // Calculer le score
+            score = 0;
+            userAnswers.forEach((answer, index) => {
+                if (answer === questions[index].correct) {
+                    score++;
+                }
+            });
+
+            // Masquer le container de questions
+            document.getElementById('questionContainer').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+
+            // Afficher le score
+            const percentage = Math.round((score / questions.length) * 100);
+            document.getElementById('finalScore').textContent = `${score}/${questions.length}`;
+            document.getElementById('scoreCircle').style.background = getScoreColor(percentage);
+
+            // Message personnalisé
+            const message = getScoreMessage(score);
+            document.getElementById('scoreMessage').textContent = message.text;
+
+            // Détails du score
+            const scoreDetails = document.getElementById('scoreDetails');
+            scoreDetails.innerHTML = `
+                <h3>📊 Détails de tes résultats :</h3>
+                <p><strong>Score total :</strong> ${score} / ${questions.length} (${percentage}%)</p>
+                <p><strong>Nombres et Opérations :</strong> ${getPartScore(0, 15)} / 15</p>
+                <p><strong>Fractions et Décimaux :</strong> ${getPartScore(15, 25)} / 10</p>
+                <p><strong>Géométrie :</strong> ${getPartScore(25, 33)} / 8</p>
+                <p><strong>Mesures :</strong> ${getPartScore(33, 40)} / 7</p>
+            `;
+
+            // Badge
+            const badgeContainer = document.getElementById('badgeContainer');
+            badgeContainer.innerHTML = `<span class="badge ${message.badgeClass}">${message.badge}</span>`;
+        }
+
+        function getPartScore(start, end) {
+            let partScore = 0;
+            for (let i = start; i < end; i++) {
+                if (userAnswers[i] === questions[i].correct) {
+                    partScore++;
+                }
+            }
+            return partScore;
+        }
+
+        function getScoreColor(percentage) {
+            if (percentage >= 90) return 'linear-gradient(135deg, #00d4aa, #01a085)';
+            if (percentage >= 75) return 'linear-gradient(135deg, #667eea, #764ba2)';
+            if (percentage >= 60) return 'linear-gradient(135deg, #ffeaa7, #fab1a0)';
+            return 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+        }
+
+        function getScoreMessage(score) {
+            if (score >= 36) {
+                return {
+                    text: "🏆 Excellent ! Tu es parfaitement prête pour la 6e !",
+                    badge: "🌟 Excellence",
+                    badgeClass: "badge-excellent"
+                };
+            } else if (score >= 30) {
+                return {
+                    text: "🌟 Très bien ! Quelques révisions et tu seras au top !",
+                    badge: "👍 Très bien",
+                    badgeClass: "badge-good"
+                };
+            } else if (score >= 24) {
+                return {
+                    text: "💪 Bien ! Continue tes efforts, tu y es presque !",
+                    badge: "📚 Bien",
+                    badgeClass: "badge-good"
+                };
+            } else if (score >= 18) {
+                return {
+                    text: "📚 Assez bien. Il faut revoir certaines notions.",
+                    badge: "⚡ À améliorer",
+                    badgeClass: "badge-average"
+                };
+            } else {
+                return {
+                    text: "🚀 Des révisions sont nécessaires. Courage, tu vas y arriver !",
+                    badge: "💪 Persévère",
+                    badgeClass: "badge-needs-work"
+                };
+            }
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            userAnswers = [];
+            score = 0;
+            showingExplanation = false;
+            
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('startScreen').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
