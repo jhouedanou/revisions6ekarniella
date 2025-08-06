@@ -649,9 +649,6 @@ function loadQuestion() {
     document.getElementById('categoryTag').textContent = question.category;
     document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
     
-    // Afficher le concept
-    showConcept();
-    
     // Préparer la question (cachée)
     document.getElementById('questionText').textContent = question.question;
     
@@ -673,17 +670,8 @@ function loadQuestion() {
     document.getElementById('questionBox').style.display = 'none';
     document.getElementById('explanation').style.display = 'none';
     
-    // Gérer les boutons de navigation
-    const prevBtn = document.getElementById('prevBtn');
-    if (currentQuestion > 0) {
-        prevBtn.style.display = 'inline-block';
-        prevBtn.classList.add('visible');
-    } else {
-        prevBtn.style.display = 'none';
-        prevBtn.classList.remove('visible');
-    }
-    
-    document.getElementById('nextBtn').textContent = currentQuestion === questions.length - 1 ? 'Voir les résultats 🎯' : 'Suivant ➡️';
+    // Afficher le concept en premier
+    showConcept();
 }
 
 function showConcept() {
@@ -706,6 +694,87 @@ function showQuestion() {
     document.getElementById('conceptSection').style.display = 'none';
     document.getElementById('questionBox').style.display = 'block';
     showingConcept = false;
+    
+    // Mettre à jour le bouton "Précédent" pour revenir au concept
+    updateNavigationButtons();
+}
+
+function showConcept() {
+    const question = questions[currentQuestion];
+    const concept = concepts[question.concept];
+    
+    if (concept) {
+        document.getElementById('conceptSection').style.display = 'block';
+        document.getElementById('questionBox').style.display = 'none';
+        document.getElementById('explanation').style.display = 'none';
+        document.getElementById('conceptContent').innerHTML = `
+            <h3>${concept.title}</h3>
+            ${concept.content}
+        `;
+        showingConcept = true;
+        showingExplanation = false;
+        
+        // Mettre à jour les boutons de navigation
+        updateNavigationButtons();
+    } else {
+        // Si pas de concept, passer directement à la question
+        showQuestion();
+    }
+}
+
+function updateNavigationButtons() {
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    
+    if (showingConcept) {
+        // Sur la page concept
+        if (currentQuestion > 0) {
+            prevBtn.style.display = 'inline-block';
+            prevBtn.classList.add('visible');
+            prevBtn.textContent = '⬅️ Question précédente';
+            prevBtn.onclick = () => prevQuestion();
+        } else {
+            prevBtn.style.display = 'none';
+            prevBtn.classList.remove('visible');
+        }
+        
+        nextBtn.textContent = 'Voir la question ➡️';
+        nextBtn.onclick = () => showQuestion();
+        
+    } else {
+        // Sur la page question
+        // Toujours permettre de revenir au concept
+        const backToConceptBtn = document.createElement('button');
+        backToConceptBtn.type = 'button';
+        backToConceptBtn.className = 'btn-secondary';
+        backToConceptBtn.textContent = '📖 Revoir le concept';
+        backToConceptBtn.onclick = () => showConcept();
+        
+        // Remplacer le contenu des boutons de navigation
+        const navButtons = document.querySelector('.nav-buttons');
+        navButtons.innerHTML = '';
+        
+        // Bouton retour concept
+        navButtons.appendChild(backToConceptBtn);
+        
+        // Bouton précédent (si pas la première question)
+        if (currentQuestion > 0) {
+            const prevQuestionBtn = document.createElement('button');
+            prevQuestionBtn.type = 'button';
+            prevQuestionBtn.className = 'btn-secondary';
+            prevQuestionBtn.textContent = '⬅️ Question précédente';
+            prevQuestionBtn.onclick = () => prevQuestion();
+            navButtons.appendChild(prevQuestionBtn);
+        }
+        
+        // Bouton suivant
+        const nextQuestionBtn = document.createElement('button');
+        nextQuestionBtn.type = 'button';
+        nextQuestionBtn.className = 'btn';
+        nextQuestionBtn.textContent = currentQuestion === questions.length - 1 ? 'Voir les résultats 🎯' : 'Suivant ➡️';
+        nextQuestionBtn.onclick = () => nextQuestion();
+        navButtons.appendChild(nextQuestionBtn);
+    }
 }
 
 function selectOption(optionIndex, optionDiv) {
