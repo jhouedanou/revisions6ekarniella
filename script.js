@@ -1036,12 +1036,5 @@ function restartQuiz() {
     document.getElementById('startScreen').style.display = 'block';
 }
 
-// Initialiser la sélection des semaines au chargement
-document.addEventListener('DOMContentLoaded', function() {
-    // Ajouter l'écran de sélection des semaines au HTML
-    const quizContainer = document.querySelector('.quiz-container');
-    const weekSelectionDiv = document.createElement('div');
-    weekSelectionDiv.id = 'weekSelection';
-    weekSelectionDiv.style.display = 'none';
-    quizContainer.appendChild(weekSelectionDiv);
-});
+// L'élément weekSelection est maintenant directement dans le HTML
+// Plus besoin de le créer dynamiquement
