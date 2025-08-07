@@ -682,6 +682,10 @@ function showWeekSelection() {
         </div>
         <button type="button" class="btn-secondary" onclick="showStartScreen()">⬅️ Retour</button>
     `;
+    
+    // Cacher l'écran de démarrage et afficher la sélection des semaines
+    document.getElementById('startScreen').style.display = 'none';
+    weekSelection.style.display = 'block';
 }
 
 function selectWeek(week) {
