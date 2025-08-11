@@ -291,6 +291,158 @@ const concepts = {
                 3 × 1000 = 3 000 m
             </div>
         `
+    },
+    "proportionnalite": {
+        title: "🔗 La proportionnalité",
+        content: `
+            <h4>Reconnaître une situation de proportionnalité</h4>
+            <p>Deux grandeurs sont proportionnelles si :</p>
+            <ul>
+                <li>Quand l'une double, l'autre double</li>
+                <li>Le coefficient de proportionnalité est constant</li>
+                <li>On peut faire un produit en croix</li>
+            </ul>
+            <div class="example">
+                <strong>Exemple :</strong> 3 kg de pommes coûtent 9€<br>
+                Combien coûtent 5 kg ?<br>
+                3 kg → 9€, donc 1 kg → 3€<br>
+                5 kg → 5 × 3€ = 15€
+            </div>
+        `
+    },
+    "echelles": {
+        title: "📏 Les échelles",
+        content: `
+            <h4>Comprendre les échelles</h4>
+            <p>Une échelle indique le rapport entre les distances :</p>
+            <ul>
+                <li><strong>Échelle 1/1000 :</strong> 1 cm sur la carte = 1000 cm (10 m) dans la réalité</li>
+                <li><strong>Échelle 1/100000 :</strong> 1 cm = 1 km dans la réalité</li>
+                <li>Plus le dénominateur est grand, plus l'échelle est petite</li>
+            </ul>
+            <div class="example">
+                <strong>Carte à l'échelle 1/50000 :</strong><br>
+                2 cm sur la carte = 2 × 50000 = 100000 cm = 1 km
+            </div>
+        `
+    },
+    "pourcentages": {
+        title: "📊 Les pourcentages",
+        content: `
+            <h4>Comprendre les pourcentages</h4>
+            <p>Un pourcentage exprime une proportion sur 100 :</p>
+            <ul>
+                <li><strong>50% = 50/100 = 0,5</strong></li>
+                <li>Pour calculer : (partie/total) × 100</li>
+                <li>25% de 80 = (25 × 80) ÷ 100 = 20</li>
+            </ul>
+            <div class="example">
+                <strong>Dans une classe de 25 élèves, 20 ont réussi :</strong><br>
+                Pourcentage de réussite = (20/25) × 100 = 80%
+            </div>
+        `
+    },
+    "nombres_relatifs": {
+        title: "🌡️ Les nombres relatifs",
+        content: `
+            <h4>Les nombres positifs et négatifs</h4>
+            <p>Les nombres relatifs incluent les nombres positifs et négatifs :</p>
+            <ul>
+                <li><strong>Positifs :</strong> +5 (ou simplement 5)</li>
+                <li><strong>Négatifs :</strong> -3, -10, -0,5</li>
+                <li>Sur une droite graduée : négatifs à gauche de 0</li>
+                <li>-5 < -2 < 0 < +3 < +7</li>
+            </ul>
+            <div class="example">
+                <strong>Température :</strong><br>
+                Il fait -2°C le matin, +5°C l'après-midi<br>
+                Écart = +5 - (-2) = +5 + 2 = 7°C
+            </div>
+        `
+    },
+    "problemes_concrets": {
+        title: "🧮 Résoudre des problèmes",
+        content: `
+            <h4>Méthode pour résoudre un problème</h4>
+            <p>Les étapes essentielles :</p>
+            <ul>
+                <li><strong>1. Lire</strong> attentivement l'énoncé</li>
+                <li><strong>2. Identifier</strong> les données et la question</li>
+                <li><strong>3. Choisir</strong> l'opération appropriée</li>
+                <li><strong>4. Calculer</strong> et vérifier le résultat</li>
+            </ul>
+            <div class="example">
+                <strong>Julie a 45€. Elle achète un livre à 12€ et des bonbons à 3€50. Combien lui reste-t-il ?</strong><br>
+                45 - 12 - 3,50 = 29,50€
+            </div>
+        `
+    },
+    "statistics_intro": {
+        title: "📊 Introduction aux statistiques",
+        content: `
+            <h4>Comprendre les données</h4>
+            <p>Les statistiques nous aident à analyser des données :</p>
+            <ul>
+                <li><strong>Moyenne :</strong> somme des valeurs ÷ nombre de valeurs</li>
+                <li><strong>Graphiques :</strong> barres, secteurs, courbes</li>
+                <li><strong>Tableaux :</strong> organiser l'information</li>
+            </ul>
+            <div class="example">
+                <strong>Notes de Tom : 12, 15, 8, 16, 14</strong><br>
+                Moyenne = (12+15+8+16+14) ÷ 5 = 65 ÷ 5 = 13
+            </div>
+        `
+    },
+    "probabilites_intro": {
+        title: "🎲 Introduction aux probabilités",
+        content: `
+            <h4>Le hasard et les probabilités</h4>
+            <p>Les probabilités mesurent les chances qu'un événement se produise :</p>
+            <ul>
+                <li><strong>Impossible :</strong> probabilité 0</li>
+                <li><strong>Certain :</strong> probabilité 1</li>
+                <li><strong>Équiprobable :</strong> même chance pour chaque résultat</li>
+            </ul>
+            <div class="example">
+                <strong>Dé à 6 faces :</strong><br>
+                Probabilité d'obtenir un 4 = 1/6<br>
+                Probabilité d'obtenir un nombre pair = 3/6 = 1/2
+            </div>
+        `
+    },
+    "solides_geometrie": {
+        title: "📦 Les solides",
+        content: `
+            <h4>Les solides géométriques</h4>
+            <p>Les principales formes en 3 dimensions :</p>
+            <ul>
+                <li><strong>Cube :</strong> 6 faces carrées identiques</li>
+                <li><strong>Pavé droit :</strong> 6 faces rectangulaires</li>
+                <li><strong>Cylindre :</strong> 2 disques reliés par une surface courbe</li>
+                <li><strong>Sphère :</strong> forme de balle parfaite</li>
+            </ul>
+            <div class="example">
+                <strong>Patron d'un cube :</strong><br>
+                6 carrés identiques qui se plient pour former le cube
+            </div>
+        `
+    },
+    "symetrie": {
+        title: "🪞 La symétrie",
+        content: `
+            <h4>La symétrie axiale</h4>
+            <p>Une figure est symétrique par rapport à un axe :</p>
+            <ul>
+                <li>L'axe de symétrie est comme un miroir</li>
+                <li>Chaque point a son symétrique de l'autre côté</li>
+                <li>La distance à l'axe est la même des deux côtés</li>
+            </ul>
+            <div class="example">
+                <strong>Lettre H :</strong><br>
+                Elle a un axe de symétrie vertical au milieu<br>
+                Les deux moitiés sont identiques
+            </div>
+        `
     }
 };
 
@@ -621,6 +773,160 @@ const questions = [
         options: ["1 800 m", "2 800 m", "1 200 m", "2 200 m"],
         correct: 0,
         explanation: "5 km = 5 000 m, reste : 5 000 - 3 200 = 1 800 m."
+    },
+
+    // PARTIE 5 : PROPORTIONNALITÉ ET POURCENTAGES
+    {
+        category: "🔗 Proportionnalité",
+        concept: "proportionnalite",
+        question: "Si 4 kg de pommes coûtent 12€, combien coûtent 7 kg ?",
+        options: ["21€", "18€", "24€", "28€"],
+        correct: 0,
+        explanation: "4 kg → 12€, donc 1 kg → 3€. Alors 7 kg → 7 × 3€ = 21€."
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "echelles",
+        question: "Sur une carte à l'échelle 1/25000, 4 cm représentent quelle distance réelle ?",
+        options: ["100 m", "1 km", "10 km", "2,5 km"],
+        correct: 1,
+        explanation: "4 cm × 25000 = 100000 cm = 1000 m = 1 km."
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "pourcentages",
+        question: "Dans une classe de 20 élèves, 15 ont réussi l'examen. Quel est le pourcentage de réussite ?",
+        options: ["65%", "70%", "75%", "80%"],
+        correct: 2,
+        explanation: "(15/20) × 100 = 75%."
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "proportionnalite",
+        question: "Une voiture consomme 6L pour 100 km. Combien consomme-t-elle pour 350 km ?",
+        options: ["18L", "21L", "24L", "27L"],
+        correct: 1,
+        explanation: "Proportion : 6L pour 100 km = x L pour 350 km. x = (6 × 350) ÷ 100 = 21L."
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "pourcentages",
+        question: "25% de 80 = ?",
+        options: ["15", "20", "25", "30"],
+        correct: 1,
+        explanation: "25% de 80 = (25 × 80) ÷ 100 = 2000 ÷ 100 = 20."
+    },
+
+    // PARTIE 6 : NOMBRES RELATIFS
+    {
+        category: "🌡️ Nombres relatifs",
+        concept: "nombres_relatifs",
+        question: "Quel nombre est le plus petit ?",
+        options: ["-8", "-3", "2", "0"],
+        correct: 0,
+        explanation: "Sur une droite graduée : -8 < -3 < 0 < 2."
+    },
+    {
+        category: "🌡️ Nombres relatifs",
+        concept: "nombres_relatifs",
+        question: "La température était de -5°C le matin et +8°C l'après-midi. Quelle est la différence ?",
+        options: ["3°C", "13°C", "8°C", "5°C"],
+        correct: 1,
+        explanation: "Différence = +8 - (-5) = +8 + 5 = 13°C."
+    },
+    {
+        category: "🌡️ Nombres relatifs",
+        concept: "nombres_relatifs",
+        question: "Range ces nombres dans l'ordre croissant : +3, -7, 0, -2",
+        options: ["-7 < -2 < 0 < +3", "-2 < -7 < 0 < +3", "0 < -2 < -7 < +3", "+3 < 0 < -2 < -7"],
+        correct: 0,
+        explanation: "Ordre croissant : -7 < -2 < 0 < +3."
+    },
+
+    // PARTIE 7 : RÉSOLUTION DE PROBLÈMES
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Marie a 35€. Elle achète un livre à 8€50 et un cahier à 4€25. Combien lui reste-t-il ?",
+        options: ["22€25", "23€75", "21€50", "24€00"],
+        correct: 0,
+        explanation: "35 - 8,50 - 4,25 = 35 - 12,75 = 22,25€."
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Un paquet de 12 gâteaux coûte 18€. Quel est le prix d'un gâteau ?",
+        options: ["1€50", "1€25", "1€75", "2€00"],
+        correct: 0,
+        explanation: "Prix d'un gâteau = 18€ ÷ 12 = 1€50."
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Dans un bus de 48 places, il y a 35 passagers. Combien de places sont libres ?",
+        options: ["13", "11", "15", "17"],
+        correct: 0,
+        explanation: "Places libres = 48 - 35 = 13."
+    },
+
+    // PARTIE 8 : STATISTIQUES ET PROBABILITÉS
+    {
+        category: "📊 Statistiques",
+        concept: "statistics_intro",
+        question: "Les notes de Paul : 14, 16, 12, 18, 10. Quelle est sa moyenne ?",
+        options: ["14", "15", "13", "16"],
+        correct: 0,
+        explanation: "(14+16+12+18+10) ÷ 5 = 70 ÷ 5 = 14."
+    },
+    {
+        category: "📊 Statistiques",
+        concept: "probabilites_intro",
+        question: "En lançant un dé à 6 faces, quelle est la probabilité d'obtenir un nombre impair ?",
+        options: ["1/2", "1/3", "2/3", "1/6"],
+        correct: 0,
+        explanation: "Nombres impairs : 1, 3, 5. Soit 3 cas favorables sur 6 = 3/6 = 1/2."
+    },
+    {
+        category: "📊 Statistiques",
+        concept: "probabilites_intro",
+        question: "Dans un sac de 20 billes (8 rouges, 12 bleues), quelle est la probabilité de tirer une bille rouge ?",
+        options: ["8/20", "12/20", "8/12", "20/8"],
+        correct: 0,
+        explanation: "Probabilité = nombre de cas favorables / nombre total = 8/20 = 2/5."
+    },
+
+    // PARTIE 9 : GÉOMÉTRIE AVANCÉE
+    {
+        category: "📦 Solides",
+        concept: "solides_geometrie",
+        question: "Combien de faces a un cube ?",
+        options: ["4", "6", "8", "12"],
+        correct: 1,
+        explanation: "Un cube a 6 faces carrées identiques."
+    },
+    {
+        category: "📦 Solides",
+        concept: "solides_geometrie",
+        question: "Quel est le volume d'un cube de 3 cm de côté ?",
+        options: ["9 cm³", "18 cm³", "27 cm³", "36 cm³"],
+        correct: 2,
+        explanation: "Volume du cube = côté³ = 3³ = 27 cm³."
+    },
+    {
+        category: "🪞 Symétrie",
+        concept: "symetrie",
+        question: "Laquelle de ces lettres a un axe de symétrie vertical ?",
+        options: ["B", "A", "R", "F"],
+        correct: 1,
+        explanation: "La lettre A a un axe de symétrie vertical qui passe par son milieu."
+    },
+    {
+        category: "🪞 Symétrie",
+        concept: "symetrie",
+        question: "Un rectangle a combien d'axes de symétrie ?",
+        options: ["1", "2", "3", "4"],
+        correct: 1,
+        explanation: "Un rectangle a 2 axes de symétrie : un horizontal et un vertical."
     }
 ];
 
@@ -633,23 +939,48 @@ const weeklyStructure = {
     },
     "Semaine 2": {
         title: "🔢 Nombres et Opérations - Semaine 2", 
-        questions: [10, 11, 12, 13],
+        questions: [10, 11, 12, 13, 14],
         concepts: ["valeur_positionnelle", "addition", "multiplication", "division"]
     },
     "Semaine 3": {
-        title: "🍕 Fractions et Décimaux - Semaine 3",
-        questions: [14, 15, 16, 17, 18, 19, 20, 21, 22, 23],
+        title: "🍕 Fractions et Décimaux",
+        questions: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24],
         concepts: ["fractions_definition", "comparaison_fractions", "decimaux"]
     },
     "Semaine 4": {
-        title: "📐 Géométrie - Semaine 4",
-        questions: [24, 25, 26, 27, 28, 29, 30, 31],
+        title: "📐 Géométrie de base",
+        questions: [25, 26, 27, 28, 29, 30, 31, 32],
         concepts: ["geometrie_figures", "perimetre", "aire"]
     },
     "Semaine 5": {
-        title: "📏 Mesures - Semaine 5",
-        questions: [32, 33, 34, 35, 36, 37, 38, 39],
+        title: "📏 Mesures et Conversions",
+        questions: [33, 34, 35, 36, 37, 38, 39],
         concepts: ["conversions", "perimetre"]
+    },
+    "Semaine 6": {
+        title: "🔗 Proportionnalité et Pourcentages",
+        questions: [40, 41, 42, 43, 44],
+        concepts: ["proportionnalite", "echelles", "pourcentages"]
+    },
+    "Semaine 7": {
+        title: "🌡️ Nombres Relatifs",
+        questions: [45, 46, 47],
+        concepts: ["nombres_relatifs"]
+    },
+    "Semaine 8": {
+        title: "🧮 Résolution de Problèmes",
+        questions: [48, 49, 50],
+        concepts: ["problemes_concrets"]
+    },
+    "Semaine 9": {
+        title: "📊 Statistiques et Probabilités",
+        questions: [51, 52, 53],
+        concepts: ["statistics_intro", "probabilites_intro"]
+    },
+    "Semaine 10": {
+        title: "📦 Géométrie Avancée",
+        questions: [54, 55, 56, 57],
+        concepts: ["solides_geometrie", "symetrie"]
     }
 };
 
@@ -954,7 +1285,7 @@ function showResults() {
     
     // Calculer le score pour cette semaine
     score = 0;
-    weekQuestions.forEach((questionIndex, weekIndex) => {
+    weekQuestions.forEach((questionIndex) => {
         if (userAnswers[questionIndex] === questions[questionIndex].correct) {
             score++;
         }
