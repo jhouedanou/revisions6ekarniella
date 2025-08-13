@@ -14,26 +14,22 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🎯 QCM Mathématiques 6e  - semaine 2</h1>
-            <p>Quiz interactif pour réviser le programme essentiel</p>
+            <h1>🎯 Révisions Mathématiques CM2</h1>
+            <p>Quiz interactif pour réviser le programme de CM2</p>
         </div>
 
         <div class="quiz-container">
             <!-- Écran de démarrage -->
             <div class="start-screen" id="startScreen">
-                <h2>✨ Prête à réviser les maths ? ✨</h2>
-                <p>Ce quiz contient 40 questions sur le programme de 6e :<br>
-                   🔢 Nombres et opérations • 🍕 Fractions et décimaux<br>
-                   📐 Géométrie • 📏 Mesures</p>
-                <p><strong>Durée conseillée :</strong> 1 heure<br>
+                <h2>✨ Prêt à réviser les maths de CM2 ? ✨</h2>
+                <p>Ce quiz contient 40 questions sur le programme de CM2 :<br>
+                   🔢 Calcul et opérations • 🍕 Fractions et décimaux<br>
+                   📐 Géométrie • 📏 Mesures • 🔗 Proportionnalité</p>
+                <p><strong>Durée conseillée :</strong> 45 minutes<br>
                    <strong>Objectif :</strong> Tester tes connaissances et progresser !</p>
-                <button type="button" class="btn" onclick="showWeekSelection()">🚀 Commencer le quiz</button>
+                <button type="button" class="btn" onclick="startQuiz()">🚀 Commencer le quiz</button>
             </div>
 
-            <!-- Écran de sélection des semaines -->
-            <div class="week-selection" id="weekSelection" style="display: none;">
-                <!-- Le contenu sera généré par JavaScript -->
-            </div>
 
             <!-- Container des questions -->
             <div class="question-container" id="questionContainer">
@@ -78,6 +74,30 @@
                 <div class="score-message" id="scoreMessage"></div>
                 <div class="score-details" id="scoreDetails"></div>
                 <div id="badgeContainer"></div>
+                
+                <!-- Formulaire d'envoi par email -->
+                <div class="email-form">
+                    <h3>📧 Recevoir le récapitulatif par email</h3>
+                    <form action="https://public.herotofu.com/v1/9ce3c350-7829-11f0-a5ef-47ffbc733d25" method="post" accept-charset="UTF-8" id="resultsForm">
+                        <div>
+                            <label for="name">Nom de l'élève</label>
+                            <input name="Name" id="name" type="text" required />
+                        </div>
+                        <div>
+                            <label for="email">Email des parents</label>
+                            <input name="Email" id="email" type="email" required />
+                        </div>
+                        <input type="hidden" name="Score" id="hiddenScore" />
+                        <input type="hidden" name="Details" id="hiddenDetails" />
+                        <div>
+                            <input type="submit" value="📩 Envoyer les résultats" class="btn" />
+                            <div style="text-indent:-99999px; white-space:nowrap; overflow:hidden; position:absolute;" aria-hidden="true">
+                                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
                 <button type="button" class="btn" onclick="restartQuiz()">🔄 Recommencer</button>
             </div>
         </div>
