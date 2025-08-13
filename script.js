@@ -1073,23 +1073,7 @@ function showResults() {
     badgeContainer.innerHTML = `<span class="badge ${message.badgeClass}">${message.badge}</span>`;
     
     // Remplir les champs cachés du formulaire
-    document.getElementById('hiddenScore').value = `${score}/${questions.length} (${percentage}%)`;
-    
-    // Créer un récapitulatif détaillé
-    let detailsText = "Récapitulatif des réponses de l'élève :\n\n";
-    for (let i = 0; i < questions.length; i++) {
-        const question = questions[i];
-        const userAnswer = userAnswers[i];
-        const isCorrect = userAnswer === question.correct;
-        
-        detailsText += `Question ${i + 1}: ${question.question}\n`;
-        detailsText += `Réponse donnée: ${userAnswer !== undefined ? question.options[userAnswer] : 'Non répondue'}\n`;
-        detailsText += `Réponse correcte: ${question.options[question.correct]}\n`;
-        detailsText += `Résultat: ${isCorrect ? '✅ Correct' : '❌ Incorrect'}\n`;
-        detailsText += `Catégorie: ${question.category}\n\n`;
-    }
-    
-    document.getElementById('hiddenDetails').value = detailsText;
+    document.getElementById('hiddenScore').value = `Score de Karniella: ${score}/${questions.length} (${percentage}%)`;
 }
 
 function getScoreMessage(score, totalQuestions) {

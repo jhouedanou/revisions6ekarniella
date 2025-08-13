@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Formulaire HeroTofu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"], input[type="email"], textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        .btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #c3e6cb;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>🧪 Test Formulaire HeroTofu</h1>
+        <p>Page de test pour vérifier l'envoi d'email via HeroTofu</p>
+        
+        <form action="https://public.herotofu.com/v1/9ce3c350-7829-11f0-a5ef-47ffbc733d25" method="post" accept-charset="UTF-8" id="testForm">
+            <div class="form-group">
+                <label for="name">Nom de l'élève</label>
+                <input name="Name" id="name" type="text" value="Karniella" required />
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email des parents</label>
+                <input name="Email" id="email" type="email" value="jhouedanou@gmail.com" required />
+            </div>
+            
+            <div class="form-group">
+                <label for="score">Score</label>
+                <input name="Score" id="score" type="text" value="35/40 (87.5%)" required />
+            </div>
+            
+            <div class="form-group">
+                <label for="details">Détails du test</label>
+                <textarea name="Details" id="details" required>Test d'envoi de formulaire HeroTofu
+
+Score de Karniella: 35/40 (87.5%)
+
+Questions correctes: 35
+Questions incorrectes: 5
+Pourcentage de réussite: 87.5%
+
+Ce test vérifie que l'envoi d'email fonctionne correctement.</textarea>
+            </div>
+            
+            <div>
+                <input type="submit" value="📩 Envoyer le test" class="btn" />
+                <div style="text-indent:-99999px; white-space:nowrap; overflow:hidden; position:absolute;" aria-hidden="true">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" />
+                </div>
+            </div>
+        </form>
+        
+        <div class="success-message" id="successMessage">
+            ✅ Test envoyé avec succès ! Vérifiez l'email à jhouedanou@gmail.com
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', function(e) {
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
