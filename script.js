@@ -443,6 +443,42 @@ const concepts = {
                 Les deux moitiés sont identiques
             </div>
         `
+    },
+    "calcul_mental": {
+        title: "🧠 Le calcul mental",
+        content: `
+            <h4>Techniques de calcul mental</h4>
+            <p>Le calcul mental permet de calculer rapidement sans poser les opérations :</p>
+            <ul>
+                <li><strong>Addition :</strong> Ajouter par paquets de 10 ou compléter à la dizaine</li>
+                <li><strong>Multiplication :</strong> Utiliser les tables et les propriétés</li>
+                <li><strong>Pourcentages :</strong> 50% = ÷2, 25% = ÷4, 10% = ÷10</li>
+                <li><strong>Doubles et moitiés :</strong> Très utiles pour multiplier/diviser</li>
+            </ul>
+            <div class="example">
+                <strong>Exemple :</strong> 25 × 8<br>
+                25 × 8 = 25 × 4 × 2 = 100 × 2 = 200<br>
+                Ou encore : 25 × 8 = (20 + 5) × 8 = 160 + 40 = 200
+            </div>
+        `
+    },
+    "logique": {
+        title: "🔍 Logique et raisonnement",
+        content: `
+            <h4>Développer le raisonnement logique</h4>
+            <p>La logique mathématique aide à résoudre des problèmes pas à pas :</p>
+            <ul>
+                <li><strong>Suites numériques :</strong> Trouver la règle (ajouter, multiplier...)</li>
+                <li><strong>Problèmes d'âges :</strong> Utiliser des équations simples</li>
+                <li><strong>Problèmes de temps :</strong> Compter les jours, semaines...</li>
+                <li><strong>Déduction :</strong> Partir de ce qu'on sait pour trouver l'inconnu</li>
+            </ul>
+            <div class="example">
+                <strong>Suite logique :</strong> 3, 6, 12, 24, ?<br>
+                Chaque nombre est multiplié par 2<br>
+                Donc : 24 × 2 = 48
+            </div>
+        `
     }
 };
 
@@ -799,6 +835,620 @@ const questions = [
         options: ["13€", "12€", "11€", "13,50€"],
         correct: 2,
         explanation: "3×2€ + 5×1€ + 4×0,50€ = 6€ + 5€ + 2€ = 13€"
+    },
+
+    // NOUVEAUX EXERCICES - CALCUL ET OPÉRATIONS (15 exercices)
+    {
+        category: "🔢 Calcul",
+        concept: "addition",
+        question: "Calculez : 3 456 + 2 789 + 156",
+        options: ["6 401", "6 301", "6 501", "6 201"],
+        correct: 0,
+        explanation: "3 456 + 2 789 + 156 = 6 401"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "soustraction",
+        question: "Calculez : 5 000 - 1 234",
+        options: ["3 766", "3 676", "4 766", "3 776"],
+        correct: 0,
+        explanation: "5 000 - 1 234 = 3 766"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "multiplication",
+        question: "Calculez : 45 × 16",
+        options: ["700", "720", "680", "740"],
+        correct: 1,
+        explanation: "45 × 16 = 720"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "division",
+        question: "Calculez : 1 155 ÷ 15",
+        options: ["77", "75", "73", "79"],
+        correct: 0,
+        explanation: "1 155 ÷ 15 = 77"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "valeur_positionnelle",
+        question: "Dans le nombre 7 825, que vaut le chiffre 8 ?",
+        options: ["8 unités", "8 dizaines", "8 centaines", "8 milliers"],
+        correct: 2,
+        explanation: "Dans 7 825, le 8 est à la position des centaines, il vaut 800"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "comparaison_nombres",
+        question: "Rangez par ordre croissant : 4 567 ; 4 576 ; 4 657 ; 4 675",
+        options: ["4 567 < 4 576 < 4 657 < 4 675", "4 567 < 4 657 < 4 576 < 4 675", "4 576 < 4 567 < 4 675 < 4 657", "4 567 < 4 576 < 4 675 < 4 657"],
+        correct: 0,
+        explanation: "En comparant chiffre par chiffre : 4 567 < 4 576 < 4 657 < 4 675"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "criteres_divisibilite",
+        question: "Parmi ces nombres, lequel est divisible par 9 ?",
+        options: ["234", "567", "891", "1 023"],
+        correct: 2,
+        explanation: "891 : 8+9+1=18, et 18 est divisible par 9, donc 891 est divisible par 9"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "multiples",
+        question: "Quel est le plus petit multiple commun de 4 et 6 ?",
+        options: ["10", "12", "18", "24"],
+        correct: 1,
+        explanation: "Multiples de 4 : 4, 8, 12... Multiples de 6 : 6, 12... Le plus petit commun est 12"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "diviseurs",
+        question: "Combien 24 a-t-il de diviseurs ?",
+        options: ["6", "7", "8", "9"],
+        correct: 2,
+        explanation: "Diviseurs de 24 : 1, 2, 3, 4, 6, 8, 12, 24. Total : 8 diviseurs"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "tables_multiplication",
+        question: "12 × 9 = ?",
+        options: ["98", "108", "118", "128"],
+        correct: 1,
+        explanation: "12 × 9 = 108"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "division",
+        question: "Le reste de 89 ÷ 7 est :",
+        options: ["4", "5", "6", "3"],
+        correct: 1,
+        explanation: "89 = 7 × 12 + 5, donc le reste est 5"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "addition",
+        question: "Combien font 999 + 999 ?",
+        options: ["1 898", "1 988", "1 998", "2 000"],
+        correct: 2,
+        explanation: "999 + 999 = 1 998"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "multiplication",
+        question: "Calculez : 250 × 4",
+        options: ["1 000", "900", "800", "1 100"],
+        correct: 0,
+        explanation: "250 × 4 = 1 000"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "soustraction",
+        question: "Calculez : 10 000 - 3 456",
+        options: ["6 544", "6 644", "6 454", "7 544"],
+        correct: 0,
+        explanation: "10 000 - 3 456 = 6 544"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "criteres_divisibilite",
+        question: "Parmi ces nombres, lequel N'EST PAS divisible par 3 ?",
+        options: ["147", "251", "369", "234"],
+        correct: 1,
+        explanation: "251 : 2+5+1=8, non divisible par 3. Les autres : 147(1+4+7=12), 369(3+6+9=18), 234(2+3+4=9) sont divisibles par 3."
+    },
+
+    // FRACTIONS ET DÉCIMAUX (12 exercices)
+    {
+        category: "🍕 Fractions",
+        concept: "fractions_definition",
+        question: "Quelle fraction est égale à 0,25 ?",
+        options: ["1/4", "2/5", "1/5", "3/4"],
+        correct: 0,
+        explanation: "0,25 = 25/100 = 1/4"
+    },
+    {
+        category: "🍕 Fractions",
+        concept: "comparaison_fractions",
+        question: "Quelle fraction est la plus grande ?",
+        options: ["2/3", "3/4", "5/6", "7/8"],
+        correct: 3,
+        explanation: "En convertissant : 2/3≈0,67, 3/4=0,75, 5/6≈0,83, 7/8=0,875. Donc 7/8 est la plus grande."
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Comment s'écrit 'trois unités et quarante-sept centièmes' ?",
+        options: ["3,47", "3,047", "30,47", "3,4700"],
+        correct: 0,
+        explanation: "Trois unités et quarante-sept centièmes = 3,47"
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Calculez : 12,5 + 3,25",
+        options: ["15,75", "15,25", "16,75", "14,75"],
+        correct: 0,
+        explanation: "12,5 + 3,25 = 15,75"
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Calculez : 8,4 - 2,7",
+        options: ["5,7", "6,7", "5,3", "6,3"],
+        correct: 0,
+        explanation: "8,4 - 2,7 = 5,7"
+    },
+    {
+        category: "🍕 Fractions",
+        concept: "fractions_definition",
+        question: "Dans une classe de 20 élèves, 15 portent des lunettes. Quelle fraction porte des lunettes ?",
+        options: ["15/20 = 3/4", "15/20 = 4/5", "20/15", "5/20 = 1/4"],
+        correct: 0,
+        explanation: "15 élèves sur 20 = 15/20 = 3/4"
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Rangez par ordre décroissant : 5,8 ; 5,08 ; 5,80 ; 5,088",
+        options: ["5,8 > 5,80 > 5,088 > 5,08", "5,80 = 5,8 > 5,088 > 5,08", "5,80 > 5,8 > 5,08 > 5,088", "5,8 = 5,80 > 5,088 > 5,08"],
+        correct: 3,
+        explanation: "5,8 = 5,80 > 5,088 > 5,08 (car 5,8 et 5,80 sont égaux)"
+    },
+    {
+        category: "🍕 Fractions",
+        concept: "fractions_definition",
+        question: "Paul mange 2/5 d'une tarte. Quelle fraction reste-t-il ?",
+        options: ["3/5", "2/3", "1/5", "4/5"],
+        correct: 0,
+        explanation: "Il reste 5/5 - 2/5 = 3/5 de la tarte"
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Que vaut 5,2 × 100 ?",
+        options: ["52", "520", "0,52", "5200"],
+        correct: 1,
+        explanation: "5,2 × 100 = 520"
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Que vaut 36,8 ÷ 100 ?",
+        options: ["3,68", "0,368", "368", "3680"],
+        correct: 1,
+        explanation: "36,8 ÷ 100 = 0,368"
+    },
+    {
+        category: "🍕 Fractions",
+        concept: "comparaison_fractions",
+        question: "Quelle fraction est plus petite que 1/2 ?",
+        options: ["3/5", "4/7", "2/5", "3/4"],
+        correct: 2,
+        explanation: "2/5 = 0,4 < 0,5 = 1/2. Les autres sont plus grandes que 1/2."
+    },
+    {
+        category: "🔢 Décimaux",
+        concept: "decimaux",
+        question: "Calculez : 2,5 × 4",
+        options: ["10", "8", "12", "6"],
+        correct: 0,
+        explanation: "2,5 × 4 = 10"
+    },
+
+    // GÉOMÉTRIE (10 exercices)
+    {
+        category: "📐 Géométrie",
+        concept: "geometrie_figures",
+        question: "Combien d'axes de symétrie a un carré ?",
+        options: ["2", "3", "4", "8"],
+        correct: 2,
+        explanation: "Un carré a 4 axes de symétrie : 2 diagonales et 2 médiatrices des côtés"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "symetrie",
+        question: "Quelle lettre n'a aucun axe de symétrie ?",
+        options: ["A", "B", "F", "O"],
+        correct: 2,
+        explanation: "La lettre F n'a aucun axe de symétrie, contrairement à A, B et O"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "solides_geometrie",
+        question: "Combien de faces a un cube ?",
+        options: ["4", "6", "8", "12"],
+        correct: 1,
+        explanation: "Un cube a 6 faces carrées"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "aire",
+        question: "L'aire d'un rectangle de 12 cm sur 7 cm est :",
+        options: ["84 cm²", "38 cm", "84 cm", "19 cm²"],
+        correct: 0,
+        explanation: "Aire = longueur × largeur = 12 × 7 = 84 cm²"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "perimetre",
+        question: "Le périmètre d'un triangle équilatéral de côté 9 cm est :",
+        options: ["18 cm", "27 cm", "36 cm", "81 cm"],
+        correct: 1,
+        explanation: "Périmètre = 3 × côté = 3 × 9 = 27 cm"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "geometrie_figures",
+        question: "Un triangle rectangle a :",
+        options: ["3 angles droits", "2 angles droits", "1 angle droit", "0 angle droit"],
+        correct: 2,
+        explanation: "Un triangle rectangle a exactement 1 angle droit (90°)"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "solides_geometrie",
+        question: "Combien d'arêtes a un pavé droit ?",
+        options: ["8", "10", "12", "6"],
+        correct: 2,
+        explanation: "Un pavé droit a 12 arêtes"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "geometrie_figures",
+        question: "Dans un losange, les diagonales sont :",
+        options: ["Égales", "Perpendiculaires", "Parallèles", "Égales et parallèles"],
+        correct: 1,
+        explanation: "Dans un losange, les diagonales sont perpendiculaires et se coupent en leur milieu"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "aire",
+        question: "Si on double les côtés d'un carré, son aire devient :",
+        options: ["2 fois plus grande", "3 fois plus grande", "4 fois plus grande", "8 fois plus grande"],
+        correct: 2,
+        explanation: "Si le côté passe de c à 2c, l'aire passe de c² à (2c)² = 4c², soit 4 fois plus grande"
+    },
+    {
+        category: "📐 Géométrie",
+        concept: "geometrie_figures",
+        question: "Un polygone à 8 côtés s'appelle :",
+        options: ["Heptagone", "Octogone", "Ennéagone", "Décagone"],
+        correct: 1,
+        explanation: "Un polygone à 8 côtés est un octogone"
+    },
+
+    // MESURES ET CONVERSIONS (10 exercices)
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "2,5 m = ? cm",
+        options: ["25 cm", "250 cm", "2500 cm", "0,25 cm"],
+        correct: 1,
+        explanation: "2,5 m = 2,5 × 100 = 250 cm"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "1,2 kg = ? g",
+        options: ["12 g", "120 g", "1200 g", "12000 g"],
+        correct: 2,
+        explanation: "1,2 kg = 1,2 × 1000 = 1200 g"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "45 min = ? h",
+        options: ["0,45 h", "0,75 h", "4,5 h", "1,45 h"],
+        correct: 1,
+        explanation: "45 min = 45/60 h = 3/4 h = 0,75 h"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "3,5 L = ? mL",
+        options: ["35 mL", "350 mL", "3500 mL", "35000 mL"],
+        correct: 2,
+        explanation: "3,5 L = 3,5 × 1000 = 3500 mL"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "8 h 15 min = ? min",
+        options: ["495 min", "815 min", "480 min", "515 min"],
+        correct: 0,
+        explanation: "8 h = 8 × 60 = 480 min, donc 8 h 15 min = 480 + 15 = 495 min"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "0,75 km = ? m",
+        options: ["75 m", "750 m", "7500 m", "0,75 m"],
+        correct: 1,
+        explanation: "0,75 km = 0,75 × 1000 = 750 m"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "2 h 30 min + 1 h 45 min = ?",
+        options: ["3 h 75 min", "4 h 15 min", "3 h 15 min", "4 h 75 min"],
+        correct: 1,
+        explanation: "2 h 30 min + 1 h 45 min = 3 h 75 min = 4 h 15 min"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "500 g + 1,5 kg = ? g",
+        options: ["2000 g", "1500 g", "2500 g", "1000 g"],
+        correct: 0,
+        explanation: "1,5 kg = 1500 g, donc 500 g + 1500 g = 2000 g"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "75 cL = ? L",
+        options: ["7,5 L", "0,75 L", "750 L", "0,075 L"],
+        correct: 1,
+        explanation: "75 cL = 75/100 L = 0,75 L"
+    },
+    {
+        category: "📏 Mesures",
+        concept: "conversions",
+        question: "Un rectangle de 15 cm sur 8 cm a un périmètre de :",
+        options: ["23 cm", "46 cm", "120 cm", "30 cm"],
+        correct: 1,
+        explanation: "Périmètre = 2 × (15 + 8) = 2 × 23 = 46 cm"
+    },
+
+    // PROPORTIONNALITÉ ET ÉCHELLES (8 exercices)
+    {
+        category: "🔗 Proportionnalité",
+        concept: "proportionnalite",
+        question: "Si 7 cahiers coûtent 21€, combien coûtent 12 cahiers ?",
+        options: ["36€", "35€", "42€", "30€"],
+        correct: 0,
+        explanation: "1 cahier = 21 ÷ 7 = 3€, donc 12 cahiers = 12 × 3 = 36€"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "echelles",
+        question: "Sur une carte à l'échelle 1/50 000, 4 cm représentent :",
+        options: ["2 km", "20 km", "200 m", "2000 m"],
+        correct: 0,
+        explanation: "4 cm × 50 000 = 200 000 cm = 2 000 m = 2 km"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "pourcentages",
+        question: "Dans une classe de 25 élèves, 20% sont absents. Combien d'élèves sont absents ?",
+        options: ["4", "5", "6", "3"],
+        correct: 1,
+        explanation: "20% de 25 = (20 × 25) ÷ 100 = 500 ÷ 100 = 5 élèves"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "proportionnalite",
+        question: "Une voiture consomme 6L pour 100 km. Pour 350 km, elle consommera :",
+        options: ["18L", "21L", "24L", "15L"],
+        correct: 1,
+        explanation: "350 ÷ 100 × 6 = 3,5 × 6 = 21L"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "pourcentages",
+        question: "25% de 60 = ?",
+        options: ["12", "15", "18", "20"],
+        correct: 1,
+        explanation: "25% de 60 = 25 × 60 ÷ 100 = 1500 ÷ 100 = 15"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "echelles",
+        question: "Sur un plan à l'échelle 1/200, une pièce mesure 3 cm × 2 cm. Ses vraies dimensions sont :",
+        options: ["6 m × 4 m", "30 cm × 20 cm", "60 cm × 40 cm", "3 m × 2 m"],
+        correct: 0,
+        explanation: "3 cm × 200 = 600 cm = 6 m ; 2 cm × 200 = 400 cm = 4 m"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "proportionnalite",
+        question: "Si 5 ouvriers construisent un mur en 12 jours, combien de temps pour 15 ouvriers ?",
+        options: ["4 jours", "6 jours", "8 jours", "36 jours"],
+        correct: 0,
+        explanation: "Plus d'ouvriers = moins de temps. 5 × 12 = 60 jours-ouvrier. 60 ÷ 15 = 4 jours"
+    },
+    {
+        category: "🔗 Proportionnalité",
+        concept: "pourcentages",
+        question: "Tom a 80€. Il dépense 25%. Combien lui reste-t-il ?",
+        options: ["55€", "60€", "65€", "50€"],
+        correct: 1,
+        explanation: "Il dépense 25% de 80 = 20€. Il lui reste 80 - 20 = 60€"
+    },
+
+    // PROBLÈMES CONCRETS (8 exercices)
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Un bus peut transporter 45 passagers. Combien faut-il de bus pour 180 élèves ?",
+        options: ["4 bus", "3 bus", "5 bus", "6 bus"],
+        correct: 0,
+        explanation: "180 ÷ 45 = 4 bus exactement"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Julie achète 3 livres à 12€ chacun et paie avec un billet de 50€. Combien de monnaie ?",
+        options: ["14€", "12€", "16€", "18€"],
+        correct: 0,
+        explanation: "3 × 12 = 36€. Monnaie : 50 - 36 = 14€"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Un fermier récolte 875 kg de pommes. Il les met en sacs de 25 kg. Combien de sacs ?",
+        options: ["35 sacs", "30 sacs", "40 sacs", "33 sacs"],
+        correct: 0,
+        explanation: "875 ÷ 25 = 35 sacs"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Dans une école de 420 élèves, il y a 3 filles pour 4 garçons. Combien de filles ?",
+        options: ["168", "180", "200", "252"],
+        correct: 1,
+        explanation: "3 filles pour 4 garçons = 3/7 sont des filles. 3/7 × 420 = 180 filles"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Un terrain rectangulaire de 60 m sur 40 m doit être entouré d'une clôture. Quelle longueur ?",
+        options: ["200 m", "100 m", "240 m", "180 m"],
+        correct: 0,
+        explanation: "Périmètre = 2 × (60 + 40) = 2 × 100 = 200 m"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Paul économise 15€ par mois. En combien de temps aura-t-il 225€ ?",
+        options: ["12 mois", "15 mois", "18 mois", "10 mois"],
+        correct: 1,
+        explanation: "225 ÷ 15 = 15 mois"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Une classe organise une sortie. Le bus coûte 280€ pour 35 élèves. Prix par élève ?",
+        options: ["7€", "8€", "9€", "6€"],
+        correct: 1,
+        explanation: "280 ÷ 35 = 8€ par élève"
+    },
+    {
+        category: "🧮 Problèmes",
+        concept: "problemes_concrets",
+        question: "Un magasin offre une réduction de 15% sur un article à 80€. Nouveau prix ?",
+        options: ["65€", "68€", "70€", "72€"],
+        correct: 1,
+        explanation: "Réduction = 15% de 80 = 12€. Nouveau prix = 80 - 12 = 68€"
+    },
+
+    // CALCUL MENTAL ET LOGIQUE (12 exercices)
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "Calcul rapide : 99 + 37",
+        options: ["136", "135", "134", "137"],
+        correct: 0,
+        explanation: "99 + 37 = 100 + 37 - 1 = 137 - 1 = 136"
+    },
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "15 × 6 = ?",
+        options: ["80", "85", "90", "95"],
+        correct: 2,
+        explanation: "15 × 6 = 15 × 2 × 3 = 30 × 3 = 90"
+    },
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "125 × 8 = ?",
+        options: ["900", "1000", "1100", "800"],
+        correct: 1,
+        explanation: "125 × 8 = 125 × 2⁴ = 1000"
+    },
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "75% de 48 = ?",
+        options: ["36", "32", "40", "44"],
+        correct: 0,
+        explanation: "75% de 48 = 3/4 × 48 = 36"
+    },
+    {
+        category: "🔍 Logique",
+        concept: "logique",
+        question: "Dans une suite : 2, 6, 18, 54, ... Quel est le terme suivant ?",
+        options: ["108", "162", "216", "180"],
+        correct: 1,
+        explanation: "Chaque terme est multiplié par 3 : 54 × 3 = 162"
+    },
+    {
+        category: "🔍 Logique",
+        concept: "logique",
+        question: "Si demain nous sommes jeudi, quel jour étions-nous avant-hier ?",
+        options: ["Dimanche", "Lundi", "Mardi", "Mercredi"],
+        correct: 1,
+        explanation: "Demain = jeudi, donc aujourd'hui = mercredi, hier = mardi, avant-hier = lundi"
+    },
+    {
+        category: "🔍 Logique",
+        concept: "logique",
+        question: "Paul a le double de l'âge de Sophie. Dans 5 ans, il aura 17 ans. Quel âge a Sophie ?",
+        options: ["5 ans", "6 ans", "7 ans", "8 ans"],
+        correct: 1,
+        explanation: "Paul a maintenant 17 - 5 = 12 ans. Sophie a 12 ÷ 2 = 6 ans"
+    },
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "11 × 11 = ?",
+        options: ["111", "121", "131", "101"],
+        correct: 1,
+        explanation: "11 × 11 = 121"
+    },
+    {
+        category: "🔍 Logique",
+        concept: "logique",
+        question: "Quelle est la suite ? 1, 4, 9, 16, 25, ?",
+        options: ["30", "35", "36", "49"],
+        correct: 2,
+        explanation: "Ce sont les carrés parfaits : 6² = 36"
+    },
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "20% de 75 = ?",
+        options: ["12", "15", "18", "20"],
+        correct: 1,
+        explanation: "20% de 75 = 1/5 × 75 = 15"
+    },
+    {
+        category: "🔍 Logique",
+        concept: "logique",
+        question: "Marie a 6 billes rouges et 9 billes bleues. Quelle fraction représente les billes rouges ?",
+        options: ["6/9", "6/15", "9/15", "6/6"],
+        correct: 1,
+        explanation: "Total : 6 + 9 = 15 billes. Billes rouges : 6/15 = 2/5"
+    },
+    {
+        category: "🧠 Calcul mental",
+        concept: "calcul_mental",
+        question: "Combien de minutes dans 2,5 heures ?",
+        options: ["120 min", "130 min", "140 min", "150 min"],
+        correct: 3,
+        explanation: "2,5 h = 2 h 30 min = 120 + 30 = 150 min"
     }
 ];
 
