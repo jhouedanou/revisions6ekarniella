@@ -1,0 +1,83 @@
+{
+  "studentName": "Karniella",
+  "startTime": "2025-08-27T10:00:00.000Z",
+  "endTime": "2025-08-27T10:45:32.000Z",
+  "questionsAttempted": 110,
+  "correctAnswers": 89,
+  "totalQuestions": 110,
+  "categoryScores": {
+    "🔢 Calcul": {
+      "attempted": 25,
+      "correct": 20,
+      "total": 25
+    },
+    "🍕 Fractions": {
+      "attempted": 17,
+      "correct": 14,
+      "total": 17
+    },
+    "📐 Géométrie": {
+      "attempted": 15,
+      "correct": 12,
+      "total": 15
+    },
+    "📏 Mesures": {
+      "attempted": 15,
+      "correct": 13,
+      "total": 15
+    },
+    "🔗 Proportionnalité": {
+      "attempted": 8,
+      "correct": 7,
+      "total": 8
+    },
+    "🧮 Problèmes": {
+      "attempted": 12,
+      "correct": 10,
+      "total": 12
+    },
+    "🧠 Calcul mental": {
+      "attempted": 12,
+      "correct": 9,
+      "total": 12
+    },
+    "🔍 Logique": {
+      "attempted": 6,
+      "correct": 4,
+      "total": 6
+    }
+  },
+  "detailedAnswers": [
+    {
+      "questionNumber": 1,
+      "category": "🔢 Calcul",
+      "concept": "addition",
+      "question": "Calculez : 2 368 + 1 457",
+      "selectedAnswer": 0,
+      "correctAnswer": 0,
+      "isCorrect": true,
+      "options": ["3 825", "3 715", "3 925", "3 815"],
+      "explanation": "2 368 + 1 457 = 3 825",
+      "timestamp": "2025-08-27T10:02:15.000Z"
+    },
+    {
+      "questionNumber": 2,
+      "category": "🔢 Calcul", 
+      "concept": "soustraction",
+      "question": "Calculez : 4 005 - 1 238",
+      "selectedAnswer": 1,
+      "correctAnswer": 0,
+      "isCorrect": false,
+      "options": ["2 767", "2 677", "2 877", "2 687"],
+      "explanation": "4 005 - 1 238 = 2 767",
+      "timestamp": "2025-08-27T10:03:42.000Z"
+    }
+  ],
+  "lastSaved": "2025-08-27T10:45:32.000Z",
+  "finalStats": {
+    "overallAccuracy": 81,
+    "timeSpent": "45 minutes",
+    "strongCategories": ["🔢 Calcul", "📏 Mesures", "🔗 Proportionnalité"],
+    "needsImprovement": ["🔍 Logique", "🧠 Calcul mental"]
+  }
+}

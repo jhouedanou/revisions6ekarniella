@@ -483,128 +483,128 @@ const concepts = {
 };
 
 const questions = [
-    // RÉVISIONS CM2 - CALCUL ET OPÉRATIONS
+    // NOUVEAUX EXERCICES - CALCUL ET OPÉRATIONS
     {
         category: "🔢 Calcul",
         concept: "addition",
-        question: "Calculez : 1 247 + 589",
-        options: ["1 826", "1 836", "1 846", "1 856"],
-        correct: 1,
-        explanation: "1 247 + 589 = 1 836"
+        question: "Calculez : 2 368 + 1 457",
+        options: ["3 825", "3 715", "3 925", "3 815"],
+        correct: 0,
+        explanation: "2 368 + 1 457 = 3 825"
     },
     {
         category: "🔢 Calcul",
         concept: "soustraction",
-        question: "Calculez : 2 003 - 456",
-        options: ["1 457", "1 547", "1 647", "1 557"],
-        correct: 1,
-        explanation: "2 003 - 456 = 1 547"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "multiplication",
-        question: "Calculez : 125 × 8",
-        options: ["900", "950", "1 000", "1 050"],
-        correct: 2,
-        explanation: "125 × 8 = 1 000"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "division",
-        question: "Calculez : 936 ÷ 8",
-        options: ["117", "127", "137", "147"],
+        question: "Calculez : 4 005 - 1 238",
+        options: ["2 767", "2 677", "2 877", "2 687"],
         correct: 0,
-        explanation: "936 ÷ 8 = 117"
+        explanation: "4 005 - 1 238 = 2 767"
     },
     {
         category: "🔢 Calcul",
         concept: "multiplication",
-        question: "Un fermier a 24 poules. Chaque poule pond 7 œufs par semaine. Combien d'œufs en une semaine ?",
-        options: ["148", "158", "168", "178"],
-        correct: 2,
-        explanation: "24 × 7 = 168 œufs"
+        question: "Calculez : 146 × 9",
+        options: ["1 314", "1 304", "1 324", "1 344"],
+        correct: 0,
+        explanation: "146 × 9 = 1 314"
     },
     {
         category: "🔢 Calcul",
         concept: "division",
-        question: "Une boîte contient 144 chocolats. On les partage en 12 sachets égaux. Combien de chocolats par sachet ?",
-        options: ["10", "11", "12", "13"],
-        correct: 2,
-        explanation: "144 ÷ 12 = 12 chocolats par sachet"
+        question: "Calculez : 1 428 ÷ 12",
+        options: ["119", "121", "117", "123"],
+        correct: 0,
+        explanation: "1 428 ÷ 12 = 119"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "multiplication",
+        question: "Un magasin a 36 étagères. Chaque étagère contient 15 livres. Combien de livres en total ?",
+        options: ["530", "540", "550", "560"],
+        correct: 1,
+        explanation: "36 × 15 = 540 livres"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "division",
+        question: "Une bibliothèque a 756 livres à ranger dans 18 rayons égaux. Combien de livres par rayon ?",
+        options: ["40", "42", "44", "38"],
+        correct: 1,
+        explanation: "756 ÷ 18 = 42 livres par rayon"
     },
     {
         category: "🔢 Calcul",
         concept: "tables_multiplication",
-        question: "8 × 7 = ?",
-        options: ["54", "56", "64", "72"],
+        question: "9 × 12 = ?",
+        options: ["98", "108", "118", "96"],
         correct: 1,
-        explanation: "8 × 7 = 56"
+        explanation: "9 × 12 = 108"
     },
     {
         category: "🔢 Calcul",
         concept: "multiples",
-        question: "Parmi ces nombres, lequel est un multiple de 9 ?",
-        options: ["35", "44", "63", "76"],
-        correct: 2,
-        explanation: "63 = 9 × 7, donc 63 est un multiple de 9"
+        question: "Parmi ces nombres, lequel est un multiple de 7 ?",
+        options: ["48", "56", "64", "72"],
+        correct: 1,
+        explanation: "56 = 7 × 8, donc 56 est un multiple de 7"
     },
     {
         category: "🔢 Calcul",
         concept: "division",
-        question: "Reste de la division 75 ÷ 8 ?",
-        options: ["3", "4", "5", "6"],
-        correct: 0,
-        explanation: "75 = 8 × 9 + 3, donc le reste est 3"
+        question: "Reste de la division 97 ÷ 11 ?",
+        options: ["8", "9", "10", "6"],
+        correct: 3,
+        explanation: "97 = 11 × 8 + 9, donc le reste est 9"
     },
     {
         category: "🔢 Calcul",
         concept: "addition",
-        question: "Calculez : 45,6 + 12,8 + 3,9",
-        options: ["62,3", "61,3", "63,3", "60,3"],
+        question: "Calculez : 67,4 + 25,8 + 12,6",
+        options: ["105,8", "104,8", "106,8", "103,8"],
         correct: 0,
-        explanation: "45,6 + 12,8 + 3,9 = 62,3"
+        explanation: "67,4 + 25,8 + 12,6 = 105,8"
     },
 
-    // FRACTIONS ET DÉCIMAUX
+    // NOUVEAUX EXERCICES - FRACTIONS ET DÉCIMAUX
     {
         category: "🍕 Fractions",
         concept: "fractions_definition",
-        question: "Quelle fraction représente 3 parts sur 8 ?",
-        options: ["8/3", "3/8", "3/5", "5/8"],
+        question: "Quelle fraction représente 5 parts sur 12 ?",
+        options: ["12/5", "5/12", "5/7", "7/12"],
         correct: 1,
-        explanation: "3 parts sur 8 s'écrit 3/8"
+        explanation: "5 parts sur 12 s'écrit 5/12"
     },
     {
         category: "🍕 Fractions",
         concept: "decimaux",
-        question: "Que vaut 0,5 en fraction ?",
-        options: ["1/5", "5/10", "1/2", "2/5"],
+        question: "Que vaut 0,75 en fraction ?",
+        options: ["7/10", "75/100", "3/4", "1/4"],
         correct: 2,
-        explanation: "0,5 = 5/10 = 1/2"
+        explanation: "0,75 = 75/100 = 3/4"
     },
     {
         category: "🍕 Fractions",
         concept: "decimaux",
-        question: "Comment écrit-on 7,25 en mots ?",
-        options: ["Sept virgule vingt-cinq", "Sept unités et vingt-cinq centièmes", "Sept et vingt-cinq", "Soixante-quinze dixièmes"],
+        question: "Comment écrit-on 12,07 en mots ?",
+        options: ["Douze virgule zéro sept", "Douze unités et sept centièmes", "Douze et soixante-dix", "Cent vingt et sept dixièmes"],
         correct: 1,
-        explanation: "7,25 se lit 'sept unités et vingt-cinq centièmes'"
+        explanation: "12,07 se lit 'douze unités et sept centièmes'"
     },
     {
         category: "🍕 Fractions",
         concept: "decimaux",
-        question: "Range par ordre croissant : 2,8 ; 2,08 ; 2,80 ; 2,088",
-        options: ["2,08 < 2,088 < 2,8 < 2,80", "2,08 < 2,088 < 2,80 < 2,8", "2,088 < 2,08 < 2,8 < 2,80", "2,08 < 2,088 < 2,8 = 2,80"],
+        question: "Range par ordre décroissant : 3,9 ; 3,09 ; 3,90 ; 3,099",
+        options: ["3,9 > 3,90 > 3,099 > 3,09", "3,90 = 3,9 > 3,099 > 3,09", "3,90 > 3,9 > 3,09 > 3,099", "3,9 = 3,90 > 3,099 > 3,09"],
         correct: 3,
-        explanation: "2,08 < 2,088 < 2,8 = 2,80 (2,8 et 2,80 sont égaux)"
+        explanation: "3,9 = 3,90 > 3,099 > 3,09 (car 3,9 et 3,90 sont égaux)"
     },
     {
         category: "🍕 Fractions",
         concept: "fractions_definition",
-        question: "Quelle fraction de cette pizza est mangée si on a pris 3 parts sur 6 ?",
-        options: ["3/6 = 1/2", "6/3 = 2", "3/6 = 3", "6/3 = 1/2"],
-        correct: 0,
-        explanation: "3 parts sur 6 = 3/6 = 1/2"
+        question: "Quelle fraction d'un gâteau reste-t-il si on a mangé 4 parts sur 9 ?",
+        options: ["4/9", "5/9", "9/4", "9/5"],
+        correct: 1,
+        explanation: "Il reste 9/9 - 4/9 = 5/9 du gâteau"
     },
 
     // GÉOMÉTRIE
@@ -1452,6 +1452,27 @@ const questions = [
     }
 ];
 
+// Fonction pour obtenir les statistiques de progrès en temps réel
+function getProgressStats() {
+    const stats = {
+        completion: Math.round((progressData.questionsAttempted / progressData.totalQuestions) * 100),
+        accuracy: progressData.questionsAttempted > 0 ? Math.round((progressData.correctAnswers / progressData.questionsAttempted) * 100) : 0,
+        timeSpent: getQuizDuration(),
+        categoryBreakdown: {}
+    };
+    
+    Object.entries(progressData.categoryScores).forEach(([category, data]) => {
+        if (data.attempted > 0) {
+            stats.categoryBreakdown[category] = {
+                accuracy: Math.round((data.correct / data.attempted) * 100),
+                completion: Math.round((data.attempted / data.total) * 100)
+            };
+        }
+    });
+    
+    return stats;
+}
+
 let currentQuestion = 0;
 let userAnswers = [];
 let score = 0;
@@ -1780,5 +1801,26 @@ function restartQuiz() {
     document.getElementById('startScreen').style.display = 'block';
 }
 
-// L'élément weekSelection est maintenant directement dans le HTML
-// Plus besoin de le créer dynamiquement
+// Charger le progrès au démarrage si disponible
+window.addEventListener('load', function() {
+    const savedProgress = loadProgress();
+    if (savedProgress && savedProgress.questionsAttempted > 0) {
+        console.log('Progrès précédent trouvé:', savedProgress);
+        // On pourrait proposer de reprendre là où on s'est arrêté
+        // Pour l'instant, on laisse l'utilisateur recommencer
+    }
+});
+
+// Sauvegarder le progrès périodiquement et avant la fermeture de la page
+window.addEventListener('beforeunload', function() {
+    if (progressData && progressData.questionsAttempted > 0) {
+        saveProgress();
+    }
+});
+
+// Sauvegarder toutes les 30 secondes si le quiz est en cours
+setInterval(function() {
+    if (progressData && progressData.startTime && !progressData.endTime) {
+        saveProgress();
+    }
+}, 30000);
