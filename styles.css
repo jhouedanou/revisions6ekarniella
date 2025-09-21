@@ -413,6 +413,42 @@ body {
     transition: width 0.5s ease;
 }
 
+/* Instructions en haut des questions */
+.question-instructions {
+    background: linear-gradient(135deg, rgba(255, 235, 167, 0.8), rgba(255, 183, 77, 0.3));
+    border: 2px solid #ffeaa7;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.instruction-text {
+    color: #333;
+    font-size: 1.1em;
+}
+
+.help-link a {
+    background: linear-gradient(135deg, #ff9ff3, #f368e0);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(255, 159, 243, 0.3);
+}
+
+.help-link a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 159, 243, 0.4);
+}
+
 /* Bouton "Demander à tonton" */
 .btn-ask-tonton {
     background: linear-gradient(135deg, #ff9ff3, #f368e0);
@@ -436,34 +472,49 @@ body {
         margin: 10px;
         border-radius: 15px;
     }
-    
+
     .header {
         padding: 20px;
     }
-    
+
     .header h1 {
         font-size: 2em;
     }
-    
+
     .quiz-container {
         padding: 20px;
     }
-    
+
     .options {
         grid-template-columns: 1fr;
     }
-    
+
     .nav-buttons {
         justify-content: center;
     }
-    
+
     .score-circle {
         width: 150px;
         height: 150px;
         font-size: 2.5em;
     }
-    
+
     .week-grid {
         grid-template-columns: 1fr;
+    }
+
+    .question-instructions {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .instruction-text {
+        font-size: 1em;
+    }
+
+    .help-link a {
+        font-size: 0.8em;
+        padding: 6px 12px;
     }
 }

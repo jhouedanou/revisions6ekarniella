@@ -736,6 +736,37 @@ let userAnswers = [];
 let score = 0;
 let showingExplanation = false;
 let showingConcept = true;
+let answeredQuestions = [];
+let shuffledQuestions = [];
+
+function shuffleArray(array) {
+    const newArray = [...array];
+    for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    }
+    return newArray;
+}
+
+function initializeQuestions() {
+    // Charger les questions déjà répondues depuis localStorage
+    const savedAnswered = localStorage.getItem('answeredQuestions');
+    if (savedAnswered) {
+        answeredQuestions = JSON.parse(savedAnswered);
+    }
+
+    // Filtrer les questions non répondues
+    const unansweredQuestions = questions.filter((_, index) => !answeredQuestions.includes(index));
+
+    // Si toutes les questions ont été répondues, réinitialiser
+    if (unansweredQuestions.length === 0) {
+        answeredQuestions = [];
+        localStorage.removeItem('answeredQuestions');
+        shuffledQuestions = shuffleArray(questions);
+    } else {
+        shuffledQuestions = shuffleArray(unansweredQuestions);
+    }
+}
 
 function startQuiz() {
     currentQuestion = 0;
@@ -744,14 +775,17 @@ function startQuiz() {
     showingExplanation = false;
     showingConcept = true;
 
+    // Initialiser et mélanger les questions
+    initializeQuestions();
+
     document.getElementById('startScreen').style.display = 'none';
     document.getElementById('questionContainer').style.display = 'block';
     loadQuestion();
 }
 
 function loadQuestion() {
-    const question = questions[currentQuestion];
-    const progress = ((currentQuestion + 1) / questions.length) * 100;
+    const question = shuffledQuestions[currentQuestion];
+    const progress = ((currentQuestion + 1) / shuffledQuestions.length) * 100;
 
     // Réinitialiser l'état
     showingConcept = true;
@@ -760,7 +794,7 @@ function loadQuestion() {
     // Mise à jour de la barre de progression
     document.getElementById('progressFill').style.width = progress + '%';
     document.getElementById('categoryTag').textContent = question.category;
-    document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
+    document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} / ${shuffledQuestions.length}`;
 
     // Afficher le concept d'abord
     showConcept();
@@ -782,7 +816,7 @@ function loadQuestion() {
 }
 
 function showConcept() {
-    const question = questions[currentQuestion];
+    const question = shuffledQuestions[currentQuestion];
     const concept = concepts[question.concept];
 
     if (concept) {
@@ -806,13 +840,26 @@ function showConcept() {
 }
 
 function showQuestion() {
-    const question = questions[currentQuestion];
+    const question = shuffledQuestions[currentQuestion];
 
     document.getElementById('conceptSection').style.display = 'none';
     document.getElementById('questionBox').style.display = 'block';
     document.getElementById('explanation').style.display = 'none';
 
-    document.getElementById('questionText').textContent = question.question;
+    // Add instruction and help link at the top of each question
+    const instructionHTML = `
+        <div class="question-instructions">
+            <div class="instruction-text">📝 <strong>Calcule au brouillon avant de répondre</strong></div>
+            <div class="help-link">
+                <a href="mailto:jhouedanou@gmail.com?subject=Aide pour les révisions&body=Bonjour tonton,%0A%0AJ'ai besoin d'aide pour cette question:%0A%0A${encodeURIComponent(question.question)}%0A%0AMerci !" target="_blank">
+                    🆘 Demande à tonton
+                </a>
+            </div>
+        </div>
+        <h3>${question.question}</h3>
+    `;
+
+    document.getElementById('questionText').innerHTML = instructionHTML;
 
     const optionsContainer = document.getElementById('optionsContainer');
     optionsContainer.innerHTML = '';
@@ -846,7 +893,7 @@ function selectOption(index) {
 }
 
 function validateAnswer() {
-    const question = questions[currentQuestion];
+    const question = shuffledQuestions[currentQuestion];
     const userAnswer = userAnswers[currentQuestion];
 
     // Colorer les options
@@ -905,7 +952,7 @@ function updateProgressData(question, isCorrect) {
 }
 
 function sendEmailHelp() {
-    const question = questions[currentQuestion];
+    const question = shuffledQuestions[currentQuestion];
 
     const subject = encodeURIComponent('IMPORTANT; email à ouvrir dans l\'app Gmail d\'Android');
     const body = encodeURIComponent(`
@@ -927,7 +974,7 @@ Merci !
 }
 
 function showExplanation() {
-    const question = questions[currentQuestion];
+    const question = shuffledQuestions[currentQuestion];
     const userAnswer = userAnswers[currentQuestion];
 
     document.getElementById('conceptSection').style.display = 'none';
@@ -950,7 +997,14 @@ function showExplanation() {
 }
 
 function nextQuestion() {
-    if (currentQuestion < questions.length - 1) {
+    // Marquer la question actuelle comme répondue
+    const originalQuestionIndex = questions.findIndex(q => q === shuffledQuestions[currentQuestion]);
+    if (originalQuestionIndex !== -1 && !answeredQuestions.includes(originalQuestionIndex)) {
+        answeredQuestions.push(originalQuestionIndex);
+        localStorage.setItem('answeredQuestions', JSON.stringify(answeredQuestions));
+    }
+
+    if (currentQuestion < shuffledQuestions.length - 1) {
         currentQuestion++;
         loadQuestion();
     } else {
@@ -962,7 +1016,7 @@ function showResults() {
     document.getElementById('questionContainer').style.display = 'none';
     document.getElementById('results').style.display = 'block';
 
-    const percentage = Math.round((score / questions.length) * 100);
+    const percentage = Math.round((score / shuffledQuestions.length) * 100);
 
     let message, emoji;
     if (percentage >= 90) {
@@ -982,7 +1036,7 @@ function showResults() {
         emoji = "🚀";
     }
 
-    document.getElementById('finalScore').textContent = `${score}/${questions.length}`;
+    document.getElementById('finalScore').textContent = `${score}/${shuffledQuestions.length}`;
     document.getElementById('finalPercentage').textContent = `${percentage}%`;
     document.getElementById('finalMessage').textContent = message;
     document.getElementById('finalEmoji').textContent = emoji;
