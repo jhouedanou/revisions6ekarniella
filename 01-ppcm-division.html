@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 01 - PPCM et Division - Quiz Mathématiques 6e</title>
+    <meta name="description" content="Quiz spécialisé sur les multiples, diviseurs, PPCM, PGCD et division euclidienne">
+    <meta name="author" content="Quiz Maths 6e">
+    <link rel="stylesheet" href="styles.css?v=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔢 01 - PPCM et Division</h1>
+            <p>Quiz spécialisé : Multiples, Diviseurs, PPCM, PGCD et Division euclidienne</p>
+        </div>
+
+        <div class="quiz-container">
+            <!-- Écran de démarrage -->
+            <div class="start-screen" id="startScreen">
+                <h2>✨ Révisions PPCM et Division ✨</h2>
+                <p>Ce quiz contient 22 questions spécialisées sur :</p>
+                <div class="concepts-overview">
+                    <div class="concept-item">
+                        <span class="concept-icon">🔢</span>
+                        <strong>Multiples</strong> - Identifier et trouver des multiples
+                    </div>
+                    <div class="concept-item">
+                        <span class="concept-icon">➗</span>
+                        <strong>Diviseurs</strong> - Tests de divisibilité et critères
+                    </div>
+                    <div class="concept-item">
+                        <span class="concept-icon">🔗</span>
+                        <strong>PPCM</strong> - Plus Petit Commun Multiple
+                    </div>
+                    <div class="concept-item">
+                        <span class="concept-icon">📊</span>
+                        <strong>PGCD</strong> - Plus Grand Commun Diviseur
+                    </div>
+                    <div class="concept-item">
+                        <span class="concept-icon">➗</span>
+                        <strong>Division euclidienne</strong> - Quotient et reste
+                    </div>
+                </div>
+                <p><strong>Durée conseillée :</strong> 1 heure<br>
+                   <strong>Objectif :</strong> Maîtriser les concepts de base de l'arithmétique !</p>
+                <button type="button" class="btn" onclick="startQuiz()">🚀 Commencer le quiz</button>
+                <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">⬅️ Retour au menu</button>
+            </div>
+
+            <!-- Container des questions -->
+            <div class="question-container" id="questionContainer">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div class="question-info">
+                    <span class="category-tag" id="categoryTag"></span>
+                    <span id="questionNumber"></span>
+                </div>
+
+                <!-- Section concept théorique -->
+                <div class="concept-section" id="conceptSection">
+                    <h3>💡 Concept à réviser</h3>
+                    <div class="concept-content" id="conceptContent"></div>
+                    <button type="button" class="btn-concept" onclick="showQuestion()">J'ai compris, voir la question ➡️</button>
+                </div>
+
+                <div class="question" id="questionBox">
+                    <h3 id="questionText"></h3>
+                    <div class="options" id="optionsContainer"></div>
+                    <button type="button" class="btn" id="validateBtn" onclick="validateAnswer()" style="display: none;">✅ Valider ma réponse</button>
+                </div>
+
+                <div class="explanation" id="explanation">
+                    <h4>💡 Explication :</h4>
+                    <p id="explanationText"></p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button type="button" class="btn" id="nextBtn" onclick="nextQuestion()" style="display: none;">Suivant ➡️</button>
+                </div>
+            </div>
+
+            <!-- Écran des résultats -->
+            <div class="results" id="results">
+                <h2>🎉 Quiz PPCM et Division terminé ! 🎉</h2>
+                <div class="score-circle" id="scoreCircle">
+                    <span id="finalScore"></span>
+                </div>
+                <div class="score-message">
+                    <span id="finalEmoji"></span>
+                    <span id="finalPercentage"></span>
+                    <p id="finalMessage"></p>
+                </div>
+                <div class="score-details" id="detailedStats"></div>
+
+                <!-- Formulaire d'envoi par email -->
+                <div class="email-form">
+                    <h3>📧 Recevoir le récapitulatif par email</h3>
+                    <form action="https://public.herotofu.com/v1/9ce3c350-7829-11f0-a5ef-47ffbc733d25" method="post" accept-charset="UTF-8" id="resultsForm">
+                        <div>
+                            <label for="name">Nom de l'élève</label>
+                            <input name="Name" id="name" type="text" value="Karniella" required>
+                        </div>
+                        <div>
+                            <label for="email">Email des parents</label>
+                            <input name="Email" id="email" type="email" value="jhouedanou@gmail.com" required>
+                        </div>
+                        <input type="hidden" name="Score" id="hiddenScore">
+                        <input type="hidden" name="Details" id="hiddenDetails">
+                        <div>
+                            <button type="submit" class="btn">📩 Envoyer les résultats</button>
+                            <div style="text-indent:-99999px; white-space:nowrap; overflow:hidden; position:absolute;" aria-hidden="true">
+                                <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <button type="button" class="btn" onclick="restartQuiz()">🔄 Recommencer</button>
+                <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">🏠 Retour au menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="01-ppcm-division.js?v=1.0"></script>
+</body>
+</html>

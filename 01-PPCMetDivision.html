@@ -19,92 +19,21 @@
         </div>
 
         <div class="quiz-container">
-            <!-- Menu de navigation par sujets -->
-            <div class="subject-menu" id="subjectMenu">
-                <h2>📚 Choisissez votre sujet de révision</h2>
-                <p>Sélectionnez le chapitre que vous souhaitez réviser :</p>
-
-                <div class="subjects-grid">
-                    <div class="subject-card" onclick="window.location.href='01-ppcm-division.html'">
-                        <div class="subject-icon">🔢</div>
-                        <h3>01 - PPCM et Division</h3>
-                        <p class="subject-description">Multiples, Diviseurs, PPCM, PGCD et Division euclidienne</p>
-                        <div class="concepts-list">
-                            <span class="concept-tag">Multiples</span>
-                            <span class="concept-tag">Diviseurs</span>
-                            <span class="concept-tag">PPCM</span>
-                            <span class="concept-tag">PGCD</span>
-                            <span class="concept-tag">Division</span>
-                        </div>
-                        <div class="subject-stats">22 questions</div>
-                    </div>
-
-                    <div class="subject-card" onclick="window.location.href='02-fractions.html'">
-                        <div class="subject-icon">🍕</div>
-                        <h3>02 - Fractions</h3>
-                        <p class="subject-description">Comprendre et comparer les fractions</p>
-                        <div class="concepts-list">
-                            <span class="concept-tag">Définition</span>
-                            <span class="concept-tag">Comparaison</span>
-                            <span class="concept-tag">Opérations</span>
-                        </div>
-                        <div class="subject-stats">Bientôt disponible</div>
-                    </div>
-
-                    <div class="subject-card" onclick="window.location.href='03-geometrie.html'">
-                        <div class="subject-icon">📐</div>
-                        <h3>03 - Géométrie</h3>
-                        <p class="subject-description">Figures, périmètres, aires et symétrie</p>
-                        <div class="concepts-list">
-                            <span class="concept-tag">Figures</span>
-                            <span class="concept-tag">Périmètre</span>
-                            <span class="concept-tag">Aire</span>
-                            <span class="concept-tag">Symétrie</span>
-                        </div>
-                        <div class="subject-stats">Bientôt disponible</div>
-                    </div>
-
-                    <div class="subject-card" onclick="window.location.href='04-nombres-decimaux.html'">
-                        <div class="subject-icon">🔢</div>
-                        <h3>04 - Nombres décimaux</h3>
-                        <p class="subject-description">Valeur positionnelle et opérations</p>
-                        <div class="concepts-list">
-                            <span class="concept-tag">Valeur positionnelle</span>
-                            <span class="concept-tag">Comparaison</span>
-                            <span class="concept-tag">Décimaux</span>
-                        </div>
-                        <div class="subject-stats">Bientôt disponible</div>
-                    </div>
-
-                    <div class="subject-card" onclick="startAllQuiz()">
-                        <div class="subject-icon">🎯</div>
-                        <h3>Quiz complet</h3>
-                        <p class="subject-description">Toutes les questions mélangées</p>
-                        <div class="concepts-list">
-                            <span class="concept-tag">Révision générale</span>
-                        </div>
-                        <div class="subject-stats">22 questions</div>
-                    </div>
-                </div>
-
-                <div class="features-info">
-                    <p><strong>🎯 Fonctionnalités :</strong></p>
-                    <ul>
+            <!-- Écran de démarrage -->
+            <div class="start-screen" id="startScreen">
+                <h2>✨ Prêt à réviser les maths de sixième ? ✨</h2>
+                <p>Ce quiz contient 22 questions sur le programme de sixième :</p>
+                <p><strong>Durée conseillée :</strong> 2 heures<br>
+                   <strong>Objectif :</strong> Tester tes connaissances et progresser !</p>
+                <div style="background: rgba(255, 235, 167, 0.3); padding: 15px; border-radius: 10px; margin: 20px 0;">
+                    <p><strong>🎯 Nouvelles fonctionnalités :</strong></p>
+                    <ul style="text-align: left; display: inline-block;">
                         <li>📝 Reminder de calcul au brouillon pour chaque question</li>
                         <li>🆘 Lien direct pour demander de l'aide à tonton</li>
                         <li>🔄 Évite les questions répétées (mélange automatique)</li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- Écran de démarrage pour quiz complet -->
-            <div class="start-screen" id="startScreen" style="display: none;">
-                <h2>✨ Quiz complet - Révision générale ✨</h2>
-                <p>Ce quiz contient 22 questions sur tout le programme de sixième :</p>
-                <p><strong>Durée conseillée :</strong> 2 heures<br>
-                   <strong>Objectif :</strong> Tester tes connaissances et progresser !</p>
                 <button type="button" class="btn" onclick="startQuiz()">🚀 Commencer le quiz</button>
-                <button type="button" class="btn-secondary" onclick="backToMenu()">⬅️ Retour au menu</button>
             </div>
 
 
@@ -176,7 +105,6 @@
                 </div>
                 
                 <button type="button" class="btn" onclick="restartQuiz()">🔄 Recommencer</button>
-                <button type="button" class="btn-secondary" onclick="backToMenu()">🏠 Retour au menu</button>
             </div>
         </div>
     </div>

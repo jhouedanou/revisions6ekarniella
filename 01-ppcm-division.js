@@ -1,133 +1,4 @@
 const concepts = {
-    "valeur_positionnelle": {
-        title: "🔢 La valeur positionnelle",
-        content: `
-            <h4>Qu'est-ce que la valeur positionnelle ?</h4>
-            <p>Dans un nombre, chaque chiffre a une valeur différente selon sa position.</p>
-            <ul>
-                <li><strong>Unités :</strong> position 1 (à droite)</li>
-                <li><strong>Dizaines :</strong> position 2</li>
-                <li><strong>Centaines :</strong> position 3</li>
-                <li><strong>Milliers :</strong> position 4</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> Dans 5 847 :<br>
-                • 7 est aux unités = 7 × 1 = 7<br>
-                • 4 est aux dizaines = 4 × 10 = 40<br>
-                • 8 est aux centaines = 8 × 100 = 800<br>
-                • 5 est aux milliers = 5 × 1000 = 5000
-            </div>
-        `
-    },
-    "comparaison_nombres": {
-        title: "🔢 Comparer les nombres",
-        content: `
-            <h4>Comment comparer des nombres ?</h4>
-            <p>On compare les nombres chiffre par chiffre, de gauche à droite :</p>
-            <ul>
-                <li>D'abord les milliers</li>
-                <li>Puis les centaines</li>
-                <li>Puis les dizaines</li>
-                <li>Enfin les unités</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 2 564 vs 2 546<br>
-                • Milliers : 2 = 2<br>
-                • Centaines : 5 = 5<br>
-                • Dizaines : 6 > 4 → donc 2 564 > 2 546
-            </div>
-        `
-    },
-    "addition": {
-        title: "➕ L'addition",
-        content: `
-            <h4>Techniques d'addition</h4>
-            <p>Pour additionner plusieurs nombres :</p>
-            <ul>
-                <li>Aligner les chiffres par colonnes (unités, dizaines...)</li>
-                <li>Additionner colonne par colonne</li>
-                <li>Reporter les retenues</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 347 + 158 + 95<br>
-                • 347 + 158 = 505<br>
-                • 505 + 95 = 600
-            </div>
-        `
-    },
-    "soustraction": {
-        title: "➖ La soustraction",
-        content: `
-            <h4>Technique de la soustraction</h4>
-            <p>Pour soustraire :</p>
-            <ul>
-                <li>Aligner les nombres</li>
-                <li>Soustraire colonne par colonne</li>
-                <li>Si nécessaire, emprunter à la colonne de gauche</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 1 000 - 247<br>
-                • On ne peut pas faire 0 - 7<br>
-                • On emprunte : 10 - 7 = 3<br>
-                • Résultat : 753
-            </div>
-        `
-    },
-    "multiplication": {
-        title: "✖️ La multiplication",
-        content: `
-            <h4>Multiplication à deux chiffres</h4>
-            <p>Pour multiplier par un nombre à deux chiffres :</p>
-            <ul>
-                <li>Multiplier par les unités</li>
-                <li>Multiplier par les dizaines (décaler d'un rang)</li>
-                <li>Additionner les résultats</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 37 × 24<br>
-                • 37 × 4 = 148<br>
-                • 37 × 20 = 740<br>
-                • 148 + 740 = 888
-            </div>
-        `
-    },
-    "division": {
-        title: "➗ La division euclidienne",
-        content: `
-            <h4>Division avec reste (niveau 6ème)</h4>
-            <p>Dans une division euclidienne : <strong>Dividende = Diviseur × Quotient + Reste</strong></p>
-            <ul>
-                <li>Le reste doit toujours être <strong>inférieur</strong> au diviseur</li>
-                <li>Si reste = 0, la division est exacte</li>
-                <li>Méthode : estimer le quotient, calculer le reste</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 847 ÷ 23<br>
-                • 23 × 30 = 690 (trop petit)<br>
-                • 23 × 40 = 920 (trop grand)<br>
-                • 23 × 36 = 828<br>
-                • 847 - 828 = 19 < 23 ✓<br>
-                <strong>Donc : 847 = 23 × 36 + 19</strong>
-            </div>
-        `
-    },
-    "tables_multiplication": {
-        title: "🔢 Les tables de multiplication",
-        content: `
-            <h4>Apprendre les tables</h4>
-            <p>Les tables de multiplication sont essentielles pour calculer rapidement.</p>
-            <ul>
-                <li>Table de 9 : astuce des doigts</li>
-                <li>Table de 5 : finit par 0 ou 5</li>
-                <li>Table de 2 : nombres pairs</li>
-            </ul>
-            <div class="example">
-                <strong>Table de 9 :</strong><br>
-                9 × 1 = 9, 9 × 2 = 18, 9 × 3 = 27...<br>
-                <strong>9 × 7 = 63</strong>
-            </div>
-        `
-    },
     "multiples": {
         title: "🔢 Les multiples",
         content: `
@@ -213,317 +84,29 @@ const concepts = {
             </div>
         `
     },
-    "fractions_definition": {
-        title: "🍕 Les fractions",
+    "division": {
+        title: "➗ La division euclidienne",
         content: `
-            <h4>Comprendre les fractions</h4>
-            <p>Une fraction représente une part d'un tout.</p>
+            <h4>Division avec reste (niveau 6ème)</h4>
+            <p>Dans une division euclidienne : <strong>Dividende = Diviseur × Quotient + Reste</strong></p>
             <ul>
-                <li><strong>Numérateur :</strong> nombre de parts prises</li>
-                <li><strong>Dénominateur :</strong> nombre total de parts</li>
-                <li>3/5 = 3 parts sur 5 parts égales</li>
+                <li>Le reste doit toujours être <strong>inférieur</strong> au diviseur</li>
+                <li>Si reste = 0, la division est exacte</li>
+                <li>Méthode : estimer le quotient, calculer le reste</li>
             </ul>
             <div class="example">
-                <strong>Visualisation :</strong><br>
-                🍕🍕🍕⚪⚪ = 3/5 de pizza<br>
-                3 parts mangées sur 5 parts au total
-            </div>
-        `
-    },
-    "comparaison_fractions": {
-        title: "🍕 Comparer les fractions",
-        content: `
-            <h4>Comment comparer des fractions ?</h4>
-            <p>Plusieurs méthodes :</p>
-            <ul>
-                <li>Convertir en décimaux</li>
-                <li>Réduire au même dénominateur</li>
-                <li>Comparer à 1/2</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong><br>
-                1/2 = 0,5<br>
-                3/8 = 0,375<br>
-                2/5 = 0,4<br>
-                Donc : 1/2 > 2/5 > 3/8
-            </div>
-        `
-    },
-    "decimaux": {
-        title: "🔢 Les nombres décimaux",
-        content: `
-            <h4>Lire et écrire les décimaux</h4>
-            <p>Un nombre décimal a une partie entière et une partie décimale.</p>
-            <ul>
-                <li><strong>Dixièmes :</strong> 1ère position après la virgule</li>
-                <li><strong>Centièmes :</strong> 2ème position après la virgule</li>
-                <li><strong>Millièmes :</strong> 3ème position après la virgule</li>
-            </ul>
-            <div class="example">
-                <strong>"Douze unités et sept dixièmes" :</strong><br>
-                12 + 0,7 = 12,7
-            </div>
-        `
-    },
-    "geometrie_figures": {
-        title: "📐 Les figures géométriques",
-        content: `
-            <h4>Les polygones</h4>
-            <p>Un polygone est une figure fermée avec des côtés droits.</p>
-            <ul>
-                <li><strong>Triangle :</strong> 3 côtés</li>
-                <li><strong>Quadrilatère :</strong> 4 côtés</li>
-                <li><strong>Pentagone :</strong> 5 côtés</li>
-                <li><strong>Hexagone :</strong> 6 côtés</li>
-            </ul>
-            <div class="example">
-                <strong>Mémo :</strong> "hexa" = 6 en grec<br>
-                Comme "hexapode" = 6 pattes
-            </div>
-        `
-    },
-    "perimetre": {
-        title: "📏 Le périmètre",
-        content: `
-            <h4>Calculer le périmètre</h4>
-            <p>Le périmètre = tour complet d'une figure</p>
-            <ul>
-                <li><strong>Rectangle :</strong> P = 2 × (L + l)</li>
-                <li><strong>Carré :</strong> P = 4 × côté</li>
-                <li><strong>Triangle :</strong> P = côté1 + côté2 + côté3</li>
-            </ul>
-            <div class="example">
-                <strong>Rectangle 12×8 cm :</strong><br>
-                P = 2 × (12 + 8) = 2 × 20 = 40 cm
-            </div>
-        `
-    },
-    "aire": {
-        title: "📏 L'aire",
-        content: `
-            <h4>Calculer l'aire (surface)</h4>
-            <p>L'aire = surface couverte par la figure</p>
-            <ul>
-                <li><strong>Rectangle :</strong> A = Longueur × largeur</li>
-                <li><strong>Carré :</strong> A = côté × côté</li>
-                <li>Unité : cm², m², etc.</li>
-            </ul>
-            <div class="example">
-                <strong>Rectangle 12×8 cm :</strong><br>
-                A = 12 × 8 = 96 cm²
-            </div>
-        `
-    },
-    "conversions": {
-        title: "📏 Les conversions",
-        content: `
-            <h4>Convertir les unités</h4>
-            <p>Tableau de conversion :</p>
-            <ul>
-                <li><strong>Longueurs :</strong> km → m (×1000)</li>
-                <li><strong>Masses :</strong> kg → g (×1000)</li>
-                <li><strong>Durées :</strong> h → min (×60)</li>
-                <li><strong>Capacités :</strong> L → cL (×100)</li>
-            </ul>
-            <div class="example">
-                <strong>3 km = ? m</strong><br>
-                3 × 1000 = 3 000 m
-            </div>
-        `
-    },
-    "proportionnalite": {
-        title: "🔗 La proportionnalité",
-        content: `
-            <h4>Reconnaître une situation de proportionnalité</h4>
-            <p>Deux grandeurs sont proportionnelles si :</p>
-            <ul>
-                <li>Quand l'une double, l'autre double</li>
-                <li>Le coefficient de proportionnalité est constant</li>
-                <li>On peut faire un produit en croix</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 3 kg de pommes coûtent 9€<br>
-                Combien coûtent 5 kg ?<br>
-                3 kg → 9€, donc 1 kg → 3€<br>
-                5 kg → 5 × 3€ = 15€
-            </div>
-        `
-    },
-    "echelles": {
-        title: "📏 Les échelles",
-        content: `
-            <h4>Comprendre les échelles</h4>
-            <p>Une échelle indique le rapport entre les distances :</p>
-            <ul>
-                <li><strong>Échelle 1/1000 :</strong> 1 cm sur la carte = 1000 cm (10 m) dans la réalité</li>
-                <li><strong>Échelle 1/100000 :</strong> 1 cm = 1 km dans la réalité</li>
-                <li>Plus le dénominateur est grand, plus l'échelle est petite</li>
-            </ul>
-            <div class="example">
-                <strong>Carte à l'échelle 1/50000 :</strong><br>
-                2 cm sur la carte = 2 × 50000 = 100000 cm = 1 km
-            </div>
-        `
-    },
-    "pourcentages": {
-        title: "📊 Les pourcentages",
-        content: `
-            <h4>Comprendre les pourcentages</h4>
-            <p>Un pourcentage exprime une proportion sur 100 :</p>
-            <ul>
-                <li><strong>50% = 50/100 = 0,5</strong></li>
-                <li>Pour calculer : (partie/total) × 100</li>
-                <li>25% de 80 = (25 × 80) ÷ 100 = 20</li>
-            </ul>
-            <div class="example">
-                <strong>Dans une classe de 25 élèves, 20 ont réussi :</strong><br>
-                Pourcentage de réussite = (20/25) × 100 = 80%
-            </div>
-        `
-    },
-    "nombres_relatifs": {
-        title: "🌡️ Les nombres relatifs",
-        content: `
-            <h4>Les nombres positifs et négatifs</h4>
-            <p>Les nombres relatifs incluent les nombres positifs et négatifs :</p>
-            <ul>
-                <li><strong>Positifs :</strong> +5 (ou simplement 5)</li>
-                <li><strong>Négatifs :</strong> -3, -10, -0,5</li>
-                <li>Sur une droite graduée : négatifs à gauche de 0</li>
-                <li>-5 < -2 < 0 < +3 < +7</li>
-            </ul>
-            <div class="example">
-                <strong>Température :</strong><br>
-                Il fait -2°C le matin, +5°C l'après-midi<br>
-                Écart = +5 - (-2) = +5 + 2 = 7°C
-            </div>
-        `
-    },
-    "problemes_concrets": {
-        title: "🧮 Résoudre des problèmes",
-        content: `
-            <h4>Méthode pour résoudre un problème</h4>
-            <p>Les étapes essentielles :</p>
-            <ul>
-                <li><strong>1. Lire</strong> attentivement l'énoncé</li>
-                <li><strong>2. Identifier</strong> les données et la question</li>
-                <li><strong>3. Choisir</strong> l'opération appropriée</li>
-                <li><strong>4. Calculer</strong> et vérifier le résultat</li>
-            </ul>
-            <div class="example">
-                <strong>Julie a 45€. Elle achète un livre à 12€ et des bonbons à 3€50. Combien lui reste-t-il ?</strong><br>
-                45 - 12 - 3,50 = 29,50€
-            </div>
-        `
-    },
-    "statistics_intro": {
-        title: "📊 Introduction aux statistiques",
-        content: `
-            <h4>Comprendre les données</h4>
-            <p>Les statistiques nous aident à analyser des données :</p>
-            <ul>
-                <li><strong>Moyenne :</strong> somme des valeurs ÷ nombre de valeurs</li>
-                <li><strong>Graphiques :</strong> barres, secteurs, courbes</li>
-                <li><strong>Tableaux :</strong> organiser l'information</li>
-            </ul>
-            <div class="example">
-                <strong>Notes de Tom : 12, 15, 8, 16, 14</strong><br>
-                Moyenne = (12+15+8+16+14) ÷ 5 = 65 ÷ 5 = 13
-            </div>
-        `
-    },
-    "probabilites_intro": {
-        title: "🎲 Introduction aux probabilités",
-        content: `
-            <h4>Le hasard et les probabilités</h4>
-            <p>Les probabilités mesurent les chances qu'un événement se produise :</p>
-            <ul>
-                <li><strong>Impossible :</strong> probabilité 0</li>
-                <li><strong>Certain :</strong> probabilité 1</li>
-                <li><strong>Équiprobable :</strong> même chance pour chaque résultat</li>
-            </ul>
-            <div class="example">
-                <strong>Dé à 6 faces :</strong><br>
-                Probabilité d'obtenir un 4 = 1/6<br>
-                Probabilité d'obtenir un nombre pair = 3/6 = 1/2
-            </div>
-        `
-    },
-    "solides_geometrie": {
-        title: "📦 Les solides",
-        content: `
-            <h4>Les solides géométriques</h4>
-            <p>Les principales formes en 3 dimensions :</p>
-            <ul>
-                <li><strong>Cube :</strong> 6 faces carrées identiques</li>
-                <li><strong>Pavé droit :</strong> 6 faces rectangulaires</li>
-                <li><strong>Cylindre :</strong> 2 disques reliés par une surface courbe</li>
-                <li><strong>Sphère :</strong> forme de balle parfaite</li>
-            </ul>
-            <div class="example">
-                <strong>Patron d'un cube :</strong><br>
-                6 carrés identiques qui se plient pour former le cube
-            </div>
-        `
-    },
-    "symetrie": {
-        title: "🪞 La symétrie",
-        content: `
-            <h4>La symétrie axiale</h4>
-            <p>Une figure est symétrique par rapport à un axe :</p>
-            <ul>
-                <li>L'axe de symétrie est comme un miroir</li>
-                <li>Chaque point a son symétrique de l'autre côté</li>
-                <li>La distance à l'axe est la même des deux côtés</li>
-            </ul>
-            <div class="example">
-                <strong>Lettre H :</strong><br>
-                Elle a un axe de symétrie vertical au milieu<br>
-                Les deux moitiés sont identiques
-            </div>
-        `
-    },
-    "calcul_mental": {
-        title: "🧠 Le calcul mental",
-        content: `
-            <h4>Techniques de calcul mental</h4>
-            <p>Le calcul mental permet de calculer rapidement sans poser les opérations :</p>
-            <ul>
-                <li><strong>Addition :</strong> Ajouter par paquets de 10 ou compléter à la dizaine</li>
-                <li><strong>Multiplication :</strong> Utiliser les tables et les propriétés</li>
-                <li><strong>Pourcentages :</strong> 50% = ÷2, 25% = ÷4, 10% = ÷10</li>
-                <li><strong>Doubles et moitiés :</strong> Très utiles pour multiplier/diviser</li>
-            </ul>
-            <div class="example">
-                <strong>Exemple :</strong> 25 × 8<br>
-                25 × 8 = 25 × 4 × 2 = 100 × 2 = 200<br>
-                Ou encore : 25 × 8 = (20 + 5) × 8 = 160 + 40 = 200
-            </div>
-        `
-    },
-    "logique": {
-        title: "🔍 Logique et raisonnement",
-        content: `
-            <h4>Développer le raisonnement logique</h4>
-            <p>La logique mathématique aide à résoudre des problèmes pas à pas :</p>
-            <ul>
-                <li><strong>Suites numériques :</strong> Trouver la règle (ajouter, multiplier...)</li>
-                <li><strong>Problèmes d'âges :</strong> Utiliser des équations simples</li>
-                <li><strong>Problèmes de temps :</strong> Compter les jours, semaines...</li>
-                <li><strong>Déduction :</strong> Partir de ce qu'on sait pour trouver l'inconnu</li>
-            </ul>
-            <div class="example">
-                <strong>Suite logique :</strong> 3, 6, 12, 24, ?<br>
-                Chaque nombre est multiplié par 2<br>
-                Donc : 24 × 2 = 48
+                <strong>Exemple :</strong> 847 ÷ 23<br>
+                • 23 × 30 = 690 (trop petit)<br>
+                • 23 × 40 = 920 (trop grand)<br>
+                • 23 × 36 = 828<br>
+                • 847 - 828 = 19 < 23 ✓<br>
+                <strong>Donc : 847 = 23 × 36 + 19</strong>
             </div>
         `
     }
 };
 
 const questions = [
-    // SEULEMENT LES 4 NOTIONS DEMANDÉES
-
     // 1. MULTIPLES DANS UN INTERVALLE
     {
         category: "🔢 Calcul",
@@ -682,7 +265,7 @@ const questions = [
         concept: "division",
         question: "Reste de la division 97 ÷ 11 ?",
         options: ["8", "9", "10", "6"],
-        correct: 3,
+        correct: 1,
         explanation: "97 = 11 × 8 + 9, donc le reste est 9"
     },
     {
@@ -690,8 +273,8 @@ const questions = [
         concept: "division",
         question: "Le reste de 89 ÷ 7 est :",
         options: ["4", "5", "6", "3"],
-        correct: 0,
-        explanation: "89 = 7 × 12 + 5, donc le reste est 5... Non : 7×12=84, 89-84=5. Correction : reste = 5."
+        correct: 1,
+        explanation: "89 = 7 × 12 + 5, donc le reste est 5."
     },
     {
         category: "🔢 Calcul",
@@ -710,6 +293,28 @@ const questions = [
         explanation: "756 ÷ 18 = 42 livres par rayon"
     }
 ];
+
+// Système de progression et données
+let progressData = {
+    questionsAttempted: 0,
+    correctAnswers: 0,
+    totalQuestions: questions.length,
+    startTime: null,
+    lastCompleted: null,
+    categoryScores: {}
+};
+
+function loadProgress() {
+    const saved = localStorage.getItem('mathQuizProgress_ppcm');
+    if (saved) {
+        progressData = { ...progressData, ...JSON.parse(saved) };
+    }
+
+    if (!progressData.startTime) {
+        progressData.startTime = new Date().toISOString();
+        localStorage.setItem('mathQuizProgress_ppcm', JSON.stringify(progressData));
+    }
+}
 
 function getProgressStats() {
     const stats = {
@@ -750,7 +355,7 @@ function shuffleArray(array) {
 
 function initializeQuestions() {
     // Charger les questions déjà répondues depuis localStorage
-    const savedAnswered = localStorage.getItem('answeredQuestions');
+    const savedAnswered = localStorage.getItem('answeredQuestions_ppcm');
     if (savedAnswered) {
         answeredQuestions = JSON.parse(savedAnswered);
     }
@@ -761,23 +366,11 @@ function initializeQuestions() {
     // Si toutes les questions ont été répondues, réinitialiser
     if (unansweredQuestions.length === 0) {
         answeredQuestions = [];
-        localStorage.removeItem('answeredQuestions');
+        localStorage.removeItem('answeredQuestions_ppcm');
         shuffledQuestions = shuffleArray(questions);
     } else {
         shuffledQuestions = shuffleArray(unansweredQuestions);
     }
-}
-
-function startAllQuiz() {
-    document.getElementById('subjectMenu').style.display = 'none';
-    document.getElementById('startScreen').style.display = 'block';
-}
-
-function backToMenu() {
-    document.getElementById('startScreen').style.display = 'none';
-    document.getElementById('questionContainer').style.display = 'none';
-    document.getElementById('results').style.display = 'none';
-    document.getElementById('subjectMenu').style.display = 'block';
 }
 
 function startQuiz() {
@@ -811,9 +404,8 @@ function loadQuestion() {
     // Afficher le concept d'abord
     showConcept();
 
-    // Masquer les boutons de navigation et d'aide
+    // Masquer les boutons de navigation
     document.getElementById('nextBtn').style.display = 'none';
-    document.getElementById('helpBtn').style.display = 'block';
 
     // Réinitialiser les options
     document.querySelectorAll('.option').forEach(opt => {
@@ -886,8 +478,6 @@ function showQuestion() {
 
     showingConcept = false;
     showingExplanation = false;
-
-    document.getElementById('conceptBtn').style.display = 'none';
 }
 
 function selectOption(index) {
@@ -932,9 +522,6 @@ function validateAnswer() {
     // Masquer le bouton valider et afficher le bouton suivant
     document.getElementById('validateBtn').style.display = 'none';
     document.getElementById('nextBtn').style.display = 'block';
-
-    // Cacher le bouton d'aide pendant l'explication
-    document.getElementById('helpBtn').style.display = 'none';
 }
 
 function updateProgressData(question, isCorrect) {
@@ -960,29 +547,7 @@ function updateProgressData(question, isCorrect) {
     }
 
     // Sauvegarder dans localStorage
-    localStorage.setItem('mathQuizProgress', JSON.stringify(progressData));
-}
-
-function sendEmailHelp() {
-    const question = shuffledQuestions[currentQuestion];
-
-    const subject = encodeURIComponent('IMPORTANT; email à ouvrir dans l\'app Gmail d\'Android');
-    const body = encodeURIComponent(`
-Bonjour tonton,
-
-J'ai une question sur les révisions CM2 :
-
-Question : ${question.question}
-
-Les options sont :
-${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}
-
-Peux-tu m'aider ?
-
-Merci !
-`);
-
-    window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
+    localStorage.setItem('mathQuizProgress_ppcm', JSON.stringify(progressData));
 }
 
 function showExplanation() {
@@ -1013,7 +578,7 @@ function nextQuestion() {
     const originalQuestionIndex = questions.findIndex(q => q === shuffledQuestions[currentQuestion]);
     if (originalQuestionIndex !== -1 && !answeredQuestions.includes(originalQuestionIndex)) {
         answeredQuestions.push(originalQuestionIndex);
-        localStorage.setItem('answeredQuestions', JSON.stringify(answeredQuestions));
+        localStorage.setItem('answeredQuestions_ppcm', JSON.stringify(answeredQuestions));
     }
 
     if (currentQuestion < shuffledQuestions.length - 1) {
@@ -1058,7 +623,7 @@ function showResults() {
 
     // Marquer le quiz comme terminé
     progressData.lastCompleted = new Date().toISOString();
-    localStorage.setItem('mathQuizProgress', JSON.stringify(progressData));
+    localStorage.setItem('mathQuizProgress_ppcm', JSON.stringify(progressData));
 }
 
 function displayDetailedStats() {
@@ -1066,13 +631,13 @@ function displayDetailedStats() {
     const statsContainer = document.getElementById('detailedStats');
 
     let statsHTML = `
-        <h3>📊 Statistiques détaillées</h3>
+        <h3>📊 Statistiques détaillées - PPCM et Division</h3>
         <div class="stat-item">
-            <span>Progression globale :</span>
+            <span>Progression :</span>
             <span>${stats.completion}%</span>
         </div>
         <div class="stat-item">
-            <span>Précision globale :</span>
+            <span>Précision :</span>
             <span>${stats.accuracy}%</span>
         </div>
         <div class="stat-item">
@@ -1110,16 +675,6 @@ function restartQuiz() {
     document.getElementById('startScreen').style.display = 'block';
 }
 
-// Charger le progrès au démarrage si disponible
-window.addEventListener('load', function() {
-    loadProgress();
-    updateProgressDisplay();
-});
-
-function continueFromConcept() {
-    showQuestion();
-}
-
 function getQuizDuration() {
     if (progressData.startTime) {
         const now = new Date();
@@ -1144,4 +699,14 @@ function updateProgressDisplay() {
             </div>
         `;
     }
+}
+
+// Charger le progrès au démarrage si disponible
+window.addEventListener('load', function() {
+    loadProgress();
+    updateProgressDisplay();
+});
+
+function continueFromConcept() {
+    showQuestion();
 }
