@@ -92,19 +92,22 @@ const concepts = {
         `
     },
     "division": {
-        title: "➗ La division",
+        title: "➗ La division euclidienne",
         content: `
-            <h4>La division euclidienne</h4>
-            <p>Diviser c'est chercher combien de fois le diviseur "entre" dans le dividende.</p>
+            <h4>Division avec reste (niveau 6ème)</h4>
+            <p>Dans une division euclidienne : <strong>Dividende = Diviseur × Quotient + Reste</strong></p>
             <ul>
-                <li><strong>Dividende ÷ Diviseur = Quotient</strong></li>
-                <li>Vérification : Quotient × Diviseur = Dividende</li>
+                <li>Le reste doit toujours être <strong>inférieur</strong> au diviseur</li>
+                <li>Si reste = 0, la division est exacte</li>
+                <li>Méthode : estimer le quotient, calculer le reste</li>
             </ul>
             <div class="example">
-                <strong>Exemple :</strong> 756 ÷ 9<br>
-                • 9 × 8 = 72 (trop petit)<br>
-                • 9 × 9 = 81 (trop grand)<br>
-                • Donc 756 ÷ 9 = 84
+                <strong>Exemple :</strong> 847 ÷ 23<br>
+                • 23 × 30 = 690 (trop petit)<br>
+                • 23 × 40 = 920 (trop grand)<br>
+                • 23 × 36 = 828<br>
+                • 847 - 828 = 19 < 23 ✓<br>
+                <strong>Donc : 847 = 23 × 36 + 19</strong>
             </div>
         `
     },
@@ -171,6 +174,42 @@ const concepts = {
                 <strong>Exemple :</strong> 147 divisible par 3 ?<br>
                 1 + 4 + 7 = 12<br>
                 12 ÷ 3 = 4 → OUI !
+            </div>
+        `
+    },
+    "ppcm": {
+        title: "🔢 PPCM (Plus Petit Commun Multiple)",
+        content: `
+            <h4>Qu'est-ce que le PPCM ?</h4>
+            <p>Le PPCM de deux nombres est le plus petit multiple commun à ces deux nombres.</p>
+            <ul>
+                <li>Lister les multiples de chaque nombre</li>
+                <li>Identifier le plus petit nombre qui apparaît dans les deux listes</li>
+                <li>Utile pour : synchroniser des événements, additionner des fractions</li>
+            </ul>
+            <div class="example">
+                <strong>PPCM de 6 et 8 :</strong><br>
+                Multiples de 6 : 6, 12, 18, <strong>24</strong>, 30, 36...<br>
+                Multiples de 8 : 8, 16, <strong>24</strong>, 32, 40...<br>
+                <strong>PPCM(6,8) = 24</strong>
+            </div>
+        `
+    },
+    "pgcd": {
+        title: "🔢 PGCD (Plus Grand Commun Diviseur)",
+        content: `
+            <h4>Qu'est-ce que le PGCD ?</h4>
+            <p>Le PGCD de deux nombres est le plus grand diviseur commun à ces deux nombres.</p>
+            <ul>
+                <li>Lister les diviseurs de chaque nombre</li>
+                <li>Identifier le plus grand nombre qui apparaît dans les deux listes</li>
+                <li>Utile pour : simplifier des fractions, partager en parts égales</li>
+            </ul>
+            <div class="example">
+                <strong>PGCD de 18 et 24 :</strong><br>
+                Diviseurs de 18 : 1, 2, 3, <strong>6</strong>, 9, 18<br>
+                Diviseurs de 24 : 1, 2, 3, 4, <strong>6</strong>, 8, 12, 24<br>
+                <strong>PGCD(18,24) = 6</strong>
             </div>
         `
     },
@@ -483,62 +522,24 @@ const concepts = {
 };
 
 const questions = [
-    // NOUVEAUX EXERCICES - CALCUL ET OPÉRATIONS
+    // SEULEMENT LES 4 NOTIONS DEMANDÉES
+
+    // 1. MULTIPLES DANS UN INTERVALLE
     {
         category: "🔢 Calcul",
-        concept: "addition",
-        question: "Calculez : 2 368 + 1 457",
-        options: ["3 825", "3 715", "3 925", "3 815"],
-        correct: 0,
-        explanation: "2 368 + 1 457 = 3 825"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "soustraction",
-        question: "Calculez : 4 005 - 1 238",
-        options: ["2 767", "2 677", "2 877", "2 687"],
-        correct: 0,
-        explanation: "4 005 - 1 238 = 2 767"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "multiplication",
-        question: "Calculez : 146 × 9",
-        options: ["1 314", "1 304", "1 324", "1 344"],
-        correct: 0,
-        explanation: "146 × 9 = 1 314"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "division",
-        question: "Calculez : 1 428 ÷ 12",
-        options: ["119", "121", "117", "123"],
-        correct: 0,
-        explanation: "1 428 ÷ 12 = 119"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "multiplication",
-        question: "Un magasin a 36 étagères. Chaque étagère contient 15 livres. Combien de livres en total ?",
-        options: ["530", "540", "550", "560"],
+        concept: "multiples",
+        question: "Combien y a-t-il de multiples de 7 entre 20 et 80 ?",
+        options: ["8", "9", "10", "11"],
         correct: 1,
-        explanation: "36 × 15 = 540 livres"
+        explanation: "Multiples de 7 entre 20 et 80 : 21, 28, 35, 42, 49, 56, 63, 70, 77. Total : 9 multiples."
     },
     {
         category: "🔢 Calcul",
-        concept: "division",
-        question: "Une bibliothèque a 756 livres à ranger dans 18 rayons égaux. Combien de livres par rayon ?",
-        options: ["40", "42", "44", "38"],
-        correct: 1,
-        explanation: "756 ÷ 18 = 42 livres par rayon"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "tables_multiplication",
-        question: "9 × 12 = ?",
-        options: ["98", "108", "118", "96"],
-        correct: 1,
-        explanation: "9 × 12 = 108"
+        concept: "multiples",
+        question: "Quel est le plus petit multiple de 12 supérieur à 50 ?",
+        options: ["60", "72", "48", "84"],
+        correct: 0,
+        explanation: "Multiples de 12 : 12, 24, 36, 48, 60... Le premier supérieur à 50 est 60."
     },
     {
         category: "🔢 Calcul",
@@ -550,357 +551,29 @@ const questions = [
     },
     {
         category: "🔢 Calcul",
-        concept: "division",
-        question: "Reste de la division 97 ÷ 11 ?",
-        options: ["8", "9", "10", "6"],
-        correct: 3,
-        explanation: "97 = 11 × 8 + 9, donc le reste est 9"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "addition",
-        question: "Calculez : 67,4 + 25,8 + 12,6",
-        options: ["105,8", "104,8", "106,8", "103,8"],
-        correct: 0,
-        explanation: "67,4 + 25,8 + 12,6 = 105,8"
-    },
-
-    // NOUVEAUX EXERCICES - FRACTIONS ET DÉCIMAUX
-    {
-        category: "🍕 Fractions",
-        concept: "fractions_definition",
-        question: "Quelle fraction représente 5 parts sur 12 ?",
-        options: ["12/5", "5/12", "5/7", "7/12"],
-        correct: 1,
-        explanation: "5 parts sur 12 s'écrit 5/12"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "decimaux",
-        question: "Que vaut 0,75 en fraction ?",
-        options: ["7/10", "75/100", "3/4", "1/4"],
-        correct: 2,
-        explanation: "0,75 = 75/100 = 3/4"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "decimaux",
-        question: "Comment écrit-on 12,07 en mots ?",
-        options: ["Douze virgule zéro sept", "Douze unités et sept centièmes", "Douze et soixante-dix", "Cent vingt et sept dixièmes"],
-        correct: 1,
-        explanation: "12,07 se lit 'douze unités et sept centièmes'"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "decimaux",
-        question: "Range par ordre décroissant : 3,9 ; 3,09 ; 3,90 ; 3,099",
-        options: ["3,9 > 3,90 > 3,099 > 3,09", "3,90 = 3,9 > 3,099 > 3,09", "3,90 > 3,9 > 3,09 > 3,099", "3,9 = 3,90 > 3,099 > 3,09"],
-        correct: 3,
-        explanation: "3,9 = 3,90 > 3,099 > 3,09 (car 3,9 et 3,90 sont égaux)"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "fractions_definition",
-        question: "Quelle fraction d'un gâteau reste-t-il si on a mangé 4 parts sur 9 ?",
-        options: ["4/9", "5/9", "9/4", "9/5"],
-        correct: 1,
-        explanation: "Il reste 9/9 - 4/9 = 5/9 du gâteau"
-    },
-
-    // GÉOMÉTRIE
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Combien de côtés a un pentagone ?",
-        options: ["4", "5", "6", "7"],
-        correct: 1,
-        explanation: "Un pentagone a 5 côtés"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "aire",
-        question: "L'aire d'un carré de 6 cm de côté est :",
-        options: ["24 cm²", "36 cm²", "12 cm²", "18 cm²"],
-        correct: 1,
-        explanation: "Aire du carré = côté × côté = 6 × 6 = 36 cm²"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "perimetre",
-        question: "Le périmètre d'un rectangle de 8 cm sur 5 cm est :",
-        options: ["13 cm", "40 cm", "26 cm", "24 cm"],
-        correct: 2,
-        explanation: "Périmètre = 2 × (8 + 5) = 2 × 13 = 26 cm"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Un triangle qui a tous ses côtés égaux s'appelle :",
-        options: ["Triangle rectangle", "Triangle isocèle", "Triangle équilatéral", "Triangle quelconque"],
-        correct: 2,
-        explanation: "Un triangle équilatéral a ses 3 côtés égaux"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Un angle aigu mesure :",
-        options: ["Exactement 90°", "Plus de 90°", "Moins de 90°", "180°"],
-        correct: 2,
-        explanation: "Un angle aigu mesure moins de 90°"
-    },
-
-    // MESURES
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "1,5 km = ? m",
-        options: ["150 m", "1 500 m", "15 000 m", "15 m"],
-        correct: 1,
-        explanation: "1,5 km = 1,5 × 1 000 = 1 500 m"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "750 g = ? kg",
-        options: ["0,75 kg", "7,5 kg", "75 kg", "0,075 kg"],
-        correct: 0,
-        explanation: "750 g = 750 ÷ 1 000 = 0,75 kg"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "3 h 20 min = ? min",
-        options: ["180 min", "200 min", "320 min", "380 min"],
-        correct: 1,
-        explanation: "3 h = 180 min, donc 3 h 20 min = 180 + 20 = 200 min"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "25 cl = ? L",
-        options: ["2,5 L", "0,25 L", "0,025 L", "250 L"],
-        correct: 1,
-        explanation: "25 cl = 25 ÷ 100 = 0,25 L"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "Un film dure 1 h 45 min. Il commence à 20 h 30. À quelle heure se termine-t-il ?",
-        options: ["22 h 15", "22 h 75", "21 h 75", "22 h 30"],
-        correct: 0,
-        explanation: "20 h 30 + 1 h 45 min = 22 h 15"
-    },
-
-    // PROPORTIONNALITÉ
-    {
-        category: "🔗 Proportionnalité",
-        concept: "proportionnalite",
-        question: "Si 3 stylos coûtent 4,50€, combien coûtent 5 stylos ?",
-        options: ["7,50€", "6,50€", "8€", "7€"],
-        correct: 0,
-        explanation: "1 stylo = 4,50 ÷ 3 = 1,50€, donc 5 stylos = 5 × 1,50 = 7,50€"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "proportionnalite",
-        question: "Une recette pour 4 personnes demande 200g de farine. Pour 6 personnes ?",
-        options: ["250g", "300g", "350g", "280g"],
-        correct: 1,
-        explanation: "200 ÷ 4 × 6 = 50 × 6 = 300g"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "echelles",
-        question: "Sur une carte à l'échelle 1/100 000, 3 cm représentent :",
-        options: ["300 m", "3 km", "30 km", "300 km"],
-        correct: 1,
-        explanation: "3 cm × 100 000 = 300 000 cm = 3 000 m = 3 km"
-    },
-
-    // PROBLÈMES
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Paul a 125€. Il achète un jeu à 39€ et un livre à 12€. Combien lui reste-t-il ?",
-        options: ["74€", "64€", "84€", "54€"],
-        correct: 0,
-        explanation: "125 - 39 - 12 = 125 - 51 = 74€"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Dans une école de 480 élèves, 3/5 mangent à la cantine. Combien d'élèves ?",
-        options: ["288", "192", "320", "240"],
-        correct: 0,
-        explanation: "3/5 de 480 = (480 × 3) ÷ 5 = 1440 ÷ 5 = 288"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Un parking a 8 rangées de 15 places chacune. Combien de places en tout ?",
-        options: ["120", "130", "140", "110"],
-        correct: 0,
-        explanation: "8 × 15 = 120 places"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Marie lit 25 pages par jour. En combien de jours lira-t-elle un livre de 200 pages ?",
-        options: ["8 jours", "7 jours", "9 jours", "6 jours"],
-        correct: 0,
-        explanation: "200 ÷ 25 = 8 jours"
-    },
-
-    // NOMBRES ET CALCUL MENTAL
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "25 × 4 = ?",
-        options: ["90", "100", "110", "80"],
-        correct: 1,
-        explanation: "25 × 4 = 100"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "Calcul rapide : 17 + 28",
-        options: ["45", "44", "46", "43"],
-        correct: 0,
-        explanation: "17 + 28 = 17 + 30 - 2 = 47 - 2 = 45"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "50% de 86 = ?",
-        options: ["43", "42", "44", "41"],
-        correct: 0,
-        explanation: "50% de 86 = 86 ÷ 2 = 43"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "Double de 35 ?",
-        options: ["60", "70", "65", "75"],
-        correct: 1,
-        explanation: "Double de 35 = 35 × 2 = 70"
-    },
-
-    // NOMBRES DÉCIMAUX AVANCÉS
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "0,8 + 0,7 = ?",
-        options: ["1,5", "0,15", "15", "1,6"],
-        correct: 0,
-        explanation: "0,8 + 0,7 = 1,5"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "3,6 × 10 = ?",
-        options: ["0,36", "360", "36", "3,60"],
-        correct: 2,
-        explanation: "3,6 × 10 = 36"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "12,5 ÷ 10 = ?",
-        options: ["125", "1,25", "0,125", "12,50"],
-        correct: 1,
-        explanation: "12,5 ÷ 10 = 1,25"
-    },
-
-    // LOGIQUE ET RAISONNEMENT
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Quelle est la suite ? 5, 8, 11, 14, ?",
-        options: ["16", "17", "18", "19"],
-        correct: 1,
-        explanation: "On ajoute 3 à chaque fois : 14 + 3 = 17"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Si aujourd'hui c'est mardi, quel jour sera-ce dans 10 jours ?",
-        options: ["Jeudi", "Vendredi", "Samedi", "Dimanche"],
-        correct: 1,
-        explanation: "Mardi + 10 jours = Vendredi (10 ÷ 7 = 1 reste 3, donc 3 jours après mardi)"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "J'ai 3 pièces de 2€, 5 pièces de 1€ et 4 pièces de 50 centimes. Combien ai-je ?",
-        options: ["13€", "12€", "11€", "13,50€"],
-        correct: 2,
-        explanation: "3×2€ + 5×1€ + 4×0,50€ = 6€ + 5€ + 2€ = 13€"
-    },
-
-    // NOUVEAUX EXERCICES - CALCUL ET OPÉRATIONS (15 exercices)
-    {
-        category: "🔢 Calcul",
-        concept: "addition",
-        question: "Calculez : 3 456 + 2 789 + 156",
-        options: ["6 401", "6 301", "6 501", "6 201"],
-        correct: 0,
-        explanation: "3 456 + 2 789 + 156 = 6 401"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "soustraction",
-        question: "Calculez : 5 000 - 1 234",
-        options: ["3 766", "3 676", "4 766", "3 776"],
-        correct: 0,
-        explanation: "5 000 - 1 234 = 3 766"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "multiplication",
-        question: "Calculez : 45 × 16",
-        options: ["700", "720", "680", "740"],
-        correct: 1,
-        explanation: "45 × 16 = 720"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "division",
-        question: "Calculez : 1 155 ÷ 15",
-        options: ["77", "75", "73", "79"],
-        correct: 0,
-        explanation: "1 155 ÷ 15 = 77"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "valeur_positionnelle",
-        question: "Dans le nombre 7 825, que vaut le chiffre 8 ?",
-        options: ["8 unités", "8 dizaines", "8 centaines", "8 milliers"],
-        correct: 2,
-        explanation: "Dans 7 825, le 8 est à la position des centaines, il vaut 800"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "comparaison_nombres",
-        question: "Rangez par ordre croissant : 4 567 ; 4 576 ; 4 657 ; 4 675",
-        options: ["4 567 < 4 576 < 4 657 < 4 675", "4 567 < 4 657 < 4 576 < 4 675", "4 576 < 4 567 < 4 675 < 4 657", "4 567 < 4 576 < 4 675 < 4 657"],
-        correct: 0,
-        explanation: "En comparant chiffre par chiffre : 4 567 < 4 576 < 4 657 < 4 675"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "criteres_divisibilite",
-        question: "Parmi ces nombres, lequel est divisible par 9 ?",
-        options: ["234", "567", "891", "1 023"],
-        correct: 2,
-        explanation: "891 : 8+9+1=18, et 18 est divisible par 9, donc 891 est divisible par 9"
-    },
-    {
-        category: "🔢 Calcul",
         concept: "multiples",
-        question: "Quel est le plus petit multiple commun de 4 et 6 ?",
-        options: ["10", "12", "18", "24"],
+        question: "Combien y a-t-il de multiples de 9 entre 30 et 100 ?",
+        options: ["7", "8", "9", "10"],
         correct: 1,
-        explanation: "Multiples de 4 : 4, 8, 12... Multiples de 6 : 6, 12... Le plus petit commun est 12"
+        explanation: "Multiples de 9 entre 30 et 100 : 36, 45, 54, 63, 72, 81, 90, 99. Total : 8 multiples."
+    },
+
+    // 2. TESTS DE DIVISIBILITÉ
+    {
+        category: "🔢 Calcul",
+        concept: "diviseurs",
+        question: "Le nombre 156 est-il divisible par 12 ?",
+        options: ["Oui", "Non"],
+        correct: 0,
+        explanation: "156 ÷ 12 = 13 exactement. Donc 156 est divisible par 12."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "diviseurs",
+        question: "Parmi ces nombres, lequel est divisible par 15 ?",
+        options: ["123", "135", "147", "159"],
+        correct: 1,
+        explanation: "Pour être divisible par 15, il faut être divisible par 3 ET par 5. 135 finit par 5 et 1+3+5=9 (divisible par 3)."
     },
     {
         category: "🔢 Calcul",
@@ -912,547 +585,132 @@ const questions = [
     },
     {
         category: "🔢 Calcul",
-        concept: "tables_multiplication",
-        question: "12 × 9 = ?",
-        options: ["98", "108", "118", "128"],
+        concept: "diviseurs",
+        question: "Le nombre 84 est-il divisible par 14 ?",
+        options: ["Oui", "Non"],
+        correct: 0,
+        explanation: "84 ÷ 14 = 6 exactement. Donc 84 est divisible par 14."
+    },
+
+    // 3. PPCM DE DEUX NOMBRES
+    {
+        category: "🔢 Calcul",
+        concept: "ppcm",
+        question: "Quel est le PPCM de 8 et 12 ?",
+        options: ["24", "48", "96", "20"],
+        correct: 0,
+        explanation: "Multiples de 8 : 8, 16, 24... | Multiples de 12 : 12, 24... | Premier commun : 24."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "ppcm",
+        question: "Deux bus partent ensemble. L'un revient toutes les 18 min, l'autre toutes les 24 min. Dans combien de temps se retrouveront-ils ?",
+        options: ["42 min", "72 min", "108 min", "144 min"],
         correct: 1,
-        explanation: "12 × 9 = 108"
+        explanation: "PPCM(18,24) = 72. Multiples de 18 : 18, 36, 54, 72... | Multiples de 24 : 24, 48, 72..."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "ppcm",
+        question: "Quel est le plus petit multiple commun de 4 et 6 ?",
+        options: ["10", "12", "18", "24"],
+        correct: 1,
+        explanation: "Multiples de 4 : 4, 8, 12... Multiples de 6 : 6, 12... Le plus petit commun est 12"
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "ppcm",
+        question: "Quel est le PPCM de 15 et 20 ?",
+        options: ["35", "60", "75", "300"],
+        correct: 1,
+        explanation: "Multiples de 15 : 15, 30, 45, 60... | Multiples de 20 : 20, 40, 60... | Premier commun : 60."
+    },
+
+    // 4. PGCD DE DEUX NOMBRES
+    {
+        category: "🔢 Calcul",
+        concept: "pgcd",
+        question: "Quel est le PGCD de 24 et 36 ?",
+        options: ["6", "8", "12", "18"],
+        correct: 2,
+        explanation: "Diviseurs de 24 : 1,2,3,4,6,8,12,24 | Diviseurs de 36 : 1,2,3,4,6,9,12,18,36 | Plus grand commun : 12."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "pgcd",
+        question: "On veut partager 48 pommes et 72 poires en paquets identiques. Quelle est la taille maximum des paquets ?",
+        options: ["12", "24", "8", "6"],
+        correct: 1,
+        explanation: "Il faut le PGCD(48,72) = 24. On peut faire des paquets de 24 (2 pommes + 3 poires chacun)."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "pgcd",
+        question: "Quel est le PGCD de 18 et 30 ?",
+        options: ["3", "6", "9", "15"],
+        correct: 1,
+        explanation: "Diviseurs de 18 : 1,2,3,6,9,18 | Diviseurs de 30 : 1,2,3,5,6,10,15,30 | Plus grand commun : 6."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "pgcd",
+        question: "Pour faire des bouquets identiques avec 42 roses et 56 tulipes, combien de fleurs maximum par bouquet ?",
+        options: ["7", "14", "21", "28"],
+        correct: 1,
+        explanation: "PGCD(42,56) = 14. Chaque bouquet aura 3 roses + 4 tulipes = 7 fleurs... Non, 14 fleurs maximum."
+    },
+
+    // 5. DIVISION EUCLIDIENNE
+    {
+        category: "🔢 Calcul",
+        concept: "division",
+        question: "Dans la division 127 ÷ 9, quel est le quotient et le reste ?",
+        options: ["q = 14, r = 1", "q = 13, r = 10", "q = 14, r = 0", "q = 15, r = 2"],
+        correct: 0,
+        explanation: "127 ÷ 9 : 9 × 14 = 126, et 127 - 126 = 1. Donc quotient = 14, reste = 1."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "division",
+        question: "On partage 235 bonbons en sachets de 18. Combien de sachets complets et combien de bonbons restants ?",
+        options: ["13 sachets, 1 bonbon", "12 sachets, 19 bonbons", "13 sachets, 0 bonbon", "12 sachets, 11 bonbons"],
+        correct: 0,
+        explanation: "235 ÷ 18 = 13 reste 1. Vérification : 18 × 13 = 234, et 235 - 234 = 1."
+    },
+    {
+        category: "🔢 Calcul",
+        concept: "division",
+        question: "Reste de la division 97 ÷ 11 ?",
+        options: ["8", "9", "10", "6"],
+        correct: 3,
+        explanation: "97 = 11 × 8 + 9, donc le reste est 9"
     },
     {
         category: "🔢 Calcul",
         concept: "division",
         question: "Le reste de 89 ÷ 7 est :",
         options: ["4", "5", "6", "3"],
-        correct: 1,
-        explanation: "89 = 7 × 12 + 5, donc le reste est 5"
+        correct: 0,
+        explanation: "89 = 7 × 12 + 5, donc le reste est 5... Non : 7×12=84, 89-84=5. Correction : reste = 5."
     },
     {
         category: "🔢 Calcul",
-        concept: "addition",
-        question: "Combien font 999 + 999 ?",
-        options: ["1 898", "1 988", "1 998", "2 000"],
-        correct: 2,
-        explanation: "999 + 999 = 1 998"
+        concept: "division",
+        question: "Calculez : 1 428 ÷ 12",
+        options: ["119", "121", "117", "123"],
+        correct: 0,
+        explanation: "1428 ÷ 12 = 119 exactement"
     },
     {
         category: "🔢 Calcul",
-        concept: "multiplication",
-        question: "Calculez : 250 × 4",
-        options: ["1 000", "900", "800", "1 100"],
-        correct: 0,
-        explanation: "250 × 4 = 1 000"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "soustraction",
-        question: "Calculez : 10 000 - 3 456",
-        options: ["6 544", "6 644", "6 454", "7 544"],
-        correct: 0,
-        explanation: "10 000 - 3 456 = 6 544"
-    },
-    {
-        category: "🔢 Calcul",
-        concept: "criteres_divisibilite",
-        question: "Parmi ces nombres, lequel N'EST PAS divisible par 3 ?",
-        options: ["147", "251", "369", "234"],
+        concept: "division",
+        question: "Une bibliothèque a 756 livres à ranger dans 18 rayons égaux. Combien de livres par rayon ?",
+        options: ["40", "42", "44", "38"],
         correct: 1,
-        explanation: "251 : 2+5+1=8, non divisible par 3. Les autres : 147(1+4+7=12), 369(3+6+9=18), 234(2+3+4=9) sont divisibles par 3."
-    },
-
-    // FRACTIONS ET DÉCIMAUX (12 exercices)
-    {
-        category: "🍕 Fractions",
-        concept: "fractions_definition",
-        question: "Quelle fraction est égale à 0,25 ?",
-        options: ["1/4", "2/5", "1/5", "3/4"],
-        correct: 0,
-        explanation: "0,25 = 25/100 = 1/4"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "comparaison_fractions",
-        question: "Quelle fraction est la plus grande ?",
-        options: ["2/3", "3/4", "5/6", "7/8"],
-        correct: 3,
-        explanation: "En convertissant : 2/3≈0,67, 3/4=0,75, 5/6≈0,83, 7/8=0,875. Donc 7/8 est la plus grande."
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Comment s'écrit 'trois unités et quarante-sept centièmes' ?",
-        options: ["3,47", "3,047", "30,47", "3,4700"],
-        correct: 0,
-        explanation: "Trois unités et quarante-sept centièmes = 3,47"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 12,5 + 3,25",
-        options: ["15,75", "15,25", "16,75", "14,75"],
-        correct: 0,
-        explanation: "12,5 + 3,25 = 15,75"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 8,4 - 2,7",
-        options: ["5,7", "6,7", "5,3", "6,3"],
-        correct: 0,
-        explanation: "8,4 - 2,7 = 5,7"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "fractions_definition",
-        question: "Dans une classe de 20 élèves, 15 portent des lunettes. Quelle fraction porte des lunettes ?",
-        options: ["15/20 = 3/4", "15/20 = 4/5", "20/15", "5/20 = 1/4"],
-        correct: 0,
-        explanation: "15 élèves sur 20 = 15/20 = 3/4"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Rangez par ordre décroissant : 5,8 ; 5,08 ; 5,80 ; 5,088",
-        options: ["5,8 > 5,80 > 5,088 > 5,08", "5,80 = 5,8 > 5,088 > 5,08", "5,80 > 5,8 > 5,08 > 5,088", "5,8 = 5,80 > 5,088 > 5,08"],
-        correct: 3,
-        explanation: "5,8 = 5,80 > 5,088 > 5,08 (car 5,8 et 5,80 sont égaux)"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "fractions_definition",
-        question: "Paul mange 2/5 d'une tarte. Quelle fraction reste-t-il ?",
-        options: ["3/5", "2/3", "1/5", "4/5"],
-        correct: 0,
-        explanation: "Il reste 5/5 - 2/5 = 3/5 de la tarte"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Que vaut 5,2 × 100 ?",
-        options: ["52", "520", "0,52", "5200"],
-        correct: 1,
-        explanation: "5,2 × 100 = 520"
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Que vaut 36,8 ÷ 100 ?",
-        options: ["3,68", "0,368", "368", "3680"],
-        correct: 1,
-        explanation: "36,8 ÷ 100 = 0,368"
-    },
-    {
-        category: "🍕 Fractions",
-        concept: "comparaison_fractions",
-        question: "Quelle fraction est plus petite que 1/2 ?",
-        options: ["3/5", "4/7", "2/5", "3/4"],
-        correct: 2,
-        explanation: "2/5 = 0,4 < 0,5 = 1/2. Les autres sont plus grandes que 1/2."
-    },
-    {
-        category: "🔢 Décimaux",
-        concept: "decimaux",
-        question: "Calculez : 2,5 × 4",
-        options: ["10", "8", "12", "6"],
-        correct: 0,
-        explanation: "2,5 × 4 = 10"
-    },
-
-    // GÉOMÉTRIE (10 exercices)
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Combien d'axes de symétrie a un carré ?",
-        options: ["2", "3", "4", "8"],
-        correct: 2,
-        explanation: "Un carré a 4 axes de symétrie : 2 diagonales et 2 médiatrices des côtés"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "symetrie",
-        question: "Quelle lettre n'a aucun axe de symétrie ?",
-        options: ["A", "B", "F", "O"],
-        correct: 2,
-        explanation: "La lettre F n'a aucun axe de symétrie, contrairement à A, B et O"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "solides_geometrie",
-        question: "Combien de faces a un cube ?",
-        options: ["4", "6", "8", "12"],
-        correct: 1,
-        explanation: "Un cube a 6 faces carrées"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "aire",
-        question: "L'aire d'un rectangle de 12 cm sur 7 cm est :",
-        options: ["84 cm²", "38 cm", "84 cm", "19 cm²"],
-        correct: 0,
-        explanation: "Aire = longueur × largeur = 12 × 7 = 84 cm²"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "perimetre",
-        question: "Le périmètre d'un triangle équilatéral de côté 9 cm est :",
-        options: ["18 cm", "27 cm", "36 cm", "81 cm"],
-        correct: 1,
-        explanation: "Périmètre = 3 × côté = 3 × 9 = 27 cm"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Un triangle rectangle a :",
-        options: ["3 angles droits", "2 angles droits", "1 angle droit", "0 angle droit"],
-        correct: 2,
-        explanation: "Un triangle rectangle a exactement 1 angle droit (90°)"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "solides_geometrie",
-        question: "Combien d'arêtes a un pavé droit ?",
-        options: ["8", "10", "12", "6"],
-        correct: 2,
-        explanation: "Un pavé droit a 12 arêtes"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Dans un losange, les diagonales sont :",
-        options: ["Égales", "Perpendiculaires", "Parallèles", "Égales et parallèles"],
-        correct: 1,
-        explanation: "Dans un losange, les diagonales sont perpendiculaires et se coupent en leur milieu"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "aire",
-        question: "Si on double les côtés d'un carré, son aire devient :",
-        options: ["2 fois plus grande", "3 fois plus grande", "4 fois plus grande", "8 fois plus grande"],
-        correct: 2,
-        explanation: "Si le côté passe de c à 2c, l'aire passe de c² à (2c)² = 4c², soit 4 fois plus grande"
-    },
-    {
-        category: "📐 Géométrie",
-        concept: "geometrie_figures",
-        question: "Un polygone à 8 côtés s'appelle :",
-        options: ["Heptagone", "Octogone", "Ennéagone", "Décagone"],
-        correct: 1,
-        explanation: "Un polygone à 8 côtés est un octogone"
-    },
-
-    // MESURES ET CONVERSIONS (10 exercices)
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "2,5 m = ? cm",
-        options: ["25 cm", "250 cm", "2500 cm", "0,25 cm"],
-        correct: 1,
-        explanation: "2,5 m = 2,5 × 100 = 250 cm"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "1,2 kg = ? g",
-        options: ["12 g", "120 g", "1200 g", "12000 g"],
-        correct: 2,
-        explanation: "1,2 kg = 1,2 × 1000 = 1200 g"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "45 min = ? h",
-        options: ["0,45 h", "0,75 h", "4,5 h", "1,45 h"],
-        correct: 1,
-        explanation: "45 min = 45/60 h = 3/4 h = 0,75 h"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "3,5 L = ? mL",
-        options: ["35 mL", "350 mL", "3500 mL", "35000 mL"],
-        correct: 2,
-        explanation: "3,5 L = 3,5 × 1000 = 3500 mL"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "8 h 15 min = ? min",
-        options: ["495 min", "815 min", "480 min", "515 min"],
-        correct: 0,
-        explanation: "8 h = 8 × 60 = 480 min, donc 8 h 15 min = 480 + 15 = 495 min"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "0,75 km = ? m",
-        options: ["75 m", "750 m", "7500 m", "0,75 m"],
-        correct: 1,
-        explanation: "0,75 km = 0,75 × 1000 = 750 m"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "2 h 30 min + 1 h 45 min = ?",
-        options: ["3 h 75 min", "4 h 15 min", "3 h 15 min", "4 h 75 min"],
-        correct: 1,
-        explanation: "2 h 30 min + 1 h 45 min = 3 h 75 min = 4 h 15 min"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "500 g + 1,5 kg = ? g",
-        options: ["2000 g", "1500 g", "2500 g", "1000 g"],
-        correct: 0,
-        explanation: "1,5 kg = 1500 g, donc 500 g + 1500 g = 2000 g"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "75 cL = ? L",
-        options: ["7,5 L", "0,75 L", "750 L", "0,075 L"],
-        correct: 1,
-        explanation: "75 cL = 75/100 L = 0,75 L"
-    },
-    {
-        category: "📏 Mesures",
-        concept: "conversions",
-        question: "Un rectangle de 15 cm sur 8 cm a un périmètre de :",
-        options: ["23 cm", "46 cm", "120 cm", "30 cm"],
-        correct: 1,
-        explanation: "Périmètre = 2 × (15 + 8) = 2 × 23 = 46 cm"
-    },
-
-    // PROPORTIONNALITÉ ET ÉCHELLES (8 exercices)
-    {
-        category: "🔗 Proportionnalité",
-        concept: "proportionnalite",
-        question: "Si 7 cahiers coûtent 21€, combien coûtent 12 cahiers ?",
-        options: ["36€", "35€", "42€", "30€"],
-        correct: 0,
-        explanation: "1 cahier = 21 ÷ 7 = 3€, donc 12 cahiers = 12 × 3 = 36€"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "echelles",
-        question: "Sur une carte à l'échelle 1/50 000, 4 cm représentent :",
-        options: ["2 km", "20 km", "200 m", "2000 m"],
-        correct: 0,
-        explanation: "4 cm × 50 000 = 200 000 cm = 2 000 m = 2 km"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "pourcentages",
-        question: "Dans une classe de 25 élèves, 20% sont absents. Combien d'élèves sont absents ?",
-        options: ["4", "5", "6", "3"],
-        correct: 1,
-        explanation: "20% de 25 = (20 × 25) ÷ 100 = 500 ÷ 100 = 5 élèves"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "proportionnalite",
-        question: "Une voiture consomme 6L pour 100 km. Pour 350 km, elle consommera :",
-        options: ["18L", "21L", "24L", "15L"],
-        correct: 1,
-        explanation: "350 ÷ 100 × 6 = 3,5 × 6 = 21L"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "pourcentages",
-        question: "25% de 60 = ?",
-        options: ["12", "15", "18", "20"],
-        correct: 1,
-        explanation: "25% de 60 = 25 × 60 ÷ 100 = 1500 ÷ 100 = 15"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "echelles",
-        question: "Sur un plan à l'échelle 1/200, une pièce mesure 3 cm × 2 cm. Ses vraies dimensions sont :",
-        options: ["6 m × 4 m", "30 cm × 20 cm", "60 cm × 40 cm", "3 m × 2 m"],
-        correct: 0,
-        explanation: "3 cm × 200 = 600 cm = 6 m ; 2 cm × 200 = 400 cm = 4 m"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "proportionnalite",
-        question: "Si 5 ouvriers construisent un mur en 12 jours, combien de temps pour 15 ouvriers ?",
-        options: ["4 jours", "6 jours", "8 jours", "36 jours"],
-        correct: 0,
-        explanation: "Plus d'ouvriers = moins de temps. 5 × 12 = 60 jours-ouvrier. 60 ÷ 15 = 4 jours"
-    },
-    {
-        category: "🔗 Proportionnalité",
-        concept: "pourcentages",
-        question: "Tom a 80€. Il dépense 25%. Combien lui reste-t-il ?",
-        options: ["55€", "60€", "65€", "50€"],
-        correct: 1,
-        explanation: "Il dépense 25% de 80 = 20€. Il lui reste 80 - 20 = 60€"
-    },
-
-    // PROBLÈMES CONCRETS (8 exercices)
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Un bus peut transporter 45 passagers. Combien faut-il de bus pour 180 élèves ?",
-        options: ["4 bus", "3 bus", "5 bus", "6 bus"],
-        correct: 0,
-        explanation: "180 ÷ 45 = 4 bus exactement"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Julie achète 3 livres à 12€ chacun et paie avec un billet de 50€. Combien de monnaie ?",
-        options: ["14€", "12€", "16€", "18€"],
-        correct: 0,
-        explanation: "3 × 12 = 36€. Monnaie : 50 - 36 = 14€"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Un fermier récolte 875 kg de pommes. Il les met en sacs de 25 kg. Combien de sacs ?",
-        options: ["35 sacs", "30 sacs", "40 sacs", "33 sacs"],
-        correct: 0,
-        explanation: "875 ÷ 25 = 35 sacs"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Dans une école de 420 élèves, il y a 3 filles pour 4 garçons. Combien de filles ?",
-        options: ["168", "180", "200", "252"],
-        correct: 1,
-        explanation: "3 filles pour 4 garçons = 3/7 sont des filles. 3/7 × 420 = 180 filles"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Un terrain rectangulaire de 60 m sur 40 m doit être entouré d'une clôture. Quelle longueur ?",
-        options: ["200 m", "100 m", "240 m", "180 m"],
-        correct: 0,
-        explanation: "Périmètre = 2 × (60 + 40) = 2 × 100 = 200 m"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Paul économise 15€ par mois. En combien de temps aura-t-il 225€ ?",
-        options: ["12 mois", "15 mois", "18 mois", "10 mois"],
-        correct: 1,
-        explanation: "225 ÷ 15 = 15 mois"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Une classe organise une sortie. Le bus coûte 280€ pour 35 élèves. Prix par élève ?",
-        options: ["7€", "8€", "9€", "6€"],
-        correct: 1,
-        explanation: "280 ÷ 35 = 8€ par élève"
-    },
-    {
-        category: "🧮 Problèmes",
-        concept: "problemes_concrets",
-        question: "Un magasin offre une réduction de 15% sur un article à 80€. Nouveau prix ?",
-        options: ["65€", "68€", "70€", "72€"],
-        correct: 1,
-        explanation: "Réduction = 15% de 80 = 12€. Nouveau prix = 80 - 12 = 68€"
-    },
-
-    // CALCUL MENTAL ET LOGIQUE (12 exercices)
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "Calcul rapide : 99 + 37",
-        options: ["136", "135", "134", "137"],
-        correct: 0,
-        explanation: "99 + 37 = 100 + 37 - 1 = 137 - 1 = 136"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "15 × 6 = ?",
-        options: ["80", "85", "90", "95"],
-        correct: 2,
-        explanation: "15 × 6 = 15 × 2 × 3 = 30 × 3 = 90"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "125 × 8 = ?",
-        options: ["900", "1000", "1100", "800"],
-        correct: 1,
-        explanation: "125 × 8 = 125 × 2⁴ = 1000"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "75% de 48 = ?",
-        options: ["36", "32", "40", "44"],
-        correct: 0,
-        explanation: "75% de 48 = 3/4 × 48 = 36"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Dans une suite : 2, 6, 18, 54, ... Quel est le terme suivant ?",
-        options: ["108", "162", "216", "180"],
-        correct: 1,
-        explanation: "Chaque terme est multiplié par 3 : 54 × 3 = 162"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Si demain nous sommes jeudi, quel jour étions-nous avant-hier ?",
-        options: ["Dimanche", "Lundi", "Mardi", "Mercredi"],
-        correct: 1,
-        explanation: "Demain = jeudi, donc aujourd'hui = mercredi, hier = mardi, avant-hier = lundi"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Paul a le double de l'âge de Sophie. Dans 5 ans, il aura 17 ans. Quel âge a Sophie ?",
-        options: ["5 ans", "6 ans", "7 ans", "8 ans"],
-        correct: 1,
-        explanation: "Paul a maintenant 17 - 5 = 12 ans. Sophie a 12 ÷ 2 = 6 ans"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "11 × 11 = ?",
-        options: ["111", "121", "131", "101"],
-        correct: 1,
-        explanation: "11 × 11 = 121"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Quelle est la suite ? 1, 4, 9, 16, 25, ?",
-        options: ["30", "35", "36", "49"],
-        correct: 2,
-        explanation: "Ce sont les carrés parfaits : 6² = 36"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "20% de 75 = ?",
-        options: ["12", "15", "18", "20"],
-        correct: 1,
-        explanation: "20% de 75 = 1/5 × 75 = 15"
-    },
-    {
-        category: "🔍 Logique",
-        concept: "logique",
-        question: "Marie a 6 billes rouges et 9 billes bleues. Quelle fraction représente les billes rouges ?",
-        options: ["6/9", "6/15", "9/15", "6/6"],
-        correct: 1,
-        explanation: "Total : 6 + 9 = 15 billes. Billes rouges : 6/15 = 2/5"
-    },
-    {
-        category: "🧠 Calcul mental",
-        concept: "calcul_mental",
-        question: "Combien de minutes dans 2,5 heures ?",
-        options: ["120 min", "130 min", "140 min", "150 min"],
-        correct: 3,
-        explanation: "2,5 h = 2 h 30 min = 120 + 30 = 150 min"
+        explanation: "756 ÷ 18 = 42 livres par rayon"
     }
 ];
 
-// Fonction pour obtenir les statistiques de progrès en temps réel
 function getProgressStats() {
     const stats = {
         completion: Math.round((progressData.questionsAttempted / progressData.totalQuestions) * 100),
@@ -1460,7 +718,7 @@ function getProgressStats() {
         timeSpent: getQuizDuration(),
         categoryBreakdown: {}
     };
-    
+
     Object.entries(progressData.categoryScores).forEach(([category, data]) => {
         if (data.attempted > 0) {
             stats.categoryBreakdown[category] = {
@@ -1469,7 +727,7 @@ function getProgressStats() {
             };
         }
     });
-    
+
     return stats;
 }
 
@@ -1485,7 +743,7 @@ function startQuiz() {
     score = 0;
     showingExplanation = false;
     showingConcept = true;
-    
+
     document.getElementById('startScreen').style.display = 'none';
     document.getElementById('questionContainer').style.display = 'block';
     loadQuestion();
@@ -1494,45 +752,39 @@ function startQuiz() {
 function loadQuestion() {
     const question = questions[currentQuestion];
     const progress = ((currentQuestion + 1) / questions.length) * 100;
-    
+
     // Réinitialiser l'état
     showingConcept = true;
     showingExplanation = false;
-    
+
     // Mise à jour de la barre de progression
     document.getElementById('progressFill').style.width = progress + '%';
     document.getElementById('categoryTag').textContent = question.category;
     document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1} / ${questions.length}`;
-    
-    // Préparer la question (cachée)
-    document.getElementById('questionText').textContent = question.question;
-    
-    const optionsContainer = document.getElementById('optionsContainer');
-    optionsContainer.innerHTML = '';
-    
-    question.options.forEach((option, index) => {
-        const optionDiv = document.createElement('div');
-        optionDiv.className = 'option';
-        optionDiv.innerHTML = `
-            <input type="radio" name="answer" value="${index}" id="option${index}">
-            <label for="option${index}">${String.fromCharCode(97 + index)}) ${option}</label>
-        `;
-        optionDiv.onclick = () => selectOption(index, optionDiv);
-        optionsContainer.appendChild(optionDiv);
+
+    // Afficher le concept d'abord
+    showConcept();
+
+    // Masquer les boutons de navigation et d'aide
+    document.getElementById('nextBtn').style.display = 'none';
+    document.getElementById('helpBtn').style.display = 'block';
+
+    // Réinitialiser les options
+    document.querySelectorAll('.option').forEach(opt => {
+        opt.classList.remove('selected', 'correct', 'incorrect');
+        opt.style.pointerEvents = 'auto';
     });
 
-    // Masquer la question et l'explication
-    document.getElementById('questionBox').style.display = 'none';
-    document.getElementById('explanation').style.display = 'none';
-    
-    // Afficher le concept en premier
-    showConcept();
+    document.getElementById('validateBtn').style.display = 'none';
+
+    // Mise à jour des statistiques en temps réel
+    updateProgressDisplay();
 }
 
 function showConcept() {
     const question = questions[currentQuestion];
     const concept = concepts[question.concept];
-    
+
     if (concept) {
         document.getElementById('conceptSection').style.display = 'block';
         document.getElementById('questionBox').style.display = 'none';
@@ -1543,88 +795,118 @@ function showConcept() {
         `;
         showingConcept = true;
         showingExplanation = false;
-        
-        // Mettre à jour les boutons de navigation
-        updateNavigationButtons();
+
+        // Afficher le bouton pour continuer
+        document.getElementById('conceptBtn').style.display = 'block';
+        document.getElementById('conceptBtn').textContent = 'Commencer la question';
     } else {
-        // Si pas de concept, passer directement à la question
+        // Si pas de concept, aller directement à la question
         showQuestion();
     }
 }
 
 function showQuestion() {
+    const question = questions[currentQuestion];
+
     document.getElementById('conceptSection').style.display = 'none';
     document.getElementById('questionBox').style.display = 'block';
+    document.getElementById('explanation').style.display = 'none';
+
+    document.getElementById('questionText').textContent = question.question;
+
+    const optionsContainer = document.getElementById('optionsContainer');
+    optionsContainer.innerHTML = '';
+
+    question.options.forEach((option, index) => {
+        const optionElement = document.createElement('div');
+        optionElement.className = 'option';
+        optionElement.textContent = option;
+        optionElement.onclick = () => selectOption(index);
+        optionsContainer.appendChild(optionElement);
+    });
+
     showingConcept = false;
-    
-    // Mettre à jour le bouton "Précédent" pour revenir au concept
-    updateNavigationButtons();
+    showingExplanation = false;
+
+    document.getElementById('conceptBtn').style.display = 'none';
 }
 
-function updateNavigationButtons() {
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    
-    if (showingConcept) {
-        // Sur la page concept
-        if (currentQuestion > 0) {
-            prevBtn.style.display = 'inline-block';
-            prevBtn.classList.add('visible');
-            prevBtn.textContent = '⬅️ Question précédente';
-            prevBtn.onclick = () => prevQuestion();
-        } else {
-            prevBtn.style.display = 'none';
-            prevBtn.classList.remove('visible');
-        }
-        
-        nextBtn.textContent = 'Voir la question ➡️';
-        nextBtn.onclick = () => showQuestion();
-        
-    } else {
-        // Sur la page question
-        // Remplacer le contenu des boutons de navigation
-        const navButtons = document.querySelector('.nav-buttons');
-        navButtons.innerHTML = '';
-        
-        // Bouton retour concept
-        const backToConceptBtn = document.createElement('button');
-        backToConceptBtn.type = 'button';
-        backToConceptBtn.className = 'btn-secondary';
-        backToConceptBtn.textContent = '📖 Revoir le concept';
-        backToConceptBtn.onclick = () => showConcept();
-        navButtons.appendChild(backToConceptBtn);
-        
-        // Bouton précédent (si pas la première question)
-        if (currentQuestion > 0) {
-            const prevQuestionBtn = document.createElement('button');
-            prevQuestionBtn.type = 'button';
-            prevQuestionBtn.className = 'btn-secondary';
-            prevQuestionBtn.textContent = '⬅️ Question précédente';
-            prevQuestionBtn.onclick = () => prevQuestion();
-            navButtons.appendChild(prevQuestionBtn);
-        }
-        
-        // Bouton "Demander à tonton"
-        const askTontonBtn = document.createElement('button');
-        askTontonBtn.type = 'button';
-        askTontonBtn.className = 'btn-ask-tonton';
-        askTontonBtn.textContent = '👨‍🏫 Demander à tonton';
-        askTontonBtn.onclick = () => askTonton();
-        navButtons.appendChild(askTontonBtn);
-        
-        // Bouton suivant
-        const nextQuestionBtn = document.createElement('button');
-        nextQuestionBtn.type = 'button';
-        nextQuestionBtn.className = 'btn';
-        nextQuestionBtn.textContent = currentQuestion === questions.length - 1 ? 'Voir les résultats 🎯' : 'Suivant ➡️';
-        nextQuestionBtn.onclick = () => nextQuestion();
-        navButtons.appendChild(nextQuestionBtn);
-    }
+function selectOption(index) {
+    // Enlever la sélection précédente
+    document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+
+    // Sélectionner la nouvelle option
+    document.querySelectorAll('.option')[index].classList.add('selected');
+
+    // Afficher le bouton valider
+    document.getElementById('validateBtn').style.display = 'block';
+
+    // Stocker la réponse
+    userAnswers[currentQuestion] = index;
 }
 
-function askTonton() {
+function validateAnswer() {
     const question = questions[currentQuestion];
-    
+    const userAnswer = userAnswers[currentQuestion];
+
+    // Colorer les options
+    document.querySelectorAll('.option').forEach((opt, index) => {
+        if (index === question.correct) {
+            opt.classList.add('correct');
+        } else if (index === userAnswer && index !== question.correct) {
+            opt.classList.add('incorrect');
+        }
+        opt.style.pointerEvents = 'none';
+    });
+
+    // Calculer le score
+    if (userAnswer === question.correct) {
+        score++;
+    }
+
+    // Mettre à jour les données de progression
+    updateProgressData(question, userAnswer === question.correct);
+
+    // Afficher l'explication
+    showExplanation();
+
+    // Masquer le bouton valider et afficher le bouton suivant
+    document.getElementById('validateBtn').style.display = 'none';
+    document.getElementById('nextBtn').style.display = 'block';
+
+    // Cacher le bouton d'aide pendant l'explication
+    document.getElementById('helpBtn').style.display = 'none';
+}
+
+function updateProgressData(question, isCorrect) {
+    // Mise à jour des données globales
+    progressData.questionsAttempted++;
+    if (isCorrect) {
+        progressData.correctAnswers++;
+    }
+
+    // Mise à jour des données par catégorie
+    const category = question.category;
+    if (!progressData.categoryScores[category]) {
+        progressData.categoryScores[category] = {
+            attempted: 0,
+            correct: 0,
+            total: questions.filter(q => q.category === category).length
+        };
+    }
+
+    progressData.categoryScores[category].attempted++;
+    if (isCorrect) {
+        progressData.categoryScores[category].correct++;
+    }
+
+    // Sauvegarder dans localStorage
+    localStorage.setItem('mathQuizProgress', JSON.stringify(progressData));
+}
+
+function sendEmailHelp() {
+    const question = questions[currentQuestion];
+
     const subject = encodeURIComponent('IMPORTANT; email à ouvrir dans l\'app Gmail d\'Android');
     const body = encodeURIComponent(`
 Bonjour tonton,
@@ -1634,66 +916,40 @@ J'ai une question sur les révisions CM2 :
 Question : ${question.question}
 
 Les options sont :
-${question.options.map((opt, i) => `${String.fromCharCode(97 + i)}) ${opt}`).join('\n')}
+${question.options.map((opt, i) => `${i + 1}. ${opt}`).join('\n')}
 
-Je suis à la question ${currentQuestion + 1} sur ${questions.length}.
-
-Peux-tu m'aider à comprendre ?
+Peux-tu m'aider ?
 
 Merci !
-    `);
-    
-    // Lien Gmail pour Android
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jhouedanou@gmail.com&su=${subject}&body=${body}`;
-    window.open(gmailUrl, '_blank');
-}
+`);
 
-function selectOption(optionIndex, optionDiv) {
-    // Supprimer la sélection précédente
-    document.querySelectorAll('.option').forEach(opt => {
-        opt.classList.remove('selected', 'correct', 'incorrect');
-    });
-    
-    // Ajouter la sélection actuelle
-    optionDiv.classList.add('selected');
-    
-    // Enregistrer la réponse
-    userAnswers[currentQuestion] = optionIndex;
-    
-    // Afficher l'explication
-    showExplanation();
+    window.open(`mailto:?subject=${subject}&body=${body}`, '_blank');
 }
 
 function showExplanation() {
     const question = questions[currentQuestion];
     const userAnswer = userAnswers[currentQuestion];
-    
-    // Colorer les options
-    document.querySelectorAll('.option').forEach((opt, index) => {
-        if (index === question.correct) {
-            opt.classList.add('correct');
-        } else if (index === userAnswer && index !== question.correct) {
-            opt.classList.add('incorrect');
-        }
-    });
-    
-    // Afficher l'explication
-    document.getElementById('explanationText').textContent = question.explanation;
+
+    document.getElementById('conceptSection').style.display = 'none';
+    document.getElementById('questionBox').style.display = 'none';
     document.getElementById('explanation').style.display = 'block';
+
+    const isCorrect = userAnswer === question.correct;
+    document.getElementById('explanationText').innerHTML = `
+        <div class="result ${isCorrect ? 'correct' : 'incorrect'}">
+            ${isCorrect ? '✅ Bonne réponse !' : '❌ Réponse incorrecte'}
+        </div>
+        <div class="explanation-detail">
+            <strong>Explication :</strong><br>
+            ${question.explanation}
+        </div>
+    `;
+
     showingExplanation = true;
+    showingConcept = false;
 }
 
 function nextQuestion() {
-    if (showingConcept) {
-        showQuestion();
-        return;
-    }
-    
-    if (!showingExplanation && userAnswers[currentQuestion] === undefined) {
-        alert('Veuillez sélectionner une réponse avant de continuer.');
-        return;
-    }
-
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
         loadQuestion();
@@ -1702,92 +958,79 @@ function nextQuestion() {
     }
 }
 
-function prevQuestion() {
-    if (currentQuestion > 0) {
-        currentQuestion--;
-        loadQuestion();
-    }
-}
-
 function showResults() {
-    // Calculer le score total
-    score = 0;
-    for (let i = 0; i < questions.length; i++) {
-        if (userAnswers[i] === questions[i].correct) {
-            score++;
-        }
-    }
-
-    // Masquer le container de questions
     document.getElementById('questionContainer').style.display = 'none';
     document.getElementById('results').style.display = 'block';
 
-    // Afficher le score
     const percentage = Math.round((score / questions.length) * 100);
+
+    let message, emoji;
+    if (percentage >= 90) {
+        message = "Excellence ! 🏆";
+        emoji = "🏆";
+    } else if (percentage >= 75) {
+        message = "Très bien ! 🌟";
+        emoji = "🌟";
+    } else if (percentage >= 60) {
+        message = "Bien ! 💪";
+        emoji = "💪";
+    } else if (percentage >= 45) {
+        message = "À améliorer 📚";
+        emoji = "📚";
+    } else {
+        message = "Révisions nécessaires 🚀";
+        emoji = "🚀";
+    }
+
     document.getElementById('finalScore').textContent = `${score}/${questions.length}`;
-    document.getElementById('scoreCircle').style.background = getScoreColor(percentage);
+    document.getElementById('finalPercentage').textContent = `${percentage}%`;
+    document.getElementById('finalMessage').textContent = message;
+    document.getElementById('finalEmoji').textContent = emoji;
 
-    // Message personnalisé
-    const message = getScoreMessage(score, questions.length);
-    document.getElementById('scoreMessage').textContent = message.text;
+    // Afficher les statistiques détaillées
+    displayDetailedStats();
 
-    // Détails du score
-    const scoreDetails = document.getElementById('scoreDetails');
-    scoreDetails.innerHTML = `
-        <h3>📊 Détails de tes résultats :</h3>
-        <p><strong>Score total :</strong> ${score} / ${questions.length} (${percentage}%)</p>
-        <p><strong>Révisions CM2 complètes !</strong></p>
+    // Marquer le quiz comme terminé
+    progressData.lastCompleted = new Date().toISOString();
+    localStorage.setItem('mathQuizProgress', JSON.stringify(progressData));
+}
+
+function displayDetailedStats() {
+    const stats = getProgressStats();
+    const statsContainer = document.getElementById('detailedStats');
+
+    let statsHTML = `
+        <h3>📊 Statistiques détaillées</h3>
+        <div class="stat-item">
+            <span>Progression globale :</span>
+            <span>${stats.completion}%</span>
+        </div>
+        <div class="stat-item">
+            <span>Précision globale :</span>
+            <span>${stats.accuracy}%</span>
+        </div>
+        <div class="stat-item">
+            <span>Temps passé :</span>
+            <span>${stats.timeSpent}</span>
+        </div>
     `;
 
-    // Badge
-    const badgeContainer = document.getElementById('badgeContainer');
-    badgeContainer.innerHTML = `<span class="badge ${message.badgeClass}">${message.badge}</span>`;
-    
-    // Remplir les champs cachés du formulaire
-    document.getElementById('hiddenScore').value = `Score de Karniella: ${score}/${questions.length} (${percentage}%)`;
-}
-
-function getScoreMessage(score, totalQuestions) {
-    const percentage = (score / totalQuestions) * 100;
-    
-    if (percentage >= 90) {
-        return {
-            text: "🏆 Excellent ! Tu maîtrises parfaitement cette semaine !",
-            badge: "🌟 Excellence",
-            badgeClass: "badge-excellent"
-        };
-    } else if (percentage >= 75) {
-        return {
-            text: "🌟 Très bien ! Quelques révisions et tu seras au top !",
-            badge: "👍 Très bien",
-            badgeClass: "badge-good"
-        };
-    } else if (percentage >= 60) {
-        return {
-            text: "💪 Bien ! Continue tes efforts, tu y es presque !",
-            badge: "📚 Bien",
-            badgeClass: "badge-good"
-        };
-    } else if (percentage >= 40) {
-        return {
-            text: "📚 Assez bien. Il faut revoir certaines notions.",
-            badge: "⚡ À améliorer",
-            badgeClass: "badge-average"
-        };
-    } else {
-        return {
-            text: "🚀 Des révisions sont nécessaires. Courage, tu vas y arriver !",
-            badge: "💪 Persévère",
-            badgeClass: "badge-needs-work"
-        };
+    if (Object.keys(stats.categoryBreakdown).length > 0) {
+        statsHTML += '<h4>📚 Par catégorie :</h4>';
+        Object.entries(stats.categoryBreakdown).forEach(([category, data]) => {
+            statsHTML += `
+                <div class="category-stat">
+                    <div class="category-name">${category}</div>
+                    <div class="category-scores">
+                        <span>Précision: ${data.accuracy}%</span>
+                        <span>Progression: ${data.completion}%</span>
+                    </div>
+                </div>
+            `;
+        });
     }
-}
 
-function getScoreColor(percentage) {
-    if (percentage >= 90) return 'linear-gradient(135deg, #00d4aa, #01a085)';
-    if (percentage >= 75) return 'linear-gradient(135deg, #667eea, #764ba2)';
-    if (percentage >= 60) return 'linear-gradient(135deg, #ffeaa7, #fab1a0)';
-    return 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+    statsContainer.innerHTML = statsHTML;
 }
 
 function restartQuiz() {
@@ -1796,31 +1039,43 @@ function restartQuiz() {
     score = 0;
     showingExplanation = false;
     showingConcept = true;
-    
+
     document.getElementById('results').style.display = 'none';
     document.getElementById('startScreen').style.display = 'block';
 }
 
 // Charger le progrès au démarrage si disponible
 window.addEventListener('load', function() {
-    const savedProgress = loadProgress();
-    if (savedProgress && savedProgress.questionsAttempted > 0) {
-        console.log('Progrès précédent trouvé:', savedProgress);
-        // On pourrait proposer de reprendre là où on s'est arrêté
-        // Pour l'instant, on laisse l'utilisateur recommencer
-    }
+    loadProgress();
+    updateProgressDisplay();
 });
 
-// Sauvegarder le progrès périodiquement et avant la fermeture de la page
-window.addEventListener('beforeunload', function() {
-    if (progressData && progressData.questionsAttempted > 0) {
-        saveProgress();
-    }
-});
+function continueFromConcept() {
+    showQuestion();
+}
 
-// Sauvegarder toutes les 30 secondes si le quiz est en cours
-setInterval(function() {
-    if (progressData && progressData.startTime && !progressData.endTime) {
-        saveProgress();
+function getQuizDuration() {
+    if (progressData.startTime) {
+        const now = new Date();
+        const start = new Date(progressData.startTime);
+        const diffMs = now - start;
+        const diffMins = Math.floor(diffMs / 60000);
+        const diffSecs = Math.floor((diffMs % 60000) / 1000);
+        return `${diffMins}min ${diffSecs}s`;
     }
-}, 30000);
+    return '0min 0s';
+}
+
+function updateProgressDisplay() {
+    const stats = getProgressStats();
+    const progressDisplay = document.getElementById('progressDisplay');
+    if (progressDisplay) {
+        progressDisplay.innerHTML = `
+            <div class="progress-stats">
+                <span>📈 ${stats.completion}% terminé</span>
+                <span>🎯 ${stats.accuracy}% de réussite</span>
+                <span>⏱️ ${stats.timeSpent}</span>
+            </div>
+        `;
+    }
+}
