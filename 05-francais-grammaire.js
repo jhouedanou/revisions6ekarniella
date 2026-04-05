@@ -109,6 +109,25 @@ const concepts = {
                 <strong>L'élève qui travaille bien</strong> (déterminant + nom + proposition relative)
             </div>
         `
+    },
+    "unites_comparaison": {
+        title: "⚖️ Les unités de comparaison (quantités)",
+        content: `
+            <h4>Comparer des quantités</h4>
+            <p>On peut aussi comparer des <strong>quantités</strong> (noms) ou des <strong>actions</strong> (verbes) :</p>
+            <ul>
+                <li><strong>Plus de... que :</strong> supériorité en quantité → <em>Il a plus de livres que moi.</em></li>
+                <li><strong>Moins de... que :</strong> infériorité en quantité → <em>Elle a moins de bonbons que lui.</em></li>
+                <li><strong>Autant de... que :</strong> égalité en quantité → <em>J'ai autant de crayons que toi.</em></li>
+            </ul>
+            <p>Avec un <strong>verbe</strong>, on utilise <strong>plus que, moins que, autant que</strong> (sans « de ») :</p>
+            <div class="example">
+                <strong>Exemples :</strong><br>
+                Il mange <strong>plus que</strong> son frère. (verbe)<br>
+                Elle travaille <strong>autant que</strong> lui. (verbe)<br>
+                Il a <strong>plus de</strong> courage <strong>que</strong> les autres. (nom)
+            </div>
+        `
     }
 };
 
@@ -331,6 +350,212 @@ const questions = [
         options: ["1", "2", "3", "4"],
         correct: 2,
         explanation: "Il y a 3 adjectifs épithètes : « joli », « petit » et « fleuri ». Ils qualifient tous le nom « jardin » directement."
+    },
+
+    // COMPARAISON (4 questions supplémentaires)
+    {
+        category: "📖 Grammaire",
+        concept: "comparaison",
+        question: "Quel est le comparatif irrégulier de l'adjectif « bon » ?",
+        options: ["Plus bon", "Meilleur", "Mieux", "Le meilleur"],
+        correct: 1,
+        explanation: "Le comparatif de « bon » est « meilleur » (et non « plus bon »). « Le meilleur » est le superlatif et « mieux » est le comparatif de l'adverbe « bien »."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "comparaison",
+        question: "Complète avec un comparatif d'égalité : Il parle ___ couramment ___ sa sœur.",
+        options: ["plus... que", "aussi... que", "moins... que", "le plus... que"],
+        correct: 1,
+        explanation: "Le comparatif d'égalité avec un adverbe se forme avec « aussi + adverbe + que » : il parle aussi couramment que sa sœur."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "comparaison",
+        question: "Dans « Cette valise est plus lourde que l'autre », quel est le mot comparé ?",
+        options: ["valise", "lourde", "autre", "plus"],
+        correct: 1,
+        explanation: "C'est l'adjectif « lourde » qui est comparé. « Plus... que » encadre l'adjectif pour former le comparatif de supériorité."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "comparaison",
+        question: "Quel est le comparatif de l'adverbe « bien » ?",
+        options: ["Plus bien", "Meilleur", "Mieux", "Le mieux"],
+        correct: 2,
+        explanation: "Le comparatif de « bien » est « mieux » (et non « plus bien »). « Le mieux » est le superlatif et « meilleur » est le comparatif de « bon »."
+    },
+
+    // SUPERLATIFS (4 questions supplémentaires)
+    {
+        category: "📖 Grammaire",
+        concept: "superlatifs",
+        question: "Quel est le superlatif de « mauvais » ?",
+        options: ["Le plus mauvais", "Le pire", "Le moindre", "Les deux premières réponses sont acceptées"],
+        correct: 3,
+        explanation: "On peut dire « le pire » (forme irrégulière) ou « le plus mauvais » (forme régulière). Les deux sont correctes en français."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "superlatifs",
+        question: "Quelle est la différence entre un comparatif et un superlatif ?",
+        options: ["Le comparatif compare deux éléments, le superlatif désigne le degré extrême dans un ensemble", "Ce sont des synonymes", "Le superlatif compare deux éléments, le comparatif désigne le degré extrême", "Le comparatif utilise toujours « le plus »"],
+        correct: 0,
+        explanation: "Le comparatif compare deux éléments (plus grand que), tandis que le superlatif exprime le degré extrême dans un groupe (le plus grand de la classe)."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "superlatifs",
+        question: "Complète : C'est ___ chanteuse ___ célèbre du pays.",
+        options: ["la plus... la plus", "la... la plus", "la plus... —", "une... plus"],
+        correct: 1,
+        explanation: "On dit « C'est la chanteuse la plus célèbre du pays ». L'article « la » accompagne le nom, et « la plus » forme le superlatif avec l'adjectif."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "superlatifs",
+        question: "Dans « C'est le meilleur joueur de l'équipe », pourquoi ne dit-on pas « le plus bon » ?",
+        options: ["Parce que « bon » est un adverbe", "Parce que « bon » a un superlatif irrégulier : « le meilleur »", "Parce que « le plus bon » est un comparatif", "Parce que « bon » ne peut pas être au superlatif"],
+        correct: 1,
+        explanation: "L'adjectif « bon » a des formes irrégulières : comparatif → meilleur, superlatif → le meilleur. On ne dit jamais « le plus bon »."
+    },
+
+    // DÉTERMINANTS (4 questions supplémentaires)
+    {
+        category: "📖 Grammaire",
+        concept: "determinants",
+        question: "Quelle est la contraction de « de + le » ?",
+        options: ["de le", "du", "del", "de l'"],
+        correct: 1,
+        explanation: "« De + le » se contracte en « du ». Exemple : Je viens du marché (= de le marché). « De l' » s'utilise devant une voyelle."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "determinants",
+        question: "Quelle est la contraction de « à + les » ?",
+        options: ["à les", "ales", "aux", "au"],
+        correct: 2,
+        explanation: "« À + les » se contracte en « aux ». Exemple : Je parle aux enfants (= à les enfants). « Au » est la contraction de « à + le »."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "determinants",
+        question: "Dans « Je ne mange pas de pain », pourquoi utilise-t-on « de » et pas « du » ?",
+        options: ["Parce que « pain » est féminin", "Parce qu'après une négation, l'article partitif devient « de »", "Parce que « de » est un article défini", "Parce que c'est un complément du nom"],
+        correct: 1,
+        explanation: "Après une négation (ne...pas), les articles partitifs (du, de la, des) deviennent « de » ou « d' ». Je mange du pain → Je ne mange pas de pain."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "determinants",
+        question: "Dans « Les élèves de la classe lisent des livres », combien y a-t-il de déterminants ?",
+        options: ["2", "3", "4", "5"],
+        correct: 1,
+        explanation: "Il y a 3 déterminants : « Les » (article défini), « la » (article défini) et « des » (article indéfini). « De » est ici une préposition, pas un déterminant."
+    },
+
+    // ADJECTIFS DÉMONSTRATIFS (3 questions supplémentaires)
+    {
+        category: "📖 Grammaire",
+        concept: "adjectifs_demonstratifs",
+        question: "Complète : ___ homme est très courageux.",
+        options: ["Ce", "Cet", "Cette", "Ces"],
+        correct: 1,
+        explanation: "On utilise « cet » devant un nom masculin singulier commençant par un h muet. « Homme » commence par un h muet."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "adjectifs_demonstratifs",
+        question: "Complète : Regarde ___ étoile dans le ciel !",
+        options: ["ce", "cet", "cette", "ces"],
+        correct: 2,
+        explanation: "« Étoile » est un nom féminin singulier, on utilise donc « cette ». Attention : « cet » est réservé au masculin devant voyelle ou h muet."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "adjectifs_demonstratifs",
+        question: "Quel adjectif démonstratif complète : « ___ exercices sont difficiles » ?",
+        options: ["Ce", "Cet", "Cette", "Ces"],
+        correct: 3,
+        explanation: "« Exercices » est un nom masculin pluriel. On utilise « ces » pour tous les noms au pluriel, qu'ils soient masculins ou féminins."
+    },
+
+    // ADJECTIFS POSSESSIFS (3 questions supplémentaires)
+    {
+        category: "📖 Grammaire",
+        concept: "adjectifs_possessifs",
+        question: "Complète : ___ école est près de chez moi. (l'école où je vais)",
+        options: ["Ma", "Mon", "Sa", "Leur"],
+        correct: 1,
+        explanation: "Bien que « école » soit féminin, on utilise « mon » car le mot commence par une voyelle. On dit « mon école » et non « ma école » pour éviter le hiatus."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "adjectifs_possessifs",
+        question: "Complète : Paul et Léa rangent ___ chambre. (la chambre de Paul et Léa)",
+        options: ["sa", "son", "leur", "leurs"],
+        correct: 2,
+        explanation: "La chambre appartient à Paul et Léa (3e personne du pluriel). Comme il n'y a qu'une seule chambre, on utilise « leur » (sans s) : leur chambre."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "adjectifs_possessifs",
+        question: "Quelle phrase contient une erreur dans l'adjectif possessif ?",
+        options: ["Mon amie est gentille.", "Ma histoire préférée.", "Ton idée est bonne.", "Son écharpe est rouge."],
+        correct: 1,
+        explanation: "On doit dire « Mon histoire préférée » et non « Ma histoire » car « histoire » commence par un h muet (voyelle). On utilise « mon » pour éviter le hiatus."
+    },
+
+    // EXPANSION DU NOM (3 questions supplémentaires)
+    {
+        category: "📖 Grammaire",
+        concept: "expansion_nom",
+        question: "Dans « la ville où je suis né », quel mot introduit la proposition subordonnée relative ?",
+        options: ["la", "ville", "où", "je"],
+        correct: 2,
+        explanation: "« Où » est un pronom relatif qui introduit la proposition subordonnée relative « où je suis né ». Il complète le nom « ville »."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "expansion_nom",
+        question: "Dans « une tasse de chocolat chaud », quelle est l'expansion du nom « tasse » ?",
+        options: ["une", "de chocolat chaud", "chocolat", "chaud"],
+        correct: 1,
+        explanation: "« De chocolat chaud » est le complément du nom « tasse ». Il est introduit par la préposition « de » et précise le contenu de la tasse."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "expansion_nom",
+        question: "Quel type d'expansion du nom trouve-t-on dans « le livre que j'ai lu » ?",
+        options: ["Adjectif épithète", "Complément du nom", "Proposition subordonnée relative", "Adverbe"],
+        correct: 2,
+        explanation: "« Que j'ai lu » est une proposition subordonnée relative introduite par le pronom relatif « que ». Elle complète le nom « livre »."
+    },
+
+    // UNITÉS DE COMPARAISON (3 questions)
+    {
+        category: "📖 Grammaire",
+        concept: "unites_comparaison",
+        question: "Complète : Julie a ___ amis ___ Thomas.",
+        options: ["autant d'... que", "aussi... que", "autant... que", "plus... que"],
+        correct: 0,
+        explanation: "Pour comparer des quantités (noms), on utilise « autant de... que ». Comme « amis » commence par une voyelle, « de » devient « d' » : autant d'amis que."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "unites_comparaison",
+        question: "Quelle phrase compare correctement une quantité ?",
+        options: ["Il est plus courageux que toi.", "Elle a plus de patience que lui.", "Ce film est aussi long que l'autre.", "C'est le moins cher de tous."],
+        correct: 1,
+        explanation: "« Plus de patience que » compare une quantité (le nom « patience ») avec « plus de... que ». Les autres phrases comparent des adjectifs ou utilisent un superlatif."
+    },
+    {
+        category: "📖 Grammaire",
+        concept: "unites_comparaison",
+        question: "Pour comparer une action (verbe), on dit : « Il travaille ___ que moi. »",
+        options: ["autant de", "plus de", "autant", "aussi"],
+        correct: 2,
+        explanation: "Avec un verbe, on utilise « autant que » (sans « de »). « Il travaille autant que moi. » Avec un nom, on dirait « autant de travail que moi »."
     }
 ];
 

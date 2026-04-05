@@ -298,6 +298,206 @@ const questions = [
         options: ["Le Moyen Âge", "L'Antiquité", "Les Temps modernes", "L'Époque contemporaine"],
         correct: 2,
         explanation: "Louis XIV a régné de 1643 à 1715. Cette période se situe dans les Temps modernes (1492-1789)."
+    },
+
+    // SOURCES D'INFORMATION – questions supplémentaires
+    {
+        category: "🏛️ Histoire",
+        concept: "sources_information",
+        question: "Une peinture rupestre trouvée dans une grotte est une source :",
+        options: ["Écrite", "Orale", "Iconographique", "Secondaire"],
+        correct: 2,
+        explanation: "Une peinture rupestre est une image réalisée à l'époque préhistorique : c'est une source iconographique primaire."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "sources_information",
+        question: "Pourquoi est-il important de croiser plusieurs sources historiques ?",
+        options: ["Pour rendre le travail plus long", "Pour vérifier la fiabilité des informations", "Pour impressionner le professeur", "Parce que c'est obligatoire par la loi"],
+        correct: 1,
+        explanation: "Croiser les sources permet de vérifier si les informations sont fiables et d'obtenir une vision plus complète des événements."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "sources_information",
+        question: "Un documentaire télévisé sur l'Égypte ancienne est :",
+        options: ["Une source primaire", "Une source secondaire", "Une source matérielle", "Une source orale primaire"],
+        correct: 1,
+        explanation: "Un documentaire est réalisé bien après les événements pour les expliquer : c'est une source secondaire."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "sources_information",
+        question: "Lequel de ces documents est une source écrite primaire ?",
+        options: ["Un article de journal publié hier sur la Rome antique", "Un traité de paix signé en 1918", "Un manuel scolaire d'histoire", "Un roman historique écrit en 2020"],
+        correct: 1,
+        explanation: "Le traité de paix de 1918 a été rédigé au moment des événements : c'est une source écrite primaire. Les autres sont des sources secondaires."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "sources_information",
+        question: "Les ruines d'un château fort sont une source :",
+        options: ["Écrite", "Orale", "Matérielle", "Iconographique"],
+        correct: 2,
+        explanation: "Les ruines d'un château sont des vestiges physiques du passé : c'est une source matérielle."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "sources_information",
+        question: "Qu'est-ce qui peut rendre une source historique peu fiable ?",
+        options: ["Elle est très ancienne", "Elle est écrite à la main", "L'auteur a pu mentir ou se tromper", "Elle est conservée dans un musée"],
+        correct: 2,
+        explanation: "Une source peut être peu fiable si l'auteur a exagéré, menti ou commis des erreurs. C'est pourquoi l'historien doit toujours vérifier et croiser ses sources."
+    },
+
+    // DIGNITÉ HUMAINE – questions supplémentaires
+    {
+        category: "🏛️ Histoire",
+        concept: "dignite_humaine",
+        question: "En quelle année la Croix-Rouge a-t-elle été fondée ?",
+        options: ["1789", "1863", "1914", "1945"],
+        correct: 1,
+        explanation: "La Croix-Rouge a été fondée en 1863 par Henry Dunant, choqué par les souffrances des soldats à la bataille de Solférino."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "dignite_humaine",
+        question: "Quel événement a inspiré Henry Dunant pour créer la Croix-Rouge ?",
+        options: ["La Révolution française", "La bataille de Solférino en 1859", "La Première Guerre mondiale", "La chute de l'Empire romain"],
+        correct: 1,
+        explanation: "En 1859, Henry Dunant est témoin de la bataille de Solférino en Italie, où des milliers de soldats blessés sont laissés sans soins. Cela l'inspire pour fonder la Croix-Rouge."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "dignite_humaine",
+        question: "Selon les Conventions de Genève, que doit-on faire pour les soldats blessés ennemis ?",
+        options: ["Les ignorer", "Les faire prisonniers sans soins", "Leur donner des soins médicaux", "Les renvoyer chez eux immédiatement"],
+        correct: 2,
+        explanation: "Les Conventions de Genève imposent de soigner tous les blessés, qu'ils soient alliés ou ennemis. C'est un principe fondamental du droit humanitaire."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "dignite_humaine",
+        question: "Quel symbole est utilisé par la Croix-Rouge pour signaler sa présence ?",
+        options: ["Un drapeau blanc", "Une croix rouge sur fond blanc", "Un cercle bleu", "Une étoile jaune"],
+        correct: 1,
+        explanation: "Le symbole de la Croix-Rouge est une croix rouge sur fond blanc. Ce symbole doit être respecté par tous les belligérants : il est interdit d'attaquer les personnes et les lieux qui l'arborent."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "dignite_humaine",
+        question: "La Déclaration universelle des droits de l'homme a été adoptée en :",
+        options: ["1789", "1863", "1918", "1948"],
+        correct: 3,
+        explanation: "La Déclaration universelle des droits de l'homme a été adoptée le 10 décembre 1948 par l'ONU, après les horreurs de la Seconde Guerre mondiale."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "dignite_humaine",
+        question: "Pourquoi la dignité humaine doit-elle être respectée même en temps de guerre ?",
+        options: ["Pour gagner la guerre plus vite", "Parce que chaque être humain a une valeur qui ne peut être retirée", "Uniquement pour éviter des sanctions", "Seulement si les deux camps sont d'accord"],
+        correct: 1,
+        explanation: "La dignité humaine est un droit fondamental : chaque être humain a une valeur inaliénable, quelles que soient les circonstances, même en temps de guerre."
+    },
+
+    // CHRONOLOGIE – questions supplémentaires
+    {
+        category: "🏛️ Histoire",
+        concept: "chronologie",
+        question: "À quel siècle correspond l'année 1789 ?",
+        options: ["XVIIe siècle", "XVIIIe siècle", "XIXe siècle", "XVIe siècle"],
+        correct: 1,
+        explanation: "1789 → 17 + 1 = 18, donc le XVIIIe siècle. C'est l'année de la Révolution française."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "chronologie",
+        question: "L'année 55 avant J.-C. se situe :",
+        options: ["Après la naissance de Jésus-Christ", "Avant la naissance de Jésus-Christ", "Au Moyen Âge", "À l'Époque contemporaine"],
+        correct: 1,
+        explanation: "« 55 avant J.-C. » signifie 55 ans avant la naissance de Jésus-Christ. C'est pendant l'Antiquité."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "chronologie",
+        question: "Combien de siècles y a-t-il dans un millénaire ?",
+        options: ["5 siècles", "10 siècles", "20 siècles", "100 siècles"],
+        correct: 1,
+        explanation: "Un millénaire = 1 000 ans, et un siècle = 100 ans. Donc 1 000 ÷ 100 = 10 siècles dans un millénaire."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "chronologie",
+        question: "Sur une frise chronologique, où place-t-on les événements les plus anciens ?",
+        options: ["À droite", "En haut", "À gauche", "En bas"],
+        correct: 2,
+        explanation: "Sur une frise chronologique horizontale, les événements les plus anciens sont à gauche et les plus récents à droite."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "chronologie",
+        question: "À quel siècle correspond l'année 476 ?",
+        options: ["IVe siècle", "Ve siècle", "VIe siècle", "IIIe siècle"],
+        correct: 1,
+        explanation: "476 → 4 + 1 = 5, donc le Ve siècle. C'est l'année de la chute de l'Empire romain d'Occident."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "chronologie",
+        question: "L'an 1 de notre calendrier correspond à :",
+        options: ["La naissance de Jules César", "La fondation de Rome", "La date de référence liée à la naissance de Jésus-Christ", "L'invention de l'écriture"],
+        correct: 2,
+        explanation: "Notre calendrier prend comme point de référence la naissance de Jésus-Christ. Tout ce qui est avant est « avant J.-C. » et tout ce qui est après est « après J.-C. »."
+    },
+
+    // GRANDES PÉRIODES – questions supplémentaires
+    {
+        category: "🏛️ Histoire",
+        concept: "grandes_periodes",
+        question: "Qui a découvert l'Amérique en 1492 ?",
+        options: ["Vasco de Gama", "Marco Polo", "Christophe Colomb", "Magellan"],
+        correct: 2,
+        explanation: "Christophe Colomb a atteint l'Amérique en 1492 en cherchant une route vers les Indes. Cet événement marque la fin du Moyen Âge."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "grandes_periodes",
+        question: "Pendant quelle grande période a-t-on construit les cathédrales gothiques ?",
+        options: ["L'Antiquité", "Le Moyen Âge", "Les Temps modernes", "La Préhistoire"],
+        correct: 1,
+        explanation: "Les grandes cathédrales gothiques (Notre-Dame de Paris, Chartres…) ont été construites au Moyen Âge, entre le XIIe et le XVe siècle."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "grandes_periodes",
+        question: "L'invention de l'écriture marque :",
+        options: ["La fin de l'Antiquité", "Le début du Moyen Âge", "La fin de la Préhistoire et le début de l'Antiquité", "Le début de l'Époque contemporaine"],
+        correct: 2,
+        explanation: "L'invention de l'écriture vers −3 300 marque la fin de la Préhistoire et le début de l'Antiquité."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "grandes_periodes",
+        question: "Dans quelle grande période se situe la construction des pyramides d'Égypte ?",
+        options: ["La Préhistoire", "L'Antiquité", "Le Moyen Âge", "Les Temps modernes"],
+        correct: 1,
+        explanation: "Les pyramides d'Égypte ont été construites vers −2 500, pendant l'Antiquité."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "grandes_periodes",
+        question: "Quel personnage célèbre a été couronné empereur en l'an 800 ?",
+        options: ["Jules César", "Louis XIV", "Charlemagne", "Napoléon Bonaparte"],
+        correct: 2,
+        explanation: "Charlemagne a été couronné empereur en l'an 800. Il a régné pendant le Moyen Âge et a créé un vaste empire en Europe."
+    },
+    {
+        category: "🏛️ Histoire",
+        concept: "grandes_periodes",
+        question: "La Révolution française de 1789 marque le passage entre quelles périodes ?",
+        options: ["De la Préhistoire à l'Antiquité", "De l'Antiquité au Moyen Âge", "Du Moyen Âge aux Temps modernes", "Des Temps modernes à l'Époque contemporaine"],
+        correct: 3,
+        explanation: "La Révolution française de 1789 marque la fin des Temps modernes et le début de l'Époque contemporaine."
     }
 ];
 
