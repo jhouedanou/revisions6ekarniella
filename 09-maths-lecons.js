@@ -163,7 +163,7 @@ const concepts = {
             </ol>
             <div class="example">
                 <strong>Propriété fondamentale :</strong><br>
-                Si O est le symétrique de O par rapport à O (centre), alors :<br>
+                Si A' est le symétrique de A par rapport au centre O, alors :<br>
                 • OA = OA' (O est équidistant de A et A')<br>
                 • A, O, A' sont alignés et O est le milieu de [AA']
             </div>
@@ -573,7 +573,7 @@ const questions = [
         question: "Sur une carte à l'échelle 1/100 000, la distance réelle entre deux villes est 50 km. Quelle est la distance sur la carte ?",
         options: ["0,5 cm", "50 cm", "5 cm", "500 cm"],
         correct: 1,
-        explanation: "1 cm sur la carte = 100 000 cm = 1 km dans la réalité. Donc 50 km réels = 50 cm sur la carte. Distance carte = distance réelle ÷ échelle = 50 km ÷ (1/100 000) → 50 × (1/100 000) = 50 cm."
+        explanation: "1 cm sur la carte représente 100 000 cm = 1 km dans la réalité. Donc : distance sur la carte = distance réelle × (1/100 000) = 5 000 000 cm × (1/100 000) = 50 cm. Ou plus simplement : 50 km réels × (1 cm / 1 km) = 50 cm sur la carte."
     },
 
     // SYMÉTRIQUE D'UN POINT (4 questions)

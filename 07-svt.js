@@ -143,9 +143,10 @@ const questions = [
         category: "🌿 SVT",
         concept: "eau_plantes",
         question: "Que se passe-t-il pour une plante privée d'eau ?",
-        options: ["Elle grandit plus vite", "Elle se flétrrit, jaunit et meurt", "Elle produit plus de fruits", "Elle absorbe plus de CO₂"],
+        options: ["Elle grandit plus vite", "Elle se flétrit, jaunit et meurt", "Elle produit plus de fruits", "Elle absorbe plus de CO₂"],
         correct: 1,
         explanation: "Sans eau, la plante perd sa turgescence : elle se flétrit, jaunit et finit par mourir."
+
     },
     {
         category: "🌿 SVT",
